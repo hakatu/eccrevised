@@ -1,0 +1,12 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
++libext+.vt
++libext+.v
++libext+.V
++nowarn+TFNPC
++nowarn+CUVWSP
++nowarn+TFMPC
++nowarn+CUVWSP
++define+approximate

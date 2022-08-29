@@ -1,0 +1,1 @@
+ncverilog -f top.vc  -l ncverilog.log +profile +access+r+w

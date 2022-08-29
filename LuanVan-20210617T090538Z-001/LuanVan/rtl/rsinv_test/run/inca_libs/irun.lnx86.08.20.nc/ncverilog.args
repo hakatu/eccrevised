@@ -1,0 +1,10 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
+-f
+top.vc
+-l
+ncverilog.log
++profile
++access+r+w

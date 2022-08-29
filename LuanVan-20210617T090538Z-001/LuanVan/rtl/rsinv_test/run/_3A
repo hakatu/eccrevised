@@ -1,0 +1,74 @@
+module      crc24_datw1024_tb
+        (
+            clk,
+            rst,
+            
+            //----- out dat gen
+            odat,
+            ovld,
+            ostart_crc_calc,
+            oend_crc_calc,
+            
+            //---- crc24 val from dut ---//
+            icrc_val,
+            icrc_vld,
+
+            //---- crc24 val from golden model --//
+            icrc_gold_val,
+            icrc_gold_vld
+            );
+
+parameter   DATW = 1024;
+
+input           clk;
+input           rst;
+            
+            //----- out dat gen
+output  [DATW-1:0]      odat;
+output          ovld;
+output          ostart_crc_calc;
+output          oend_crc_calc;
+            
+            //---- crc24 val from dut ---//
+input   [23:0]      icrc_val;
+input           icrc_vld;
+
+            //---- crc24 val from golden model --//
+input   [23:0]      icrc_gold_val;
+input           icrc_gold_vld;
+
+
+reg [DATW-1:0]      odat;
+reg                 ovld;
+reg                 ostart_crc_calc;
+reg                 oend_crc_calc;
+
+reg     [15:0]testvector [1000:0];
+
+initial
+    begin
+    $readmemh("/home/scratch/daot/01_Interlaken/03_TB/dat_crc24_gen.txt",testvector);
+    end
+
+integer i;
+
+initial
+    begin
+    i = 2000;
+    #210;
+    i=0;
+    end
+
+
+always@(posedge clk)
+    begin
+        if(i<2000)  
+        begin
+            odat    <=  {testvector[i+3],testvector[i+4],testvector[i+5],testvector[i+6],{960{1'b0}}};
+            ovld    <= testvector[i][0];
+            ostart_crc_calc <= testvector[i+1][0];
+            oend_crc_calc   <= testvector[i+2][0];
+            i <= i + 7;
+        end
+    end
+endmodule

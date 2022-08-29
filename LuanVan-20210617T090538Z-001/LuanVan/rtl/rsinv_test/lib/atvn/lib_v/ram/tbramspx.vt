@@ -1,0 +1,111 @@
+//////////////////////////////////////////////////////////////////////////////////
+//
+//  Arrive Technologies
+//
+// Filename        : iramspx.v
+// Description     : a library of single port RAM model
+//
+// Author          : ducdd@atvn.com.vn
+// Created On      : Wed Jun 18 15:49:51 2002
+// History (Date, Changed By)
+//      Tue Jun 25 14:37:55 2002
+//      Wed Sep 07 15:16:36 2005, ddduc
+//          modified from ramspx
+//          added new control signals and violation reports
+//      Fri Sep 09 16:55:04 2005, ddduc
+//          added write violations
+//  Thu Jul 28, ndtu, add parameter MAXDEPTH for better resource usage
+//
+//
+//////////////////////////////////////////////////////////////////////////////////
+// +display collision at write side
+//      DISPLAY_ERR_RAM_WR = "ON"
+// +no display collision at write side
+//      DISPLAY_ERR_RAM_WR = "OFF" or define `DISPLAY_ERR_RAM_WR_OFF
+// +display collision at read side
+//      DISPLAY_ERR_RAM_RD = "ON"
+// +no display collision at read side
+//      DISPLAY_ERR_RAM_WR = "OFF" or define `DISPLAY_ERR_RAM_WR_OFF
+// +turn off write X when collision at write side
+//      `ERR_RAM_WR_X_OFF
+// +modify to simlib tbramspx.vt
+
+module tbramspx
+    (
+     clk,
+     xa,
+     we,
+     re,
+     din,
+     dout,
+     
+     test,
+     mask
+     );
+
+parameter ADDRBIT = 11;
+parameter DEPTH = 1536;
+parameter WIDTH = 32;
+parameter TYPE  = "AUTO";
+parameter MAXDEPTH = 0;
+parameter OUT_REG = 0;
+
+parameter DISPLAY_ERR_RAM_RD    = "ON";
+
+input               clk;
+input [ADDRBIT-1:0] xa;
+input               we;
+input [WIDTH-1:0]   din;
+input               re;
+output [WIDTH-1:0]  dout;
+input               mask;   // =1, re is disable
+input               test;   // rd and wr are disable
+
+reg [WIDTH-1:0]     ram [DEPTH-1:0];
+reg [WIDTH-1:0]     qout;
+reg [WIDTH-1:0]     qout_reg;
+always @(posedge clk) qout_reg <= qout;
+
+wire [WIDTH-1:0]    dout;
+assign              dout = OUT_REG == 1 ? qout_reg : qout;
+
+integer i;
+initial
+    begin 
+    for(i=0;i<DEPTH;i=i+1)
+        ram[i] = {WIDTH{1'b0}};
+    end
+
+always @ (posedge clk)
+    begin
+    if (we & (!test))
+        begin
+        ram[xa] <= din;
+        //qout <= {WIDTH{1'bx}};  qout not like altera model.
+        end
+
+    if (test) qout <= {WIDTH{1'b0}};
+    else if (re | mask)
+        begin
+        if (!we)    qout <= ram[xa];
+        else
+            begin
+            qout <= {WIDTH{1'bx}};
+
+            `ifdef DISPLAY_ERR_RAM_RD_OFF
+            `else
+            if (DISPLAY_ERR_RAM_RD == "ON")
+                $display("ERR_RAM: RD and WR at the same time at %h %t %m",a,$time);
+            `endif
+          
+            end
+        end
+    //else    qout  <= {WIDTH{1'bx}};
+    end
+
+// for debug
+wire    sameaddr;
+assign sameaddr = we & re;
+
+endmodule
+

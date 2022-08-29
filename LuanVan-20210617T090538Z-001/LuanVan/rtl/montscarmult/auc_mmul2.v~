@@ -1,0 +1,1033 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : auc_mmul.v
+// Description  : Montgomery multiplication
+// Python code https://github.com/hakatu/rfc7748/blob/master/python/curves.py
+// basically k*xP, k from ram
+// Author       : hungnt@HW-NTHUNG
+// Created On   : Wed April 03 13:35:57 2019
+// History (Date, Changed By)
+// 33% done, so much logic :((
+////////////////////////////////////////////////////////////////////////////////
+
+module auc_mmul
+    (
+     clk,
+     rst,
+     
+     // Input
+     mmul_en,//controller
+
+     //from ALU
+     mmul_auvld,
+     mmul_audat,
+     
+     // Output
+     mmul_done,//done
+
+     //to ALU
+     mmul_opcode,
+     mmul_auen,
+     mmul_carry,
+     
+     // RAM control
+     mmul_radd,
+     mmul_rdat,//for swap
+     mmul_wadd,
+     mmul_wen,
+     mmul_wdat
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+parameter           WID   = 256;
+parameter           CURWID = 255;//curve width is only 255
+parameter           AWID  = 5;
+parameter           OPWID = 4;
+
+localparam          INIT   = 0;
+localparam          X25519 = 9;
+localparam          A24    = 256'd121665;
+localparam          EXP_K  = 256'd19; //2^255 mod 2^255-19
+localparam          EXP_2K = 256'd361;//2^(255*2) mod 2^255-19
+
+//Block RAM address table
+
+localparam          X_G     = 0;
+localparam          Y_G     = 1;
+localparam          X_3G    = 2;
+localparam          Y_3G    = 3;
+localparam          Z_3G    = 3;
+localparam          X_5G    = 5;
+localparam          Y_5G    = 6;
+localparam          Z_5G    = 7;
+localparam          X_7G    = 8;
+localparam          Y_7G    = 9;
+localparam          Z_7G    = 10;
+
+localparam          K_NUM   = 11;
+localparam          K_INV   = 12;
+localparam          R_NUM   = 13;
+localparam          S_NUM   = 14;
+localparam          X_KG    = 15;   //KKG KG same
+localparam          HASH    = 16;
+localparam          PKEY    = 17;
+localparam          ZRRAM   = 18;   // NEED FIX
+localparam          ONERAM  = 19;   // NEED FIX //May be init when reset
+
+localparam          TEMP0   = 20;
+localparam          TEMP1   = 21;
+localparam          TEMP2   = 22;
+localparam          TEMP3   = 23;
+localparam          TEMP4   = 24;
+localparam          TEMP5   = 25;
+localparam          TEMP6   = 26;   
+localparam          TEMP7   = 27;
+localparam          TEMP8   = 28;
+//
+//TEMP CHANGE NAME FOR USAGE in comp
+localparam          X_2   = 20;
+localparam          Z_2   = 21;
+localparam          X_3   = 22;
+localparam          Z_3   = 23;
+localparam          A     = 24;
+localparam          DA    = 24;
+localparam          B     = 25;
+localparam          CB    = 25;
+localparam          AA    = 26;
+localparam          C     = 26;
+localparam          DACBS = 26; //DA-CB
+localparam          BB    = 27;
+localparam          Z2TEMP= 27;
+localparam          D     = 27;
+localparam          DACB  = 27; //DA+CB
+localparam          E     = 28;
+localparam          DACB2 = 28;
+localparam          U255  = 30;//blank
+localparam          A24   = 31;//blank
+//
+
+//TEMP CHANGE NAME FOR USAGE in EXPO final
+localparam          X_2   = 20;
+localparam          Z_2   = 21;
+localparam          X_3   = 22;
+localparam          Z_3   = 23;
+localparam          E     = 24;
+localparam          TY    = 25;
+localparam          POWZ  = 26;
+//
+
+localparam          S_RP    = 29;
+localparam          S_RPH   = 30;
+localparam          BLNK    = 31;
+//
+
+
+//VALUE INITlocalparam          X2VL   = 1;
+localparam          Z2VL   = 0;
+localparam          X3VL   = X25519;
+localparam          Z3VL   = 1;
+
+//main statemachine 
+localparam          IDLE    = 2'b00;
+localparam          INIT    = 2'b01;//init first xz
+localparam          COMP    = 2'b10;//compute for
+localparam          FINAL   = 2'b11;//final rslt calculation
+
+//init statemachine
+localparam          ISWID    = 3;
+localparam          I_IDLE   = 3'b000;
+localparam          I_INITX2 = 3'b001;//INIT X2
+localparam          I_INITZ2 = 3'b010;//INIT Z2
+localparam          I_INITX3 = 3'b011;//INIT X3
+localparam          I_INITZ3 = 3'b100;//INIT Z3
+localparam          I_INITA24= 3'b101;//INIT A24
+localparam          I_INITU  = 3'b110;//INIT U255
+
+//comp statemachine (loop 254 to 0) 255 iterations
+localparam          CSWID    = 6;
+localparam          C_IDLE     = 6'b000000;
+localparam          C_PREKT1   = 6'b000001; //read K
+localparam          C_PREKT2   = 6'b000010; //read 0 //enable fa //wait vld
+localparam          C_SWAPX2   = 6'b000011;//get swap^=k>>i & 1 //read x2
+localparam          C_SWAPX3   = 6'b000100;//SWAP read x3 //enable swap //waitvld
+localparam          C_SWAPZ2   = 6'b000101;//write x2 //read z2
+localparam          C_SWAPZ3   = 6'b000110;//read z3 //enable swap //waitvld //write x3
+localparam          C_SWAPHZ2  = 6'b000111;//write z2 //read x2
+localparam          C_GETA1    = 6'b001000;//write z3 //read z2 //enable fa //waitvld
+localparam          C_GETA2    = 6'b001001;//write A //read A
+localparam          C_GETAA    = 6'b001010;//read A //enable mul //waitvld
+localparam          C_GETB1    = 6'b001011;//write AA //read x2
+localparam          C_GETB2    = 6'b001100;//read z2 //enable fa & carry(sub) //waitvld
+localparam          C_GETBB    = 6'b001101;//write B //read B
+localparam          C_GETBB2   = 6'b001110;//read B //enable mul //waitvld
+localparam          C_GETE1    = 6'b001111;//write BB //read AA
+localparam          C_GETE2    = 6'b010000;//read BB //enable fa & carry(sub) //waitvld
+localparam          C_GETX21   = 6'b010001;//write E //read AA
+localparam          C_GETX22   = 6'b010010;//read BB //enable mul //waitvld
+localparam          C_GETZ21   = 6'b010011;//write x2 //read E
+localparam          C_GETZ22   = 6'b010100;//read A24 //enable mul //waitvld
+localparam          C_GETZ23   = 6'b010001;//write Z2TEMP //read AA
+localparam          C_GETZ24   = 6'b010010;//read Z2TEMP //enable fa //waitvld
+localparam          C_GETZ25   = 6'b010011;//write Z2TEMP //read E
+localparam          C_GETZ26   = 6'b010100;//read Z2TEMP //enable mul //waitvld
+localparam          C_GETC1    = 6'b010101;//write z2 //read x3
+localparam          C_GETC2    = 6'b010110;//read z3  //enable fa //waitvld
+localparam          C_GETD1    = 6'b010111;//write C //read x3
+localparam          C_GETD2    = 6'b011000;//read z3  //enable fa & carry(sub) //waitvld
+localparam          C_GETCB1   = 6'b011001;//write D //read C
+localparam          C_GETCB2   = 6'b011010;//read B  //enable mul  //waitvld
+localparam          C_GETDA1   = 6'b011011;//write CB //read D
+localparam          C_GETDA2   = 6'b011100;//read A  //enable mul  //waitvld
+localparam          C_GETX31   = 6'b011101;//write DA //read CB
+localparam          C_GETX32   = 6'b011110;//read DA  //enable fa  //waitvld
+localparam          C_GETX33   = 6'b011111;//write DACB  //read DACB
+localparam          C_GETX34   = 6'b100000;//read DACB  //enable mul  //waitvld
+localparam          C_GETDACB21= 6'b100001;//write x3  //read DA
+localparam          C_GETDACB22= 6'b100010;//read CB  //enable fa & carry(sub)  //waitvld
+localparam          C_GETDACB23= 6'b100011;//write DACBS  //read DACBS
+localparam          C_GETDACB24= 6'b100100;//read DACBS  //enable mul  //waitvld
+localparam          C_GETZ31   = 6'b100101;//write DACBS //read U255
+localparam          C_GETZ32   = 6'b100110;//read DACBS  //enable mul  //waitvld //counter dec
+//next if if done to idle //if not done go to C_PREKT1 again
+
+
+//final statemachine
+localparam          FSWID       = 5;
+localparam          F_IDLE      = 5'b00000;
+localparam          F_SWAPZ2    = 5'b00001;//SWAP read z2
+localparam          F_SWAPZ3    = 5'b00010;//SWAP read z3 //enable swap //waitvld
+localparam          F_SWAPX2    = 5'b00011;//SWAP read x2 //write z2
+localparam          F_SWAPX3    = 5'b00100;//SWAP read x3 //enable swap //wait
+localparam          F_SWAPL     = 5'b00101;//write x2
+localparam          F_FINALEK   = 5'b00110;//write E = EXP_K
+localparam          F_MPTY1     = 5'b00111;//read z_2 //para EXP_2K //enable mul //wait vld
+localparam          F_MPTY2     = 5'b01000;//write TY //enable counter
+//loop i 0 -> 254
+localparam          F_EETY      = 5'b01001;//read E
+//if binary p_2(i) = 1
+localparam          F_EETY2     = 5'b01010;//read TY //enable mult // wait vld
+//normal
+localparam          F_TYTY1     = 5'b01011;//write TY //read TY
+localparam          F_TYTY2     = 5'b01100;//read TY //enable mult //wait vld
+//loop
+//i finish end loop
+localparam          F_POWZ1     = 5'b01101;//read 1
+localparam          F_POWZ2     = 5'b01110;//read E //enable mult //wait vld
+localparam          F_RSLT1     = 5'b01111;//write POWZ //read x_2
+localparam          F_RSLT2     = 5'b10000;//read POWZ //enable mult //wait vld
+//back to idle, calculation done
+
+////////////////////////////////////////////////////////////////////////////////
+// Port declarations
+
+input     clk;
+input     rst;
+     
+// Input
+input     mmul_en;//controller
+
+//from ALU
+input [WID-1:0] mmul_audat;
+input           mmul_auvld;
+
+// Output
+output          mmul_done;//done
+
+//to ALU
+output [OPWID-1:0] mmul_opcode;
+output             mmul_auen;
+output             mmul_carry;//for sub
+
+// RAM control
+output [AWID-1:0]  mmul_radd;
+output [AWID-1:0]  mmul_wadd;
+output             mmul_wen;
+output [WID-1:0]   mmul_wdat;
+
+////////////////////////////////////////////////////////////////////////////////
+// Local logic and instantiation
+
+//Main FSM
+//minor state done flag
+reg                init_done;
+reg                comp_done;
+reg                final_done;
+
+reg [1:0]          main;
+
+wire      mainisidle;
+
+assign    mainisidle = main == IDLE;
+
+wire      mainenidle;
+
+assign    mainenidle = mainisidle & mmul_en;//mmul_en not main_en
+
+reg       main_en;//to enable module fsm
+
+wire      mainisinit;
+
+assign    mainisinit = main == INIT;
+
+wire      maineninit;
+
+assign    maineninit = mainisinit & main_en;
+
+wire      mainiscomp;
+
+assign    mainiscomp = main == COMP;
+
+wire      mainencomp;
+
+assign    mainencomp = mainiscomp & main_en;
+
+wire      mainisfinal;
+
+assign    mainisfinal = main == FINAL;
+
+wire      mainenfinal;
+
+assign    mainenfinal = mainisfinal & main_en;
+
+always@(posedge clk)
+    begin
+    if(rst)
+        begin
+        main <= IDLE;
+        main_en <= 1'b0;
+        end
+    else
+        begin
+        if(mainenidle)
+            begin
+            main <= INIT;
+            main_en <= 1'b1;
+            end
+        else if(maindoneinit)//lack
+            begin
+            main <= COMP;
+            main_en <= 1'b1;
+            end
+        else if(maindonecomp)//lack
+            begin
+            main <= FINAL;
+            main_en <= 1'b1;
+            end
+        else if(maindonefinal)//lack
+            begin
+            main <= IDLE;
+            main_en <= 1'b0;
+            end
+        else
+            begin
+            main <= main;
+            main_en <= 1'b0;
+            end
+        end
+    end
+
+//INIT FSM
+//FSM
+
+reg [FSWID-1:0] initstate;
+
+wire      initisidle; //declared for the scope of perfection
+
+assign    initisidle = init == I_IDLE;
+
+wire      initisinitx2; 
+
+assign    initisinitx2 = init == I_INITX2;
+
+wire      initisinitz2; 
+
+assign    initisinitz2 = init == I_INITZ2;
+
+wire      initisinitx3; 
+
+assign    initisinitx3 = init == I_INITX3;
+
+wire      initisinitz3;
+
+assign    initisinitz3 = init == I_INITZ3;
+
+wire      initisinita24;
+
+assign    initisinita24 = init == I_INITA24;
+
+wire      initisinitu;
+
+assign    initisinitu = init == I_INITU;
+
+
+always@(posedge clk)
+    begin
+    if(rst)
+        begin
+        init_state <= I_IDLE;
+        init_done <= 1'b0;//declared
+        end
+    else
+        begin
+        if(maineninit & initisidle)
+            begin
+            init_state <= I_INITX2;
+            init_done <= 1'b0;
+            end
+        else if(initisinitx2)
+            begin
+            init_state <= I_INITZ2;
+            init_done <= 1'b0;
+            end        
+        else if(initisinitz2)
+            begin
+            init_state <= I_INITX3;
+            init_done <= 1'b0;
+            end
+        else if(initisinitx3)
+            begin
+            init_state <= I_INITZ3;
+            init_done <= 1'b0;
+            end
+        else if(initisinitz3)
+            begin
+            init_state <= I_INITA24;
+            init_done <= 1'b0;
+            end
+        else if(initisinita24)
+            begin
+            init_state <= I_INITU;
+            init_done <= 1'b0;
+            end
+        else if(initisinitu)
+            begin
+            init_state <= I_IDLE;
+            init_done <= 1'b1;//done
+            end
+        else
+            begin
+            init_state <= init_state;
+            init_done <= 1'b0;
+            end
+        end
+    end
+
+//COMP FSM
+reg [CSWID-1:0] compstate;
+
+wire      compisidle; 
+
+assign    compisidle = comp == C_IDLE;
+
+wire      compisidlevld; 
+
+assign    compisidlevld = compisidle & mmul_auvld;
+
+wire      compisprekt1; 
+
+assign    compisprekt1 = comp == C_PREKT1;
+
+wire      compisprekt2; 
+
+assign    compisprekt2 = comp == C_PREKT2;
+
+wire      compisprekt2vld; 
+
+assign    compisprekt2vld = compisprekt2 & mmul_auvld;
+
+wire      compisswapx2; 
+
+assign    compisswapx2 = comp == C_SWAPX2;
+
+wire      compisswapx3; 
+
+assign    compisswapx3 = comp == C_SWAPX3;
+
+wire      compisswapx3vld; 
+
+assign    compisswapx3vld = compisswapx3 & mmul_vld;
+
+wire      compisswapz2; 
+
+assign    compisswapz2 = comp == C_SWAPZ2;
+
+wire      compisswapz3; 
+
+assign    compisswapz3 = comp == C_SWAPZ3;
+
+wire      compisswapz3vld; 
+
+assign    compisswapz3vld = compisswapz3 & mmul_vld;
+
+wire      compisswaphz2; 
+
+assign    compisswaphz2 = comp == C_SWAPHZ2;
+
+wire      compisgeta1; 
+
+assign    compisgeta1 = comp == C_GETA1;
+
+wire      compisgeta1vld; 
+
+assign    compisgeta1vld = compisgeta1 & mmul_auvld;
+
+wire      compisgeta2; 
+
+assign    compisgeta2 = comp == C_GETA2;
+
+wire      compisgetaa; 
+
+assign    compisgetaa = comp == C_GETAA;
+
+wire      compisgetaavld; 
+
+assign    compisgetaavld = compisgetaa & mmul_auvld;
+
+wire      compisgetb1; 
+
+assign    compisgetb1 = comp == C_GETB1;
+
+wire      compisgetb2; 
+
+assign    compisgetb2 = comp == C_GETB2;
+
+wire      compisgetb2vld; 
+
+assign    compisgetb2vld = compisgetb2 & mmul_auvld;
+
+wire      compisgetbb; 
+
+assign    compisgetbb = comp == C_GETBB;
+
+wire      compisgetbb2; 
+
+assign    compisgetbb2 = comp == C_GETBB2;
+
+wire      compisgetbb2vld; 
+
+assign    compisgetbb2vld = compisgetbb2 & mmul_auvld;
+
+wire      compisgete1; 
+
+assign    compisgete1 = comp == C_GETE1;
+
+wire      compisgete2; 
+
+assign    compisgete2 = comp == C_GETE2;
+
+wire      compisgete2vld; 
+
+assign    compisgete2vld = compisgete2 & mmul_auvld;
+
+wire      compisgetx21; 
+
+assign    compisgetx21 = comp == C_GETX21;
+
+wire      compisgetx22; 
+
+assign    compisgetx22 = comp == C_GETX22;
+
+wire      compisgetx22vld; 
+
+assign    compisgetx22vld = compisgetx22 & mmul_auvld;
+
+wire      compisgetz21; 
+
+assign    compisgetz21 = comp == C_GETZ21;
+
+wire      compisgetz22; 
+
+assign    compisgetz22 = comp == C_GETZ22;
+
+wire      compisgetz22vld; 
+
+assign    compisgetz22vld = compisgetz22 & mmul_auvld;
+
+wire      compisgetz23; 
+
+assign    compisgetz23 = comp == C_GETZ23;
+
+wire      compisgetz24; 
+
+assign    compisgetz24 = comp == C_GETZ24;
+
+wire      compisgetz24vld; 
+
+assign    compisgetz24vld = compisgetz24 & mmul_auvld;
+
+wire      compisgetz25; 
+
+assign    compisgetz25 = comp == C_GETZ25;
+
+wire      compisgetz26; 
+
+assign    compisgetz26 = comp == C_GETZ26;
+
+wire      compisgetz26vld; 
+
+assign    compisgetz26vld = compisgetz26 & mmul_auvld;
+
+wire      compisgetc1; 
+
+assign    compisgetc1 = comp == C_GETC1;
+
+wire      compisgetc2; 
+
+assign    compisgetc2 = comp == C_GETC2;
+
+wire      compisgetc2vld; 
+
+assign    compisgetc2vld = compisgetc2 & mmul_auvld;
+
+wire      compisgetd1; 
+
+assign    compisgetd1 = comp == C_GETD1;
+
+wire      compisgetd2; 
+
+assign    compisgetd2 = comp == C_GETD2;
+
+wire      compisgetd2vld; 
+
+assign    compisgetd2vld = compisgetd2 & mmul_auvld;
+
+wire      compisgetcb1; 
+
+assign    compisgetcb1 = comp == C_GETCB1;
+
+wire      compisgetcb2; 
+
+assign    compisgetcb2 = comp == C_GETCB2;
+
+wire      compisgetcb2vld; 
+
+assign    compisgetcb2vld = compisgetcb2 & mmul_auvld;
+
+wire      compisgetda1; 
+
+assign    compisgetda1 = comp == C_GETDA1;
+
+wire      compisgetda2; 
+
+assign    compisgetda2 = comp == C_GETDA2;
+
+wire      compisgetda2vld; 
+
+assign    compisgetda2vld = compisgetda2 & mmul_auvld;
+
+wire      compisgetx31; 
+
+assign    compisgetx31 = comp == C_GETX31;
+
+wire      compisgetx32; 
+
+assign    compisgetx32 = comp == C_GETX32;
+
+wire      compisgetx32vld; 
+
+assign    compisgetx32vld = compisgetx32 & mmul_auvld;
+
+wire      compisgetx33; 
+
+assign    compisgetx33 = comp == C_GETX33;
+
+wire      compisgetx34; 
+
+assign    compisgetx34 = comp == C_GETX34;
+
+wire      compisgetx34vld; 
+
+assign    compisgetx34vld = compisgetx34 & mmul_auvld;
+
+wire      compisgetdacb21; 
+
+assign    compisgetdacb21 = comp == C_GETDACB21;
+
+wire      compisgetdacb22; 
+
+assign    compisgetdacb22 = comp == C_GETDACB22;
+
+wire      compisgetdacb22vld; 
+
+assign    compisgetdacb22vld = compisgetdacb22 & mmul_auvld;
+
+wire      compisgetdacb23; 
+
+assign    compisgetdacb23 = comp == C_GETDACB23;
+
+wire      compisgetdacb24; 
+
+assign    compisgetdacb24 = comp == C_GETDACB24;
+
+wire      compisgetdacb24vld; 
+
+assign    compisgetdacb24vld = compisgetdacb24 & mmul_auvld;
+
+wire      compisgetz31; 
+
+assign    compisgetz31 = comp == C_GETZ31;
+
+wire      compisgetz32; 
+
+assign    compisgetz32 = comp == C_GETZ32;
+
+wire      compisgetz32vld; 
+
+assign    compisgetz32vld = compisgetz32 & mmul_auvld;
+
+always@(posedge clk)
+    begin
+    if(rst)
+        begin
+        comp_state <= C_IDLE;
+        comp_done <= 1'b0;//declared
+        end
+    else
+        begin
+        if(mainencomp & compisidle)
+            begin
+            comp_state <= C_PREKT1;
+            comp_done <= 1'b0;
+            end
+        else if(compisprekt1)
+            begin
+            comp_state <= C_PREKT2;
+            comp_done <= 1'b0;
+            end
+        else if(compisprekt2vld)
+            begin
+            comp_state <= C_SWAPX2;
+            comp_done <= 1'b0;
+            end
+        else if(compisswapx2)
+            begin
+            comp_state <= C_SWAPX3;
+            comp_done <= 1'b0;
+            end
+        else if(compisswapx3vld)
+            begin
+            comp_state <= C_SWAPZ2;
+            comp_done <= 1'b0;
+            end
+        else if(compisswapz2)
+            begin
+            comp_state <= C_SWAPZ3;
+            comp_done <= 1'b0;
+            end
+        else if(compisswapz3vld)
+            begin
+            comp_state <= C_SWAPHZ2;
+            comp_done <= 1'b0;
+            end
+        else if(compisswaphz2)
+            begin
+            comp_state <= C_GETA1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgeta1vld)
+            begin
+            comp_state <= C_GETA2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgeta2)
+            begin
+            comp_state <= C_GETAA;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetaavld)
+            begin
+            comp_state <= C_GETB1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetb1)
+            begin
+            comp_state <= C_GETB2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetb2vld)
+            begin
+            comp_state <= C_GETBB;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetbb)
+            begin
+            comp_state <= C_GETBB2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetbb2vld)
+            begin
+            comp_state <= C_GETE1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgete1)
+            begin
+            comp_state <= C_GETE2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgete2vld)
+            begin
+            comp_state <= C_GETX21;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx21)
+            begin
+            comp_state <= C_GETX22;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx22vld)
+            begin
+            comp_state <= C_GETZ21;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz21)
+            begin
+            comp_state <= C_GETZ22;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz22vld)
+            begin
+            comp_state <= C_GETZ23;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz23)
+            begin
+            comp_state <= C_GETZ24;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz24vld)
+            begin
+            comp_state <= C_GETZ25;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz25)
+            begin
+            comp_state <= C_GETZ26;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz26vld)
+            begin
+            comp_state <= C_GETC1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetc1)
+            begin
+            comp_state <= C_GETC2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetc2vld)
+            begin
+            comp_state <= C_GETD1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetd1)
+            begin
+            comp_state <= C_GETD2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetd2vld)
+            begin
+            comp_state <= C_GETCB1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetcb1)
+            begin
+            comp_state <= C_GETCB2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetcb2vld)
+            begin
+            comp_state <= C_GETDA1;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetda1)
+            begin
+            comp_state <= C_GETDA2;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetda2vld)
+            begin
+            comp_state <= C_GETX31;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx31)
+            begin
+            comp_state <= C_GETX32;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx32vld)
+            begin
+            comp_state <= C_GETX33;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx33)
+            begin
+            comp_state <= C_GETX34;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetx34vld)
+            begin
+            comp_state <= C_GETDACB21;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetdacb21)
+            begin
+            comp_state <= C_GETDACB22;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetdacb22vld)
+            begin
+            comp_state <= C_GETDACB23;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetdacb23)
+            begin
+            comp_state <= C_GETDACB24;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetdacb24vld)
+            begin
+            comp_state <= C_GETZ31;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz31)
+            begin
+            comp_state <= C_GETZ32;
+            comp_done <= 1'b0;
+            end
+        else if(compisgetz32vld)
+            begin
+            if(compcnt_done)
+                begin
+                comp_state <= C_IDLE;
+                comp_done <= 1'b1;
+                end
+            else
+                begin
+                comp_state <= C_PREKT1;
+                comp_done <= 1'b0;
+                end
+            end
+        else
+            begin
+            comp_state <= comp_state;
+            comp_done <= 1'b0;
+            end
+        end
+    end
+
+//FINAL FSM
+reg [FSWID-1:0] final_state;
+
+wire      finalisidle; 
+
+assign    finalisidle = final == F_IDLE;
+
+wire      finalisidlevld; 
+
+assign    finalisidlevld = finalisidle & mmul_auvld;
+
+always@(posedge clk)
+    begin
+    if(rst)
+        begin
+        final_state <= F_IDLE;
+        final_done <= 1'b0;//declared
+        end
+    else
+        begin
+        if(mainenfinal & finalisidle)
+            begin
+            final_state <= F_SWAPZ2;
+            final_done <= 1'b0;
+            end
+        else if(finalisswapz2)
+            begin
+            final_state <= F_SWAPZ3;
+            final_done <= 1'b0;
+            end
+        else if(finalisswapz3vld)
+            begin
+            final_state <= F_SWAPX2;
+            final_done <= 1'b0;
+            end
+        else if(finalisswapx2)
+            begin
+            final_state <= F_SWAPX3;
+            final_done <= 1'b0;
+            end
+        else if(finalisswapx3vld)
+            begin
+            final_state <= F_SWAPL;
+            final_done <= 1'b0;
+            end
+        else if(finalisswapl)
+            begin
+            final_state <= F_FINALEK;
+            final_done <= 1'b0;
+            end
+        else if(finalisfinalek)
+            begin
+            final_state <= F_MPTY1;
+            final_done <= 1'b0;
+            end
+        else if(finalismpty1)
+            begin
+            final_state <= F_MPTY2;
+            final_done <= 1'b0;
+            end
+        else if(finalismpty2)
+            begin
+            final_state <= F_EETY;
+            final_done <= 1'b0;
+            end
+        else if(finaliseety)
+            begin
+            final_state <= F_EETY2;
+            final_done <= 1'b0;
+            end
+        else if(finaliseety2)
+            begin
+            final_state <= F_TYTY1;
+            final_done <= 1'b0;
+            end
+        else if(finalistyty1)
+            begin
+            final_state <= F_TYTY2;
+            final_done <= 1'b0;
+            end
+        else if(finalistyty2)
+            begin
+            final_state <= F_POWZ1;
+            final_done <= 1'b0;
+            end
+        else if(finalispowz1)
+            begin
+            final_state <= F_POWZ2;
+            final_done <= 1'b0;
+            end
+        else if(finalispowz2)
+            begin
+            final_state <= F_RSLT1;
+            final_done <= 1'b0;
+            end
+        else if(finalisrslt1)
+            begin
+            final_state <= F_RSLT2;
+            final_done <= 1'b0;
+            end
+        else if(finalisrslt2)
+            begin
+            final_state <= F_IDLE;
+            final_done <= 1'b0;
+            end
+        else
+            begin
+            final_state <= final_state;
+            final_done <= 1'b0;
+            end
+        end
+    end
+endmodule 

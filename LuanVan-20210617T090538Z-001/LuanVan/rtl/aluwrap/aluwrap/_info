@@ -1,0 +1,283 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/PC/Desktop/ram
+valuwrap
+Z0 !s110 1556962148
+!i10b 1
+!s100 b@AhnRKVGWm2U[`b@D_JQ2
+ILh`K15a?D<YPC=Q@PTheV2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap
+w1556648890
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/aluwrap.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/aluwrap.v
+L0 16
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1556962148.000000
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/aluwrap.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/aluwrap.v|
+!i113 1
+Z5 o-work aluwrap
+Z6 tCvgOpt 0
+vcla
+R0
+!i10b 1
+!s100 K=ThD@iE^S@ghJFLUYl:Y2
+I^HP3J<X5a;4DGWfi_3zXA0
+R1
+R2
+w1556648892
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/cla.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/cla.v
+Z7 L0 14
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/cla.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/cla.v|
+!i113 1
+R5
+R6
+vfflopx
+Z8 !s110 1556962149
+!i10b 1
+!s100 ^AG:WnJo8Wh9li5?Z6l`k3
+IIzBDAdT3jgK__1Me`kLBM3
+R1
+R2
+w1555220780
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/fflopx.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/fflopx.v
+R7
+R3
+r1
+!s85 0
+31
+Z9 !s108 1556962149.000000
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/fflopx.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/fflopx.v|
+!i113 1
+R5
+R6
+vfull_adder
+R0
+!i10b 1
+!s100 L:G@2S8nAmFgYfPdB@Yg50
+I_VRHQR_UQm5en4T;7hRlU1
+R1
+R2
+w1556648894
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_adder.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_adder.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_adder.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_adder.v|
+!i113 1
+R5
+R6
+vfull_sub
+R0
+!i10b 1
+!s100 3o]:nTgQkl<D[9]0Q3_[G3
+IOle;FQK:7OVMKGPk<YB3B3
+R1
+R2
+w1556648896
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_sub.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_sub.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_sub.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/full_sub.v|
+!i113 1
+R5
+R6
+vmodfa
+R0
+!i10b 1
+!s100 DS7QWlEM;VK5M6lj>CH^81
+IRcB@O4;]HGd33YYkOm:n>1
+R1
+R2
+w1556648898
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/modfa.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/modfa.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/modfa.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/modfa.v|
+!i113 1
+R5
+R6
+vmontinv
+R0
+!i10b 1
+!s100 1IIR3jLOJZ=365ddghD_I1
+Il>0V0=6U<Kb36C_02N3V=1
+R1
+R2
+w1556961575
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinv.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinv.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinv.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinv.v|
+!i113 1
+R5
+R6
+vmontinvp1
+R8
+!i10b 1
+!s100 z@7O_nTS04YzPz94Sa^X;0
+IM>6G>ciA=D[BB`MKZ0D`m2
+R1
+R2
+w1556961574
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp1.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp1.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp1.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp1.v|
+!i113 1
+R5
+R6
+vmontinvp2
+R8
+!i10b 1
+!s100 <j<ZLaBP2o1zh]lSDcE4c2
+I;XVhLVgYR7o==`@oj9OQI1
+R1
+R2
+w1556961576
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp2.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp2.v
+R7
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp2.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montinvp2.v|
+!i113 1
+R5
+R6
+vmontpro
+R8
+!i10b 1
+!s100 A^LAUaU:hn=E6l]<C>zKS0
+I1gk6aY981Lzo8;Z?7:3mh2
+R1
+R2
+w1556648904
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montpro.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montpro.v
+R7
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montpro.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montpro.v|
+!i113 1
+R5
+R6
+vmontprowrap
+R8
+!i10b 1
+!s100 LfDchSm`7ob6g2Bf2;8Pb0
+IMB>N@[idGN]1Ggf2zaTP_2
+R1
+R2
+w1556648906
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montprowrap.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montprowrap.v
+L0 13
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montprowrap.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/montprowrap.v|
+!i113 1
+R5
+R6
+vmux
+R8
+!i10b 1
+!s100 ;;@l=:aXJK<k:7T[0I;AY0
+IW5Rg38T=TX_6m0gXGkcO51
+R1
+R2
+w1556906926
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/mux.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/mux.v
+R7
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/mux.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/mux.v|
+!i113 1
+R5
+R6
+vtb_aluwrap
+R8
+!i10b 1
+!s100 MFiGb`iKNAEz8l0IV8e`10
+ILkbIa15mm@SkW4Mfb7fR>0
+R1
+R2
+w1556962141
+8C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/tb_aluwrap.v
+FC:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/tb_aluwrap.v
+L0 2
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/tb_aluwrap.v|
+!s90 -reportprogress|300|-work|aluwrap|-stats=none|C:/Users/PC/Downloads/aluwrap-20190504T091744Z-001/aluwrap/tb_aluwrap.v|
+!i113 1
+R5
+R6

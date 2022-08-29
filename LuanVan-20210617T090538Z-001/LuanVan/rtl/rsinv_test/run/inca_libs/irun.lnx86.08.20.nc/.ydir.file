@@ -1,0 +1,16 @@
+../ippackage/ippcrc/core/rsinv.vt
+../ippackage/ippcrc/core/rsinv.v
+../ippackage/ippcrc/core/rsinv.V
+../ippackage/ippcsge/core/rsinv.vt
+../ippackage/ippcsge/core/rsinv.v
+../ippackage/ippcsge/core/rsinv.V
+../ippackage/ipsmacge/core/rsinv.vt
+../ippackage/ipsmacge/core/rsinv.v
+../ippackage/ipsmacge/core/rsinv.V
+../lib/atvn/lib_v/macro/rsinv.vt
+../lib/atvn/lib_v/macro/rsinv.v
+../lib/atvn/lib_v/macro/rsinv.V
+../lib/atvn/lib_v/ram/rsinv.vt
+../lib/atvn/lib_v/ram/rsinv.v
+../lib/atvn/lib_v/ram/rsinv.V
+../rtl/corexxx//rsinv.vt

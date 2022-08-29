@@ -1,0 +1,40 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
++liborder
++libext+.vt+.v+.V+
++incdir+.+
++nowarnTFNPC
++nowarnTFMPC
++define+approximate
++notimingchecks
++nclibdirname+inca_libs
++profile
++access+r+w
+-NOWARN
+TFNPC
+-NOWARN
+CUVWSP
+-NOWARN
+TFMPC
+-NOWARN
+CUVWSP
+-PROFILE
+-MESSAGES
+-XLSTIME
+1556161172
+-XLKEEP
+-XLMODE
+./inca_libs/irun.lnx86.08.20.nc
+-RUNMODE
+-CDSLIB
+./inca_libs/irun.lnx86.08.20.nc/cds.lib
+-HDLVAR
+./inca_libs/irun.lnx86.08.20.nc/hdl.var
+-XLNAME
+ncverilog
+-XLVERSION
+"TOOL:	ncverilog	08.20-s015"
+-XLNAME
+./inca_libs/irun.lnx86.08.20.nc/linuxsrv40.atvn.com.vn_20054

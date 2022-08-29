@@ -1,0 +1,157 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : rtlcore.v
+// Description  : .
+//
+// Author       : cuongnv@LTHP022018
+// Created On   : Tue May 29 14:52:17 2018
+// History (Date, Changed By)
+//
+////////////////////////////////////////////////////////////////////////////////
+
+module rtlcore
+    (clk,
+     rst,
+
+     // Data in
+     fifowr,
+     fifodi,
+
+     // Data out
+     fiford,
+     fifodo,
+     fifodovld,
+     
+     // CPU interface
+     eupce_,
+     euprnw,
+     eupa,
+     eupdi,
+     eupdo,
+     eupack,
+     eupint
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+parameter   WID = 8;
+
+////////////////////////////////////////////////////////////////////////////////
+// Port declarations
+input               clk,
+                    rst;
+
+     // Data in
+input               fifowr;
+input [WID-1:0]     fifodi;
+
+
+     // Data out
+output              fiford;
+output [WID-1:0]    fifodo;
+output              fifodovld;
+
+     // CPU interface
+input               eupce_,
+                    euprnw;
+input [23:0]        eupa;
+input [31:0]        eupdi;
+output [31:0]       eupdo;
+output              eupack,
+                    eupint;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Output declarations
+
+////////////////////////////////////////////////////////////////////////////////
+// Local logic and instantiation
+
+// CPU interface
+wire [31:0]         o_config;
+wire                cfgwren,cfgrden;
+assign              {cfgwren,cfgrden} = o_config[1:0];
+
+rtlcorepi   rtlcorepi
+    (.clk(clk),
+     .rst(rst),
+
+     // External async CPU interface
+     .eupce_(eupce_),
+     .euprnw(euprnw),
+     .eupa(eupa),
+     .eupdi(eupdi),
+     .eupdo(eupdo),
+     .eupack(eupack),
+     .eupint(eupint),
+
+     // Global config for engine
+     .o_config(o_config)
+     );
+
+// FIFO engine to be tested
+wire                fiford,fifofull,notempty;
+wire [8:0]          fifolen;
+wire                fifo_we;
+wire [7:0]          fifo_wa;
+wire [WID-1:0]      fifo_di;
+wire                fifo_re;
+wire [7:0]          fifo_ra;
+wire [WID-1:0]      fifo_do;
+
+wire                
+fifoc_fshx  #(8,256)    rtlfifo
+    (
+     .clk(clk),
+     .rst(rst),
+     
+     .fiford(fiford & cfgrden),    // FIFO control
+     .fifowr(fifowr & cfgwren),
+     .fifofsh(1'b0),   // FIFO flush
+
+     .fifofull(fifofull),  // high when fifo full
+     .notempty(notempty),  // high when fifo not empty
+     .fifolen(fifolen),   
+
+                // Connect to memories
+     .write(fifo_we),     // enable to write memories
+     .wraddr(fifo_wa),    // write address of memories
+     .read(fifo_re),      // enable to read memories
+     .rdaddr(fifo_ra)     // read address of memories
+     );
+
+iarray112x #(8,256,WID) memfifo
+    (
+     .wrst(rst),
+     .wclk(clk),
+     .wa(fifo_wa),
+     .we(fifo_we),
+     .di(fifo_di),
+     .rclk(clk),
+     .rrst(rst),
+     .ra(fifo_ra),
+     .re(fifo_re),
+     .do(fifo_do),
+     .mask(1'b0),
+     .test(1'b0)
+     );
+    
+
+// Control read write
+wire                read,read1,read2;
+assign              read = fiford & notempty & cfgrden;
+fflopx #(2) pp2read (clk,rst,{read,read1},{read1,read2});
+assign              fifodovld = read2;
+
+////////////////////////////////////////////////////////////////////////////////
+// Log file error display just when simulation
+`ifdef  RTL_LOG_FILE
+always @ (posedge clk)
+    begin
+    if (fiford & !notempty) $fdisplay (rtllogfile,"FIFO read error @time %t",$time);
+    if (fifowr & fifofull)  $fdisplay (rtllogfile,"FIFO write error @time %t",$time);   
+    end
+`endif
+endmodule 

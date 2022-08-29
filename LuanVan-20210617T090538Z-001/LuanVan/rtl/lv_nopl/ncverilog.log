@@ -1,0 +1,339 @@
+ncverilog: 08.20-s015: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+TOOL:	ncverilog	08.20-s015: Started on May 24, 2019 at 12:20:46 ICT
+ncverilog
+	-f top.vc
+		tb_ex_sim.vt
+		-y
+		../ippackage/ipddr2phy/core
+		-y
+		../ippackage/ipspi3linkif/core
+		-y
+		../ippackage/ippcrc/core
+		-y
+		../ippackage/ippcsge/core
+		-y
+		../ippackage/ipsmacge/core
+		-y
+		../lib/atvn/lib_v/macro
+		-y
+		../lib/atvn/lib_v/ram
+		-y
+		../rtl/corexxx/alu
+		-y
+		../rtl/corexxx/
+		-y
+		../rtl/libp/
+		-y
+		../testbench/source/
+		-y
+		../testbench/testcase/
+		+liborder
+		+libext+.vt+.v+.V+
+		+incdir+.+
+		+nowarnTFNPC
+		+nowarnTFMPC
+		+define+approximate
+		+notimingchecks
+		+nclibdirname+inca_libs
+	-l
+	ncverilog.log
+	+profile
+	+access+r+w
+Recompiling... reason: file './tb_ex_sim.vt' is newer than expected.
+	expected: Fri May 24 09:08:05 2019
+	actual:   Fri May 24 12:22:49 2019
+file: tb_ex_sim.vt
+	module worklib.tb_ex_sim:vt
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOF: Library file or directory "../ippackage/ipddr2phy/core" does not exist.
+ncvlog: *W,LIBNOF: Library file or directory "../ippackage/ipspi3linkif/core" does not exist.
+ncvlog: *W,LIBNOF: Library file or directory "../rtl/corexxx/alu" does not exist.
+ncvlog: *W,LIBNOF: Library file or directory "../testbench/source/" does not exist.
+file: ../lib/atvn/lib_v/macro/fflopx.v
+	module macro_13.fflopx:v
+		errors: 0, warnings: 0
+file: ../lib/atvn/lib_v/macro/fflopx.v
+file: ../rtl/corexxx//ecc_core.v
+	module corexxx_13.ecc_core:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//ecc_core.v
+file: ../rtl/corexxx//mainctrl.v
+	module corexxx_13.mainctrl:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wrap.v
+	module corexxx_13.auc_wrap:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wrap.v
+file: ../rtl/corexxx//aluwrap.v
+	module corexxx_13.aluwrap:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//aluwrap.v
+file: ../rtl/corexxx//auc_decoder.v
+	module corexxx_13.auc_decoder:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_decoder.v
+file: ../rtl/corexxx//auc_rand_wrap.v
+	module corexxx_13.auc_rand_wrap:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_rand_wrap.v
+file: ../rtl/corexxx//auc_naf.v
+	module corexxx_13.auc_naf:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_naf.v
+file: ../rtl/corexxx//auc_wmul.v
+	module corexxx_13.auc_wmul:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul.v
+file: ../rtl/corexxx//auc_mmul.v
+	module corexxx_13.auc_mmul:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_mmul.v
+file: ../rtl/corexxx//rsinv.v
+	module corexxx_13.rsinv:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//alram113x.v
+	module corexxx_13.alram113x:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//alram113x.v
+file: ../rtl/corexxx//ffxkclkx.v
+	module corexxx_13.ffxkclkx:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//ffxkclkx.v
+file: ../rtl/corexxx//modfa.v
+	module corexxx_13.modfa:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//modfa.v
+file: ../rtl/corexxx//montprowrap.v
+	module corexxx_13.montprowrap:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montprowrap.v
+file: ../rtl/corexxx//montinv.v
+	module corexxx_13.montinv:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montinv.v
+file: ../rtl/corexxx//cswap.v
+	module corexxx_13.cswap:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//cswap.v
+file: ../rtl/corexxx//auc_rand.v
+	module corexxx_13.auc_rand:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_rand.v
+file: ../rtl/corexxx//full_sub.v
+	module corexxx_13.full_sub:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//full_sub.v
+file: ../rtl/corexxx//cla.v
+	module corexxx_13.cla:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//cla.v
+file: ../rtl/corexxx//auc_wmul_pre.v
+	module corexxx_13.auc_wmul_pre:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul_decoder.v
+	module corexxx_13.auc_wmul_decoder:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul_main.v
+	module corexxx_13.auc_wmul_main:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul_conv.v
+	module corexxx_13.auc_wmul_conv:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul_dbl.v
+	module corexxx_13.auc_wmul_dbl:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_wmul_add.v
+	module corexxx_13.auc_wmul_add:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_mmulinit.v
+	module corexxx_13.auc_mmulinit:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_mmulcomp.v
+	module corexxx_13.auc_mmulcomp:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//auc_mmulfinal.v
+	module corexxx_13.auc_mmulfinal:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//alram112x.v
+	module corexxx_13.alram112x:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//alram112x.v
+file: ../rtl/corexxx//ffxkclk.v
+	module corexxx_13.ffxkclk:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//full_adder.v
+	module corexxx_13.full_adder:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montpro.v
+	module corexxx_13.montpro:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montpro.v
+file: ../rtl/corexxx//montinvp1.v
+	module corexxx_13.montinvp1:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montinvp1.v
+file: ../rtl/corexxx//montinvp2.v
+	module corexxx_13.montinvp2:v
+		errors: 0, warnings: 0
+file: ../rtl/corexxx//montinvp2.v
+file: ../rtl/corexxx//mux_xx1.v
+	module corexxx_13.mux_xx1:v
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOU: Library "../ippackage/ippcrc/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../ippackage/ippcsge/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../ippackage/ipsmacge/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../lib/atvn/lib_v/ram" given but not used.
+ncvlog: *W,LIBNOU: Library "../rtl/libp/" given but not used.
+ncvlog: *W,LIBNOU: Library "../testbench/testcase/" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 10
+		Caching library 'macro_13' ....... Done
+		Caching library 'worklib' ....... Done
+		Caching library 'corexxx_13' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		corexxx_13.alram112x:v <0x0f8674cb>
+			streams:   6, words:  2823
+		corexxx_13.alram113x:v <0x60d038dc>
+			streams:   2, words:   548
+		corexxx_13.aluwrap:v <0x68855536>
+			streams:  29, words: 13565
+		corexxx_13.auc_decoder:v <0x1de6fa31>
+			streams:  13, words:  8128
+		corexxx_13.auc_mmul:v <0x1032d7d5>
+			streams:  23, words:  7113
+		corexxx_13.auc_mmulcomp:v <0x2ed33906>
+			streams:  24, words: 33391
+		corexxx_13.auc_mmulfinal:v <0x4f0248f3>
+			streams:  18, words:  9683
+		corexxx_13.auc_mmulinit:v <0x73820383>
+			streams:  29, words: 17231
+		corexxx_13.auc_naf:v <0x6e6783bf>
+			streams:  35, words: 38280
+		corexxx_13.auc_rand:v <0x40b9244c>
+			streams:  10, words:  3787
+		corexxx_13.auc_rand_wrap:v <0x6dba61a6>
+			streams:   1, words:   137
+		corexxx_13.auc_wmul:v <0x02353e2f>
+			streams:  19, words:  5925
+		corexxx_13.auc_wmul_add:v <0x7bf7380a>
+			streams: 103, words: 74914
+		corexxx_13.auc_wmul_conv:v <0x48d66fd3>
+			streams:  16, words: 10467
+		corexxx_13.auc_wmul_dbl:v <0x22a4848c>
+			streams:  70, words: 54201
+		corexxx_13.auc_wmul_decoder:v <0x57340981>
+			streams:   7, words:  3378
+		corexxx_13.auc_wmul_main:v <0x5990d584>
+			streams:  33, words: 17846
+		corexxx_13.auc_wmul_pre:v <0x3a8a77ad>
+			streams:  20, words: 19578
+		corexxx_13.auc_wrap:v <0x7a8cd589>
+			streams:  25, words: 13267
+		corexxx_13.cla:v <0x3807b819>
+			streams:   5, words:  2845
+		corexxx_13.cla:v <0x538754db>
+			streams:   5, words:  1174
+		corexxx_13.cla:v <0x64e6ea07>
+			streams:   5, words:  2845
+		corexxx_13.cswap:v <0x11489a9b>
+			streams:   6, words:  3447
+		corexxx_13.ffxkclk:v <0x028504d8>
+			streams:   5, words:   815
+		corexxx_13.ffxkclk:v <0x0fd34f97>
+			streams:   5, words:   819
+		corexxx_13.ffxkclk:v <0x1d219a56>
+			streams:   5, words:   821
+		corexxx_13.ffxkclkx:v <0x1b653220>
+			streams:   0, words:     0
+		corexxx_13.ffxkclkx:v <0x28ef9ebb>
+			streams:   0, words:     0
+		corexxx_13.ffxkclkx:v <0x49ca6aee>
+			streams:   0, words:     0
+		corexxx_13.ffxkclkx:v <0x6aa53721>
+			streams:   0, words:     0
+		corexxx_13.full_adder:v <0x29285e09>
+			streams:   0, words:     0
+		corexxx_13.full_sub:v <0x3aeda461>
+			streams:   3, words:  2008
+		corexxx_13.mainctrl:v <0x6be0b893>
+			streams: 105, words: 84987
+		corexxx_13.modfa:v <0x51ad98a5>
+			streams:  26, words:  9475
+		corexxx_13.montinvp1:v <0x0a8fc8ec>
+			streams:  21, words: 19168
+		corexxx_13.montinvp2:v <0x71327796>
+			streams:   9, words:  4408
+		corexxx_13.montpro:v <0x73b95829>
+			streams:   6, words:  5387
+		corexxx_13.montprowrap:v <0x47d2c74a>
+			streams:  10, words:  3081
+		corexxx_13.mux_xx1:v <0x2c42ba3d>
+			streams:   1, words:  1866
+		corexxx_13.rsinv:v <0x7f344273>
+			streams:  42, words: 15075
+		macro_13.fflopx:v <0x04297b21>
+			streams:   3, words:   983
+		macro_13.fflopx:v <0x173e8666>
+			streams:   3, words:   824
+		macro_13.fflopx:v <0x1b03e788>
+			streams:   3, words:   569
+		worklib.tb_ex_sim:vt <0x2950c505>
+			streams:   9, words: 21769
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                2622      37
+		Registers:               505     237
+		Scalar wires:          10294       -
+		Expanded wires:         4623      21
+		Vectored wires:          488       -
+		Always blocks:           370     102
+		Initial blocks:          280      12
+		Cont. assignments:      5504     371
+		Pseudo assignments:      290      35
+		Simulation timescale:    1ns
+	Writing initial simulation snapshot: worklib.tb_ex_sim:vt
+Loading snapshot worklib.tb_ex_sim:vt .................... Done
+ncsim> source /opt/tools/bin/ca/82/tools/inca/files/ncsimrc
+ncsim> run
+ECDHE GEN X255 begin at                 1200
+Input
+k = 0900000000000000000000000000000000000000000000000000000000000000
+ECDHE GEN X255 test is done at            135937150
+ Output: 422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079
+ Expected : 422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079
+ECDHE GEN with X25519 is working
+ECDHE COMP X255 begin at            135939350
+Input
+u = e5210f12786811d3f4b7959d0538ae2c31dbe7106fc03c3efc4cd549c715a493
+k = 4b66e9d4d1b4673c5ad22691957d6af5c11b6421e0ea01d42ca4169e7918ba0d
+ECDHE COMP X255 test is done at            271876050
+ Output: 95cbde9476e8907d7aade45cb4b873f88b595a68799fa152e6f8f7647aac7957
+ Expected : 95cbde9476e8907d7aade45cb4b873f88b595a68799fa152e6f8f7647aac7957
+ECDHE COMP with X25519 is working
+ECDHE GEN P256 begin at            271878350
+Input
+k = ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632541
+ECDHE GEN P256 test is done at            501361850
+ Output: 76a94d138a6b41858b821c629836315fcd28392eff6ca038a5eb4787e1277c6e
+ Expected : 76a94d138a6b41858b821c629836315fcd28392eff6ca038a5eb4787e1277c6e
+ECDHE GEN P256 is working
+ECDSA P256 begin at            501364150
+Input
+hash = a41a41a12a799548211c410c65d8133afde34d28bdd542e4b680cf2899c8a8c4
+private key = c477f9f65c22cce20657faa5b2d1d8122336f851a508a1ed04e479c34985bf96
+k = 7a1a7e52797fc8caaa435d2a4dace39158504bf204fbe19f14dbb427faee50ae
+ECDSA P256 test is done at            748971250
+ Output: 2b42f576d07f4165ff65d1f3b1500f81e44c316f1f0b3ef57325b69aca46104f
+ Expected : 2b42f576d07f4165ff65d1f3b1500f81e44c316f1f0b3ef57325b69aca46104f
+ECDSA P256 R is working
+ Output: dc42c2122d6392cd3e3a993a89502a8198c1886fe69d262c4b329bdb6b63faf1
+ Expected : dc42c2122d6392cd3e3a993a89502a8198c1886fe69d262c4b329bdb6b63faf1
+ECDSA P256 S is working
+Simulation complete via $finish(1) at time 749022350 NS + 0
+./tb_ex_sim.vt:313 $finish;
+ncsim> exit
+TOOL:	ncverilog	08.20-s015: Exiting on May 24, 2019 at 12:41:20 ICT  (total: 00:20:34)

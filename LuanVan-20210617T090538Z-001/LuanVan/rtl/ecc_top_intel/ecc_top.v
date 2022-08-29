@@ -1,0 +1,137 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : ecc_top.v
+// Description  : TOP mapping with sipo and 3 ff all pins
+//
+// Author       : hungnt@HW-NTHUNG
+// Created On   : Mon May 13 16:42:47 2019
+// History (Date, Changed By)
+//
+////////////////////////////////////////////////////////////////////////////////
+
+module ecc_top
+    (
+     clk,
+     rst,
+     // IP core
+     din,       //3*WID
+     mode,
+     start,
+     dout,
+     status,
+     // Simulation random number
+     test_num
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+
+`define             RTL_SIMULATION
+`define             RWSAMECLK
+
+parameter           WIDTH   = 256;
+parameter           ADDR    = 5;
+parameter           WINDOW  = 4;
+parameter           CBIT    = 8;
+parameter           DEPTH   = 1<<ADDR;
+parameter           CURWID  = 255;
+parameter           OPWID   = 4;
+
+////////////////////////////////////////////////////////////////////////////////
+// Port declarations
+
+input               clk;
+input               rst;
+
+// IP core
+input               din;
+input [2:0]         mode; // MSB indicates EC
+input               start;
+output              dout;
+output [1:0]        status;
+
+input               test_num;
+
+////////////////////////////////////////////////////////////////////////////////
+// Output declarations
+
+////////////////////////////////////////////////////////////////////////////////
+// Local logic and instantiation
+
+//flopx input
+wire               din3;
+wire [2:0]         mode3; // MSB indicates EC
+wire               start3;
+wire              dout3;
+wire              dout1;
+wire [1:0]        status3;
+
+wire               test_num3;
+
+ffxkclkx #(3,1) iffxkclkx1(clk,rst,din,din3);
+ffxkclkx #(3,3) iffxkclkx2(clk,rst,mode,mode3);
+ffxkclkx #(3,1) iffxkclkx3(clk,rst,start,start3);
+ffxkclkx #(3,1) iffxkclkx4(clk,rst,dout1,dout3);
+ffxkclkx #(3,2) iffxkclkx5(clk,rst,status3,status);
+ffxkclkx #(3,1) iffxkclkx6(clk,rst,test_num,test_num3);
+
+assign             dout = dout3;
+
+//SIPO
+wire [3*WIDTH-1:0] dinp;
+wire [WIDTH-1:0] doutp;
+wire [WIDTH-1:0] test_nump;
+
+rtldbgsipo1//din
+    #(3*WIDTH,1)
+    irtldbgsipo1
+        (
+         .clk(clk),
+         .rst(rst),
+         .iena(1'b1),
+         .idat(din3),
+         .odat(dinp)
+         );
+
+rtldbgsipo1//test_num
+    #(WIDTH,1)
+    irtldbgsipo2
+        (
+         .clk(clk),
+         .rst(rst),
+         .iena(1'b1),
+         .idat(test_num3),
+         .odat(test_nump)
+         );
+
+rtldbgsipo1//dout
+    #(1,WIDTH)
+    irtldbgsipo3
+        (
+         .clk(clk),
+         .rst(rst),
+         .iena(1'b1),
+         .idat(doutp),
+         .odat(dout1)
+         );
+
+
+
+// IP core
+ecc_core iecc_core
+    (
+     .clk(clk),
+     .rst(rst),
+     // IP core
+     .din(dinp),       //3*WID
+     .mode(mode3),
+     .start(start),
+     .dout(doutp),
+     .status(status3),
+     // Simulation random number
+     .test_num(test_nump)
+     );
+
+endmodule 

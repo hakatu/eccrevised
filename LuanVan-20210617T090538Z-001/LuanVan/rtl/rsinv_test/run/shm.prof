@@ -1,0 +1,53 @@
+   Total salloc'd mem:     906076
+  Alloc'd in shmd_cxt:       2600
+  Padding in shmd_cxt:        104
+  Total accounted for:      43236
+Total unaccounted for:     -20483
+
+Padding: 104
+Scope Def: 24
+Scope: 80
+Signal Descriptor: 0
+Unit Wire Item/Probe: 1920
+Scalared Wire Item: 0
+Unit Alias Item: 80
+Scalared Alias Item: 0
+Wire Probe: 0
+Compressed Wire Item: 200
+Compressed Alias Item: 40
+Vector Wire Probe: 360
+Scalared Primitive Item: 0
+Primitive probe: 0
+Array Wire Item: 0
+Array Wire Vector Probe: 0
+Array Wire Probe: 0
+Assert Item/Probe: 0
+Event Item/Probe: 0
+Scalar Reg Item/Probe: 480
+Vector Reg Item/Probe: 88
+Scalar Reg Item/Probe SRP: 880
+Vector Reg Item/Probe SRP: 528
+Unpacked Struct Item/Probe: 0
+Memory Item/Probe: 0
+Variable One Item/Probe: 0
+Variable Many Item/Probe: 0
+Signal Probe: 0
+Vector Signal Probe: 0
+Signal Mixed Item: 0
+Signal Scalared Item: 0
+Enumeration Type: 0
+SystemC Item: 0
+SystemC Memory Item: 0
+SystmC Callback Info: 0
+Analog Item: 0
+Analog Probe: 0
+Analog Scope: 0
+Code Probe: 280
+Code Probe Table Slot: 280
+Code Probe Item: 16384
+Code Probe Chkitem: 0
+Code Probe Chk: 0
+SRP Wait Method: 0
+SRP Doohickey: 16384
+Wire Wait Method: 1160
+Other Wait Method: 3964

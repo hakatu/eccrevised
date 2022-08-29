@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : array121x.v
+// Description  : a library of a register array model with
+//                  2 read ports and 1 write port.
+//
+// Author       : ddduc@HW-DDDUC
+// Created On   : Tue Oct 21 20:49:10 2003
+// History (Date, Changed By)
+//  Thu Nov 13 09:39:26 2003, ddduc, Added rst_ pin
+//  Mon Jul 27 14:40:33 2009, ndtu@HW-NDTU
+//      add parameter MAXDEPTH for better resource usage
+//  Thu Aug 20 10:06:07 2015, cuongnv@HW-NVCUONG
+//      change rst_ to rst
+////////////////////////////////////////////////////////////////////////////////
+
+module array121x (rst,wclk,wa,we,di,rclk1,ra1,do1,rclk2,ra2,do2);
+
+parameter ADDRBIT = 9;
+parameter DEPTH = 512;
+parameter WIDTH = 32;
+parameter TYPE = "AUTO";
+parameter MAXDEPTH = 0;
+
+input               rst;
+input               wclk;
+input [ADDRBIT-1:0] wa;
+input               we;
+input [WIDTH-1:0]   di;
+input               rclk1;
+input [ADDRBIT-1:0] ra1;
+output [WIDTH-1:0]  do1;
+input               rclk2;
+input [ADDRBIT-1:0] ra2;
+output [WIDTH-1:0]  do2;
+
+array111x #(ADDRBIT,DEPTH,WIDTH,TYPE,MAXDEPTH) ram1 (rst,wclk,wa,we,di,rclk1,ra1,do1);
+array111x #(ADDRBIT,DEPTH,WIDTH,TYPE,MAXDEPTH) ram2 (rst,wclk,wa,we,di,rclk2,ra2,do2);
+iarray111x #(ADDRBIT,DEPTH,WIDTH,TYPE,MAXDEPTH) ram1 (rst,wclk,wa,we,di,rst,rclk1,ra1,1'b1,
+    (
+     wrst,
+     wclk,
+     wa,
+     we,
+     di,
+
+     rrst,
+     rclk,
+     ra,
+     re,
+     do,
+
+     test,
+     mask
+     );
+
+endmodule
+

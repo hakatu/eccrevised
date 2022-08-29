@@ -1,0 +1,20 @@
+//-----------------------------------------------------------------------------
+// CRC module for data[127:0] ,   crc[7:0]=1+x^1+x^2+x^8;
+//-----------------------------------------------------------------------------
+module crc8_256
+    (
+     idat,
+     icrc,
+     ocrc1,//out crc result for first 64-bit
+     ocrc2// out crc result for full 128-bit
+     );
+
+input [127:0] idat;
+input [7:0]  icrc;
+output [7:0] ocrc1,
+             ocrc2;
+
+crc8_128 ical_crc1 (.idat(idat[255:128]),.icrc(icrc),.ocrc1(),.ocrc2(ocrc1));
+crc8_128 ical_crc2 (.idat(idat[127:0]),.icrc(ocrc1),.ocrc1(),.ocrc2(ocrc2));
+
+endmodule

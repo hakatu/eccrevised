@@ -1,0 +1,10 @@
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_autoneg.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_carr_sense.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_core.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_decode_8b10b.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_encode_8b10b.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_pcs_rx.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_pcs_tx.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_pcsrx.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_pcstx.v
+$PROJ_ROOT/ippackage/ippcsge/core/ippcsge_sync.v

@@ -1,0 +1,71 @@
+ncsim: 08.20-s015: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+
+Linux linuxsrv40.atvn.com.vn 2.6.32-504.el6.x86_64 #1 SMP Tue Sep 16 01:56:35 EDT 2014 x86_64 12 CPUs, 11904 Meg RAM, 333 hits/sec, (hungnt)
+
+	model name:Intel(R) Core(TM) i7 CPU 970 @ 3.20GHz
+ 
+	cache size:12288 KB
+ 
+ncelab options:
+	-NOWARN
+	TFNPC
+	-NOWARN
+	CUVWSP
+	-NOWARN
+	TFMPC
+	-NOWARN
+	CUVWSP
+	-CDSLIB
+	./inca_libs/irun.lnx86.08.20.nc/cds.lib
+	-HDLVAR
+	./inca_libs/irun.lnx86.08.20.nc/hdl.var
+	-WORK
+	worklib
+	-NOTIMINGCHECKS
+	+liborder
+	+libext+.vt+.v+.V+
+	+incdir+.+
+	+nowarnTFNPC
+	+nowarnTFMPC
+	+define+approximate
+	+notimingchecks
+	+nclibdirname+inca_libs
+	+profile
+	+access+r+w
+	-MESSAGES
+	-ACCESS
+	+r+w
+	worklib.tb_rsinv:v
+
+Profiled Intervals: 
+	         #start	          #stop
+[1]	           0 NS	 to      10730.5 NS 
+
+Memory Usage - 16.7M program + 24.8M data + 1.0M profile = 42.5M total
+CPU Usage - 0.0s system + 0.0s user = 0.0s total (3.5% cpu)
+
+------------------------------------------------------------
+Stream Counts (7 hits total)
+------------------------------------------------------------
+%hits #hits  #inst  name
+ 42.9     3 [     ] outside engine
+ 28.6     2 [     ] User defined task/function $recordvars
+ 14.3     1 [     ] Library function rtl_shm_open
+ 14.3     1 [     ] Library function rtl_shm_probe
+
+------------------------------------------------------------
+Most Active Modules (behavioral)
+------------------------------------------------------------
+%hits #hits  #inst  name
+
+------------------------------------------------------------
+Stream Type Summary Counts (7 hits total)
+------------------------------------------------------------
+%hits #hits  #inst  name
+ 42.9     3 [     ] Outside engine
+ 28.6     2 [     ] User defined system tasks/functions
+ 28.6     2 [     ] System tasks/functions or library functions
+
+------------------------------------------------------------
+Details of Shared Object Contribution
+------------------------------------------------------------

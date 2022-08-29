@@ -1,0 +1,1295 @@
+`timescale  1ns / 1ps
+/* -----\/----- EXCLUDED -----\/-----
+`define YYMMDD_VER  32'h15120837
+`define PRODUCT     32'h60210051
+`define INT_ID      16'h0027
+`define XILINX
+`define ALTERA_SYN_RAM_NOT_RD_X_OFF
+`define XRAMDISTMAXSIZE 2048
+`define XRAMDISTMAXDEPTH 128
+ -----/\----- EXCLUDED -----/\----- */
+
+// CLOCK DEFINE
+`define     HALFCYCLE311    1.607
+`define     HALFCYCLE250    2.000
+`define     HALFCYCLE233    2.572
+//`define     HALFCYCLE233    2*`HALFCYCLE311
+`define     HALFCYCLECPU    2*`HALFCYCLE311
+//`define     HALFCYCLECPU    8
+`define     CYCLECPU        2*`HALFCYCLECPU;
+`define     CPUTIMEOUT      4000      // 1000 cycle CPU
+
+// TOP DEFINE
+`define  TOP_OFF_DDR_TEST
+
+// CORE DEFINE
+//`define     RTL_OFF_OC48_SLC2TO8
+`define     RTL_OFF_DEBUG
+
+`define RTL_OFF_DCCK
+`define RTL_OFF_PTP
+`define RTL_OFF_ETH_PASS
+`define RTL_OFF_ETH_MRO
+`define RTL_OFF_ETH_40G
+`define RTL_OFF_GLBPMC
+`define RTL_OFF_INTPMC
+`define     RTL_OFF_OCN
+`define     RTL_OFF_POH
+`define     RTL_OFF_LOTDM
+`define     RTL_OFF_HOTDM
+`define     RTL_OFF_PLA
+`define     RTL_OFF_PWE
+`define     RTL_OFF_CLA
+`define     RTL_OFF_PMC
+`define     RTL_OFF_AME
+`define     RTL_OFF_PRM
+`define     RTL_OFF_BERT
+`define     RTL_OFF_UPSR
+`define     RTL_OFF_DDRARBTX
+`define     RTL_OFF_DDRARBCDR
+`define     RTL_OFF_OCNETHMUX
+
+//`define     RTL_OFF_PDA_REORDER
+//`define  RTL_PDA_INT_LINKLIST
+`define  RTL_PDA_RAM_XILINX
+//`define  RTL_OFF_DDRCRC
+
+`define     RTL_RAMCFG_PARITY
+
+
+// TB define
+`define RTL_SIMULATION
+//`define RTL_SYNTHESIS
+`define RTL_PDA_LOG_FILE
+`define RTL_DDR_LOG_FILE
+`define RTLPDA     testtop.rtlcore.rtlpda  
+`define RTLMAC2GE  testtop.rtlcore.rtlepacore.rtlmac2gebuf  
+`define RTLGE2MAC  testtop.rtlcore.rtlepacore.rtlge2macbuf  
+//`define ETHPASS_TEST
+
+
+module testtop;
+
+// OPEN LOG FILE
+`ifdef RTL_PDA_LOG_FILE
+integer  rtlpdalog;
+integer  rtlpdaerr;
+integer  tbmon;
+ 
+initial
+    begin
+    rtlpdalog = $fopen("rtlpdalog.log");
+    rtlpdaerr = $fopen("rtlpdaerr.log");
+    tbmon = $fopen("tbmon.log");
+    end
+`endif
+
+`ifdef RTL_PDA_DAT_FILE
+integer  rtlpdadat;
+initial
+    begin
+    rtlpdadat = $fopen("rtlpdadat.log");
+    end
+`endif
+
+////////////////////////////////////////////////////////////////////////////////
+// Clock and reset
+reg     rst;
+initial
+    begin
+    rst = 1'b1;
+    #(200)  rst = 1'b0;    
+    end
+
+/* -----\/----- EXCLUDED -----\/-----
+reg     clkcpu;
+initial
+    begin
+    clkcpu = 1'b0;
+    forever clkcpu = #(`HALFCYCLECPU) ~clkcpu; 
+    end
+ -----/\----- EXCLUDED -----/\----- */
+
+reg     clk250;
+initial
+    begin
+    clk250 = 1'b0;
+    forever clk250 = #(`HALFCYCLE250) ~clk250; 
+    end
+
+reg     clk233;
+initial
+    begin
+    clk233 = 1'b0;
+    forever clk233 = #(`HALFCYCLE233) ~clk233; 
+    end
+
+reg     clk311;
+initial
+    begin
+    clk311 = 1'b0;
+    forever clk311 = #(`HALFCYCLE311) ~clk311; 
+    end
+
+reg     clk155;
+initial
+    begin
+    clk155 = 1'b0;
+    forever
+        begin
+        @ (negedge clk311);
+        clk155 <= ~clk155;
+        end
+    end
+wire    clkcpu = clk155;
+
+reg     clk155_90;
+initial
+    begin
+    clk155_90 = 1'b0;
+    forever
+        begin
+        @ (negedge clk311);
+        clk155_90 <= #(`HALFCYCLE311) ~clk155_90;
+        end
+    end
+
+reg     clk77;
+initial
+    begin
+    clk77 = 1'b0;
+    forever
+        begin
+        @ (negedge clk155);
+        clk77 <= ~clk77;
+        end
+    end
+
+////////////////////////////////////////////////////////////////////////////////
+// CPU engine
+
+reg           rwsame;
+reg [31:0]   eupdi;
+reg           euprnw;
+reg [27:0]    eupa;
+reg           eupce_;
+wire [31:0]  eupdo;
+wire          eupack;
+wire          eupint;
+
+initial
+    begin
+    rwsame = 1'b0;       
+    eupdi  =  128'h0;
+    eupa   = 28'h0; 
+    euprnw = 1'b0;
+    eupce_ = 1'b1;
+    end
+
+reg [15:0]  eupcnt;
+wire        euptimeout = eupcnt >= `CPUTIMEOUT;
+
+always @ (posedge clkcpu or negedge rst)
+    begin
+    if (!rst)  eupcnt <= 16'd0;
+    else if (eupce_)        eupcnt <= 10'd0;
+    else if (euptimeout)    eupcnt <= eupcnt;
+    else                    eupcnt <= eupcnt + 1'b1;
+    end
+
+task write;
+    input [24:0] address;
+    input [31:0] datain;
+    begin
+    if (rwsame)        wait(!rwsame);
+    rwsame = 1'b1;
+    @(posedge clkcpu);
+    eupa = address;
+    eupdi = datain;
+    euprnw = 1'b0;
+    eupce_ = 1'b0;
+    wait (eupack | euptimeout);
+    if (euptimeout) $display ("wr add %h   timeout @time%t",eupa,$time);
+    else $display ("wr add %h   %h   @time%t",eupa,eupdi,$time);
+    @(posedge clkcpu);
+    eupce_ = 1'b1;
+    wait(!eupack);  
+    @(posedge clkcpu);
+    rwsame = 1'b0;
+    end
+endtask
+
+task    read;
+    input [24:0] address;
+    output [31:0] odata;
+
+    begin
+    if (rwsame)        wait(!rwsame);
+    rwsame = 1'b1;
+    @(posedge clkcpu);
+    eupa = address;
+    euprnw = 1'b1;
+    eupce_ = 1'b0;
+    wait (eupack | euptimeout);
+    if (euptimeout)     $display ("rd add %h   timeout  @time%t",eupa,odata,$time);
+    
+    @(posedge clkcpu);
+    odata  = eupdo;
+    eupce_ = 1'b1;
+    if (!euptimeout) $display ("rd add %h   %h   @time%t",eupa,odata,$time);
+    wait(!eupack);  
+    @(posedge clkcpu);
+    rwsame = 1'b0;
+    end
+endtask
+
+task write64;
+    input [24:0] address;
+    input [63:0] datain;
+    begin
+    write(25'h500000,datain[63:32]);
+    write(address,datain[31:0]);
+    end
+endtask
+
+task read64;
+    input [24:0] address;
+    output [63:0] dataout;
+    begin
+    read(address,dataout[31:0]);
+    read(25'h500000,dataout[63:32]);
+    end
+endtask
+
+task write128;
+    input [24:0] address;
+    input [127:0] datain;
+    begin
+    write(25'h500000,datain[63:32]);
+    write(25'h500001,datain[95:64]);
+    write(25'h500002,datain[127:96]);
+    write(address,datain[31:0]);
+    end
+endtask
+
+task read128;
+    input [24:0] address;
+    output [127:0] dataout;
+    begin
+    read(address,dataout[31:0]);
+    read(25'h500000,dataout[63:32]);
+    read(25'h500001,dataout[95:64]);
+    read(25'h500002,dataout[127:96]);
+    end
+endtask
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// DUT
+parameter           ROW = 15;
+parameter           BAK = 3;
+parameter           COL = 7;
+
+parameter           APPADR  = 28;
+parameter           APPDAT  = 512;
+parameter           APPMSK  = APPDAT/8;
+
+// DDR41 user interface
+wire                ddr1_clk,
+                    ddr1_rst;
+wire                ddr1_req;
+wire                ddr1_reqrnw;
+wire [255:0]        ddr1_reqwrd;
+wire [ROW-1:0]      ddr1_reqrow;
+wire [BAK-1:0]      ddr1_reqbak;
+wire [COL-1:0]      ddr1_reqcol;
+wire                ddr1_ack;
+wire                ddr1_rvl;
+wire [255:0]        ddr1_rdd;
+wire                ddr1_done;
+
+assign              ddr1_clk  = clk311;
+assign              ddr1_rst = rst;
+
+wire [ROW-1:0]      app1_row;
+wire [BAK-1:0]      app1_bak;
+wire [COL+2:0]      app1_col;
+wire   [APPADR-1:0] app1_addr           ;
+wire   [2:0]        app1_cmd            ;
+wire                app1_en             ;
+wire   [APPDAT/2-1:0] app1_wdf_data       ;
+wire                app1_wdf_end        ;
+wire   [APPMSK/2-1:0] app1_wdf_mask       ;
+wire                app1_wdf_wren       ;
+wire  [APPDAT/2-1:0]  app1_rd_data        ;
+wire                app1_rd_data_valid  ;
+wire                app1_rdy            ;
+wire                app1_wdf_rdy        ;
+
+ddr_app_mux #(28,256) ddr_app_mux1
+    (
+     // User interface
+     .user_addr({ddr1_reqrow,ddr1_reqcol,ddr1_reqbak,3'd0}),
+     .user_cmd({2'd0,ddr1_reqrnw}),
+     .user_en(ddr1_req),
+     .user_wdf_data(ddr1_reqwrd),
+     .user_wdf_end(1'b0),
+     .user_wdf_mask(32'b0),
+     .user_wdf_wren(1'b0),
+     .user_rd_data(ddr1_rdd),
+     .user_rd_data_valid(ddr1_rvl),
+     .user_rdy(ddr1_ack),
+     .user_wdf_rdy(),
+     .user_calib_complete(ddr1_done),
+     
+     // interface with Xilinx's controller
+     .ui_clk(ddr1_clk),
+     .ui_rst(ddr1_rst),
+     .app_addr({app1_row,app1_col[COL+2:3],app1_bak,app1_col[2:0]}),
+     .app_cmd(app1_cmd),
+     .app_en(app1_en),
+     .app_wdf_data(app1_wdf_data),
+     .app_wdf_end(app1_wdf_end),
+     .app_wdf_mask(app1_wdf_mask),
+     .app_wdf_wren(app1_wdf_wren),
+     .app_rd_data(app1_rd_data),
+     .app_rd_data_valid(app1_rd_data_valid),
+     .app_rdy(app1_rdy),
+     .app_wdf_rdy(app1_wdf_rdy),
+     .init_calib_complete(1'b1),
+
+     .app_ref_req(),
+     .app_ref_ack(),
+
+     //----HW manual test----
+     .prbs_error(),
+     .hw_icontrol(32'b0),
+     .hw_ostatus(),
+     .hw_oerror(),
+     // -- CPU bus ----------
+     .cfgtesten(1'b0),
+     .upce_(1'b1),
+     .uprnw(1'b0),
+     .upa(8'd0),
+     .updi(32'd0),
+     .updo(),
+     .upack()
+     );
+wire                app1_full,app1_req,app1_reqrnw,app1_ack;
+wire [ROW-1:0]      app1_reqrow;
+wire [BAK-1:0]      app1_reqbak;
+wire [COL-1:0]      app1_reqcol;
+wire [255:0]        app1_reqwrd;
+assign              app1_rdy = !app1_full;
+assign              app1_wdf_rdy = app1_rdy;
+
+fifodout #(1,2,256+1+ROW+COL+BAK) app1fifo
+    (.clk(ddr1_clk),.rst(ddr1_rst),.fiford(app1_ack),.fifowr(app1_en),
+     .fifodin({app1_cmd[0],app1_wdf_data,app1_row,app1_bak,app1_col[COL+2:3]}),.fifofull(app1_full),
+     .fifolen(),.notempty(app1_req),.fifodout({app1_reqrnw,app1_reqwrd,app1_reqrow,app1_reqbak,app1_reqcol}));
+
+//rtlddr3sim #(256,ROW-2,BAK,COL,30,21,1) ddr41sim
+rtlddr3sim #(256,ROW-2,BAK,COL) ddr41sim
+    (.clk(ddr1_clk),
+     .rst(ddr1_rst),
+     .req(app1_req),
+     .reqrnw(app1_reqrnw),
+     .reqwrd(app1_reqwrd),
+     .reqrow(app1_reqrow[ROW-3:0]),
+     .reqbak(app1_reqbak),
+     .reqcol(app1_reqcol),
+     .ack(app1_ack),
+     .rvl(app1_rd_data_valid),
+     .rdd(app1_rd_data)
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// DDR42 user interface
+wire                ddr2_clk,
+                    ddr2_rst;
+
+wire                ddr2_req;
+wire                ddr2_reqrnw;
+wire [511:0]        ddr2_reqwrd;
+wire [ROW-1:0]      ddr2_reqrow;
+wire [BAK-1:0]      ddr2_reqbak;
+wire [COL-1:0]      ddr2_reqcol;
+wire                ddr2_ack;
+wire                ddr2_rvl;
+wire [511:0]        ddr2_rdd;
+wire                ddr2_done   = 1'b1;
+
+assign              ddr2_clk  = clk311;
+assign              ddr2_rst = rst;
+
+wire [ROW-1:0]      app2_row;
+wire [BAK-1:0]      app2_bak;
+wire [COL+2:0]      app2_col;
+wire   [APPADR-1:0] app2_addr           ;
+wire   [2:0]        app2_cmd            ;
+wire                app2_en             ;
+wire   [APPDAT-1:0] app2_wdf_data       ;
+wire                app2_wdf_end        ;
+wire   [APPMSK-1:0] app2_wdf_mask       ;
+wire                app2_wdf_wren       ;
+wire  [APPDAT-1:0]  app2_rd_data        ;
+wire                app2_rd_data_valid  ;
+wire                app2_rdy            ;
+wire                app2_wdf_rdy        ;
+
+ddr_app_mux #(28,512) ddr_app_mux2
+    (
+     // User interface
+     .user_addr({ddr2_reqrow,ddr2_reqcol,ddr2_reqbak,3'd0}),
+     .user_cmd({2'd0,ddr2_reqrnw}),
+     .user_en(ddr2_req),
+     .user_wdf_data(ddr2_reqwrd),
+     .user_wdf_end(1'b0),
+     .user_wdf_mask(64'b0),
+     .user_wdf_wren(1'b0),
+     .user_rd_data(ddr2_rdd),
+     .user_rd_data_valid(ddr2_rvl),
+     .user_rdy(ddr2_ack),
+     .user_wdf_rdy(),
+     .user_calib_complete(ddr2_done),
+     
+     // interface with Xilinx's controller
+     .ui_clk(ddr2_clk),
+     .ui_rst(ddr2_rst),
+     .app_addr({app2_row,app2_col[COL+2:3],app2_bak,app2_col[2:0]}),
+     .app_cmd(app2_cmd),
+     .app_en(app2_en),
+     .app_wdf_data(app2_wdf_data),
+     .app_wdf_end(app2_wdf_end),
+     .app_wdf_mask(app2_wdf_mask),
+     .app_wdf_wren(app2_wdf_wren),
+     .app_rd_data(app2_rd_data),
+     .app_rd_data_valid(app2_rd_data_valid),
+     .app_rdy(app2_rdy),
+     .app_wdf_rdy(app2_wdf_rdy),
+     .init_calib_complete(1'b1),
+
+     .app_ref_req(),
+     .app_ref_ack(),
+
+     //----HW manual test----
+     .prbs_error(),
+     .hw_icontrol(32'b0),
+     .hw_ostatus(),
+     .hw_oerror(),
+     // -- CPU bus ----------
+     .cfgtesten(1'b0),
+     .upce_(1'b1),
+     .uprnw(euprnw),
+     .upa(eupa[7:0]),
+     .updi(eupdi[31:0]),
+     .updo(),
+     .upack()
+     );
+wire                app2_full,app2_req,app2_reqrnw,app2_ack;
+wire [ROW-1:0]      app2_reqrow;
+wire [BAK-1:0]      app2_reqbak;
+wire [COL-1:0]      app2_reqcol;
+wire [511:0]        app2_reqwrd;
+assign              app2_rdy = !app2_full;
+assign              app2_wdf_rdy = app2_rdy;
+
+fifodout #(1,2,512+1+ROW+COL+BAK) app2fifo
+    (.clk(ddr2_clk),.rst(ddr2_rst),.fiford(app2_ack),.fifowr(app2_en),
+     .fifodin({app2_cmd[0],app2_wdf_data,app2_row,app2_bak,app2_col[COL+2:3]}),.fifofull(app2_full),
+     .fifolen(),.notempty(app2_req),.fifodout({app2_reqrnw,app2_reqwrd,app2_reqrow,app2_reqbak,app2_reqcol}));
+
+rtlddr3sim #(512,ROW-2,BAK,COL) ddr42sim
+//rtlddr3sim #(512,ROW-2,BAK,COL,30,21,1) ddr42sim
+    (.clk(ddr2_clk),
+     .rst(ddr2_rst),
+     .req(app2_req),
+     .reqrnw(app2_reqrnw),
+     .reqwrd(app2_reqwrd),
+     .reqrow(app2_reqrow[ROW-3:0]),
+     .reqbak(app2_reqbak),
+     .reqcol(app2_reqcol),
+     .ack(app2_ack),
+     .rvl(app2_rd_data_valid),
+     .rdd(app2_rd_data)
+     );
+
+// QDR2 user interface
+wire                qdr1_clk;
+wire                qdr1_rst;
+     
+wire                qdr1_we;
+wire [18:0]         qdr1_wa;
+wire [127:0]        qdr1_wrd;
+wire                qdr1_re;
+wire [18:0]         qdr1_ra;
+wire                qdr1_rvl;
+wire [127:0]        qdr1_rdd;
+wire                qdr1_done = 1'b1;
+
+assign              qdr1_clk = clk250;
+assign              qdr1_rst = rst;
+
+wire [127:0]        qdr1_rdd2,qdr1_rdd3,qdr1_rdd4,qdr1_rdd5,qdr1_rdd6,qdr1_rdd7,qdr1_rdd8,qdr1_rdd9,qdr1_rdd10,qdr1_rdd11,qdr1_rdd12;
+fflopx #(10*128) ppqdr1_rdd (qdr1_clk,qdr1_rst,
+                            {qdr1_rdd2,qdr1_rdd3,qdr1_rdd4,qdr1_rdd5,qdr1_rdd6,qdr1_rdd7,qdr1_rdd8,qdr1_rdd9,qdr1_rdd10,qdr1_rdd11},
+                            {qdr1_rdd3,qdr1_rdd4,qdr1_rdd5,qdr1_rdd6,qdr1_rdd7,qdr1_rdd8,qdr1_rdd9,qdr1_rdd10,qdr1_rdd11,qdr1_rdd12});
+
+wire                qdr1_re1,qdr1_re2,qdr1_re3,qdr1_re4,qdr1_re5,qdr1_re6,qdr1_re7,qdr1_re8,qdr1_re9,qdr1_re10,qdr1_re11,qdr1_re12;
+fflopx #(12) ppqdr1_re (qdr1_clk,qdr1_rst,
+                       {qdr1_re,qdr1_re1,qdr1_re2,qdr1_re3,qdr1_re4,qdr1_re5,qdr1_re6,qdr1_re7,qdr1_re8,qdr1_re9,qdr1_re10,qdr1_re11},
+                       {qdr1_re1,qdr1_re2,qdr1_re3,qdr1_re4,qdr1_re5,qdr1_re6,qdr1_re7,qdr1_re8,qdr1_re9,qdr1_re10,qdr1_re11,qdr1_re12});
+
+assign              qdr1_rdd = qdr1_rdd12;
+assign              qdr1_rvl = qdr1_re12;
+
+iarray112x #(19,{1'b1,{19{1'b0}}},128) mem_qdr1
+    (
+     .wrst (qdr1_rst),
+     .wclk  (qdr1_clk),
+     .wa    (qdr1_wa), 
+     .we    (qdr1_we),
+     .di    (qdr1_wrd),
+
+     .rrst (qdr1_rst),
+     .rclk  (qdr1_clk),
+     .ra    (qdr1_ra),
+     .re    (qdr1_re),
+     .do    (qdr1_rdd2),
+
+     .test  (1'b0),
+     .mask  (1'b0)
+     );
+/* -----\/----- EXCLUDED -----\/-----
+wire orst;
+wire [127:0] core_eupdi,core_eupdo;
+wire         core_eupack,core_eupint;
+
+rtltoppi_expand rtltoppi_expand
+    (
+     .clk(clkcpu),
+     .rst(rst),
+     .orst(orst),
+     
+     // External CPU Bus
+     .eupa(eupa),
+     .eupce_(eupce_),
+     .euprnw(euprnw),
+     .eupdi(eupdi[31:0]),
+     .eupdo(eupdo),
+     .eupack(eupack),
+     .eupint(),
+     .updi_e(core_eupdi),    // expand CPU bus with hold registers
+     
+     // Control(), sticky and status registers
+     .o_control(),      
+     .i_sticky(0),
+     .i_status(0),
+
+     // Core-Interface
+     .core_eupce_(core_eupce_),
+     .core_eupdo(core_eupdo),
+     .core_eupack(core_eupack),
+     .core_eupint(core_eupint),
+     
+     // GE-Interface
+     .ge_eupce_(),
+     .ge_eupdo(0),
+     .ge_eupack(0),
+     .ge_eupint(0),
+     
+     // OCN-Interface
+     .oc_eupce_(),
+     .oc_eupdo(0),
+     .oc_eupack(0),
+     .oc_eupint(0),
+     
+     // DDR-Interface
+     .ddr_eupce_(),
+     .ddr_eupdo(0),
+     .ddr_eupack(0),
+     .ddr_eupint(0)
+     );
+ -----/\----- EXCLUDED -----/\----- */
+
+af6cnc0022rtlcore       rtlcore
+    (
+     // ------ System Clock Interface ---------------
+     .clk155        (clk155),   // 0 degree
+     .rst155       (rst),
+
+     .clk233        (clk233),    // 0 degree
+     .rst233       (rst),
+     
+     .clk311        (clk311),    // 270 degree
+     .rst311       (rst),
+
+     // ----- CDR PRC & External clock  ----------------------
+/* -----\/----- EXCLUDED -----\/-----
+     .iprcclk       (),//temp
+     .icdrext1ck    (),
+     .icdrext2ck    (),
+     .icdrsyncck    (),
+     
+     //-----8xOCN INTERFACE-----
+     .ocn_rxlclk    (ocn_rxlclk),
+     .ocn_rxlrst   (ocn_rxlrst),
+     .ocn_rxldat    (ocn_rxldat),
+     .ocn_rxllos    (ocn_rxllos),
+
+     .ocn_txlclk    (ocn_txlclk),
+     .ocn_txlrst   (ocn_txlrst),
+     .ocn_txldat    (ocn_txldat),
+     
+     // ------ 4xEth XGMII 10G ------------------------------------
+     .xgmii_clk     (xgmii_clk),
+     .xgmii_rst    (xgmii_rst),
+     .xgmii_rxd     (xgmii_rxd),
+     .xgmii_rxc     (xgmii_rxc),
+     .xgmii_txd     (xgmii_txd),
+     .xgmii_txc     (xgmii_txc),
+     
+ -----/\----- EXCLUDED -----/\----- */
+     //--- .DDR64bit #1  ----------------------------------
+     .ddr3_clk      (ddr1_clk),
+     .ddr3_rst     (ddr1_rst),
+
+     .ddr3_req      (ddr1_req), 
+     .ddr3_reqrnw   (ddr1_reqrnw),
+     .ddr3_reqwrd   (ddr1_reqwrd),
+     .ddr3_reqrow   (ddr1_reqrow),
+     .ddr3_reqbak   (ddr1_reqbak),
+     .ddr3_reqcol   (ddr1_reqcol),
+     .ddr3_done     (ddr1_done), 
+     .ddr3_ack      (ddr1_ack),
+     .ddr3_rvl      (ddr1_rvl),
+     .ddr3_rdd      (ddr1_rdd),
+
+     //--- DDR64bit #2  ----------------------------------
+     .ddr2_clk      (ddr2_clk),
+     .ddr2_rst     (ddr2_rst),
+
+     .ddr2_req      (ddr2_req), 
+     .ddr2_reqrnw   (ddr2_reqrnw),
+     .ddr2_reqwrd   (ddr2_reqwrd),
+     .ddr2_reqrow   (ddr2_reqrow),
+     .ddr2_reqbak   (ddr2_reqbak),
+     .ddr2_reqcol   (ddr2_reqcol),
+     .ddr2_done     (ddr2_done), 
+     .ddr2_ack      (ddr2_ack),
+     .ddr2_rvl      (ddr2_rvl),
+     .ddr2_rdd      (ddr2_rdd),
+     
+     //--- QDR36bit #1  ----------------------------------
+     .qdr1_wren     (1'b1), 
+     .qdr1_rden     (1'b1), 
+     
+     .qdr1_clk      (qdr1_clk),
+     .qdr1_rst     (qdr1_rst),
+     .qdr1_done     (qdr1_done),
+     
+     .qdr1_we       (qdr1_we), 
+     .qdr1_wa       (qdr1_wa),
+     .qdr1_wrd      (qdr1_wrd),
+     .qdr1_re       (qdr1_re),
+     .qdr1_ra       (qdr1_ra),
+     .qdr1_rvl      (qdr1_rvl),
+     .qdr1_rdd      (qdr1_rdd),//@oqdr_re6
+
+     .eupa          (eupa[24:0]),       
+     .eupce_        (eupce_),
+     .euprnw        (euprnw),
+     .eupdi         (eupdi),
+     .eupdo         (eupdo),
+     .eupack        (eupack),   
+     .eupint        (eupint)
+     );
+//AF6CCI0011_TOP AF6CCI0011_TOP ();
+
+////////////////////////////////////////////////////////////////////////////////
+//DUMP WAVE
+//`define DUMP_WAVE
+
+`ifdef DUMP_WAVE
+initial
+    begin
+    #125_000;
+    
+    //------------------------------
+    $display("BEGIN wave1",$time);
+    $shm_open("wave1.shm",0,,1);
+    //$shm_probe(testtop,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlepacore,"AC"); 
+    $shm_probe(testtop.rtlcore.rtlpda.rtlpdatdm,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlpda.rtlpdatdm.rtldeas[0],"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlpda.rtlpdatdm.rtlencfifo[0].rtlencfifo48,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlpda.rtljitbuf,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlpda.rtlwrca,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlddrarbrx,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlddrarbtx,"AC"); 
+    //$shm_probe(testtop.rtlcore.rtlqdrarb,"AC"); 
+    //$shm_probe(testtop.ddr41sim,"AC"); 
+    //$shm_probe(testtop.gmii_diag,"AC"); 
+    //$shm_probe(testtop.ddr42sim,"AC"); 
+    #1_000_000;
+    $shm_close;
+    $display("END wave1",$time);
+
+    //--------------------------
+    $display("BEGIN wave2",$time);
+    $shm_open("wave2.shm",0,,1);
+    $shm_probe(testtop.rtlcore.rtlpda.rtljitbuf,"AC"); 
+    $shm_probe(testtop.rtlcore.rtlpda.rtlpdatdm,"AC"); 
+    #1000_000;
+    $display("END wave2",$time);
+    $shm_close;    
+    //------------------------------
+    
+/* -----\/----- EXCLUDED -----\/-----
+    //--------------------------
+    $display("BEGIN wave3",$time);
+    $shm_open("wave3.shm",0,,1);
+    $shm_probe(testtop.rtlcore.rtlpda.rtljitbuf,"AC"); 
+    $shm_probe(testtop.rtlcore.rtlpda.rtlpdatdm,"AC"); 
+    #2000_000;
+    $display("END wave3",$time);
+    $shm_close;    
+    //------------------------------
+ -----/\----- EXCLUDED -----/\----- */
+    
+    #10_000_000;
+    $stop;
+
+    end
+`endif
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Testcase
+//`define TC_VC11CEP
+//`define TC_VC12CEP
+//`define TC_VC3CEP
+//`define TC_DS1SATOP
+//`define TC_DS3SATOP
+`define TC_HO_VC3BASIC
+//`define TC_HO_VC4BASIC
+//`define TC_HO_OC12BASIC   // must run full 48sts
+//`define TC_HO_OC48BASIC
+//`define TC_DS3SATOP_HO_VC3BASIC
+//`define TC_CESOP
+//`define TC_HO_VC3_192C_CEP
+
+//`define   LENCOVER
+//`define  RTL_PDA_INT_LINKLIST
+
+`ifdef                  RTL_OFF_OC48_SLC2TO8
+parameter               LONUM = 1;
+`else 
+`ifdef                  RTL_OFF_OC48_SLICE6TO8
+parameter               LONUM = 6;
+`else
+parameter               LONUM = 8;
+`endif
+`endif
+
+`define GEBW       40 // 194.4*256 = 50G clk by clk, each clk each 1G
+
+`define MAXLO      8
+`define MAXSTS     48    // sts3 maxsts = 16, sts12: maxsts = 48, sts48: don't care 
+`define MAXVTG     7
+`define MAXVT     3
+`define MAXPW     21
+
+`ifdef TC_CESOP
+`define VTNUM     4
+`define FIRSTCOL  4
+`else
+`ifdef TC_DS1SATOP
+`define VTNUM     4
+`define FIRSTCOL  4
+`else
+`ifdef TC_VC11CEP
+`define VTNUM     4
+`define FIRSTCOL  4
+`else
+`define VTNUM     3
+`define FIRSTCOL  4
+`endif
+`endif
+`endif
+integer     i,j,k,mapid,sts12id,tdmid,stsid,vtgid,vtid,sliceid,slice24,glbpwid;
+
+reg [127:0]  rdata;
+reg [31:0]  pklen,jitter,pdv,cesnds0,cesnumfr;
+
+`include    "../tb/traffic/tb_pwgenmon.vt"
+
+initial
+    begin
+    #(10000);
+    cesnds0 = 31;
+    cesnumfr = 4;
+    
+    `ifdef  TC_CESOP
+    pdv = 3;
+    jitter = 2*pdv;
+    //pklen = 108;
+    pklen = 8;
+    `include    "../tb/testcase/tc_cesop.vt"
+    `endif    
+
+    `ifdef  TC_VC12CEP
+    pdv = 3;
+    jitter = 2*pdv;
+    pklen = 140;
+    //pklen = 8;
+    `include    "../tb/testcase/tc_vc12cep.vt"
+
+/* -----\/----- EXCLUDED -----\/-----
+    // Change LO-> HO
+    #2_500_000;
+    $display("CLA stop LO traffic @time%t",$time);
+    glbpwid = 0;
+    for (sliceid=0;sliceid<`MAXLO;sliceid=sliceid+1)//slice48
+        for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+            for (vtgid=0;vtgid<`MAXVTG;vtgid=vtgid+1)
+                for (vtid=0;vtid<`MAXVT;vtid=vtid+1)
+                    begin
+                    cfgpwbw[glbpwid] = 20'd0;   // 765 byte/125us
+                    glbpwid = glbpwid + 1;                  
+                    end
+    $display("PDA wait LO JB empty @time%t",$time);
+    #2_500_000;
+    $display("PDA clear LO MAP request @time%t",$time);
+    tdmid = 0;
+    for (sliceid=0;sliceid<`MAXLO;sliceid=sliceid+1)//slice48
+        for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+            for (vtgid=0;vtgid<`MAXVTG;vtgid=vtgid+1)
+                for (vtid=0;vtid<`MAXVT;vtid=vtid+1)
+                    begin
+    mapid = {stsid[5:0],vtgid[2:0],vtid[1:0]};  
+    lo48cfgpwen[mapid[10:0]] = 1'b0;
+    lo48cfgpwid[mapid[10:0]] = tdmid[10:0];
+    $display("MAP sts%d vtg%d vt%d mappwid%d en%d @time%t",stsid[5:0],vtgid[2:0],vtid[1:0],tdmid[10:0],lo48cfgpwen[mapid[10:0]],$time);
+                    tdmid = tdmid + 1;
+                    end
+    
+    $display("PDA wait change to HO  @time%t",$time);
+    #500_000;    
+    pdv = 3;
+    jitter = 2*pdv;
+    pklen = 783;
+    `include    "../tb/testcase/tc_ho_vc3basic.vt"
+    write(25'h558000,16'h8000);
+
+    #1_000_000; // stop CLA of VC3
+    $display("CLA stop HO traffic @time%t",$time);
+        glbpwid = 0;
+    for (sliceid=0;sliceid<`MAXLO;sliceid=sliceid+1)//slice48
+        for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+            begin
+            cfgpwbw[glbpwid] = 20'd0;   // 765 byte/125us
+            glbpwid = glbpwid + 1;                  
+            end        
+    $display("PDA wait HO JB empty @time%t",$time);
+    #1_000_000;// wait JB empty
+    write(25'h558000,16'h0000);
+    
+    $display("PDA start LO MAP again @time%t",$time);
+    pdv = 3;
+    jitter = 2*pdv;
+    pklen = 140;
+    //pklen = 8;
+    `include    "../tb/testcase/tc_vc12cep.vt"
+ -----/\----- EXCLUDED -----/\----- */
+    `endif    
+
+    `ifdef  TC_DS1SATOP
+    pdv = 3;
+    jitter = 2*pdv;
+    pklen = 108;
+    //pklen = 8;
+    `include    "../tb/testcase/tc_ds1satop.vt"
+    `endif    
+
+    `ifdef  TC_DS3SATOP
+    pdv = 6;
+    jitter = 2*pdv;
+    pklen = 765;
+    //pklen = 1024;
+    `include    "../tb/testcase/tc_ds3satop.vt"
+    `endif    
+
+    `ifdef  TC_HO_VC3BASIC
+    pdv = 3;
+    jitter = 2*pdv;
+    pklen = 783;
+    `include    "../tb/testcase/tc_ho_vc3basic.vt"
+    //`include    "../tb/testcase/tc_ho_vc3_192c_cep.vt"
+    //`include    "../tb/testcase/tc_ho_192c_cep.vt"
+    `endif    
+    
+    `ifdef  TC_HO_VC4BASIC
+    //pdv = 4;
+    //pklen = 783*3;
+    pdv = 12;
+    pklen = 783;
+    jitter = 2*pdv;
+    `include    "../tb/testcase/tc_ho_vc4basic.vt"
+    `endif    
+
+    `ifdef  TC_HO_OC12BASIC
+    //pdv = 4;
+    //pklen = 783*12;
+    pdv = 48;
+    pklen = 783;
+    jitter = 2*pdv;
+    `include    "../tb/testcase/tc_ho_oc12basic.vt"
+    `endif    
+
+    `ifdef  TC_HO_OC48BASIC
+    pdv = 48;
+    jitter = 2*pdv;
+    //pklen = 783;
+    pklen = 3132;
+    `include    "../tb/testcase/tc_ho_oc48basic.vt"
+    `endif
+
+    `ifdef  TC_DS3SATOP_HO_VC3BASIC
+    pdv = 8;
+    jitter = 2*pdv;
+    pklen = 783;
+    `include    "../tb/testcase/tc_ds3satop_hovc3cep.vt"
+    `endif
+
+    for (sliceid=0;sliceid<16;sliceid=sliceid+1)//slice48
+        write(25'hC0C40+sliceid,{1'b1,20'h2588});
+    
+/* -----\/----- EXCLUDED -----\/-----
+    
+    // Test PW Alarm
+    for (i=0;i<`MAXPW;i=i+1)    
+        begin
+        write(25'h1E60000+i,32'h1FF);   // interrupt enable
+        if (i==0)       write(25'h1E6FFE0,32'hFFFFFFFF);   // interrupt enable
+        end
+    #(50000);
+    read(25'h1,rdata);
+    write(25'h12,32'h01234567);
+    write(25'h13,32'h89abcdef);
+    write(25'h10,{4'h8,24'hFFF,4'd1});
+    #(50000);
+    read(25'h10,rdata);
+    write(25'h10,{4'h8,24'hFFF,4'd0});
+    #(5000);
+    
+    read(25'h20,rdata);
+    read(25'h21,rdata);
+ -----/\----- EXCLUDED -----/\----- */
+    
+/* -----\/----- EXCLUDED -----\/-----
+    write(25'h1e603FF,32'h1ff);
+    write(25'h1e60400,32'h1ff);
+    #(500000);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+    read(25'h1e613ff,rdata);
+    read(25'h1e61400,rdata);
+    write(25'h1e60bff,32'hFFFFFFFF);
+    write(25'h1e60C00,32'hFFFFFFFF);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+
+    #(500000);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+    read(25'h1e613ff,rdata);
+    read(25'h1e61400,rdata);
+    write(25'h1e60bff,32'hFFFFFFFF);
+    write(25'h1e60C00,32'hFFFFFFFF);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+    
+    #(500000);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+    read(25'h1e613ff,rdata);
+    read(25'h1e61400,rdata);
+    write(25'h1e60bff,32'hFFFFFFFF);
+    write(25'h1e60C00,32'hFFFFFFFF);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+
+    #(500000);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+    read(25'h1e613ff,rdata);
+    read(25'h1e61400,rdata);
+    write(25'h1e60bff,32'hFFFFFFFF);
+    write(25'h1e60C00,32'hFFFFFFFF);
+    read(25'h1e60bff,rdata);
+    read(25'h1e60c00,rdata);
+ -----/\----- EXCLUDED -----/\----- */
+    
+    // End test PW alarm
+/* -----\/----- EXCLUDED -----\/-----
+    // Test JB center
+    #(500000);
+    
+        read(25'h500011,rdata);
+        write(25'h500010,1);
+        #(3000000);
+        read(25'h500011,rdata);
+     // End JB center
+ -----/\----- EXCLUDED -----/\----- */
+/* -----\/----- EXCLUDED -----\/-----
+ // Test lost blk
+    force   testtop.rtlcore.rtlpda.rtlwrca.ieop = 0;
+    
+    #(2000000);
+ -----/\----- EXCLUDED -----/\----- */
+   
+/* -----\/----- EXCLUDED -----\/-----
+    #(1000000);
+$display("Config TB MAP");
+for (slice24=0;slice24<`MAXOC24;slice24=slice24+1) // slice 24
+    begin
+    lo24cfgen[slice24] = 1'd0;  
+    end
+
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+for (vtgid=0;vtgid<7;vtgid=vtgid+1)
+for (vtid=0;vtid<`VTNUM;vtid=vtid+1)
+    begin   
+    tdmid = {stsid[4:0],vtgid[2:0],vtid[1:0]};  
+    lo24cfgpwen[tdmid[9:0]] = 1'b0;
+    lo24cfgpwid[tdmid[9:0]] = stsid[9:0];
+    $display("MAP sts%d vtg%d vt%d pwid%d en%d @time%t",stsid[4:0],vtgid[2:0],vtid[1:0],stsid[4:0],lo24cfgpwen[tdmid[9:0]],$time);
+    end
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXLO;sliceid=sliceid+1)//slice48
+for (slice24=0;slice24<`MAXOC24;slice24=slice24+1) // slice 24
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+//for (vtgid=0;vtgid<1;vtgid=vtgid+1)
+//for (vtid=0;vtid<1;vtid=vtid+1)
+    begin           
+    cfgpwbw[glbpwid] = 20'd0;   // 765 byte/125us
+    glbpwid = glbpwid + 1;  
+    end
+ -----/\----- EXCLUDED -----/\----- */
+/* -----\/----- EXCLUDED -----\/-----
+    #(700000);
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXHO;sliceid=sliceid+1)//slice48
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*HONUM
+    begin
+    cfgpwbw[glbpwid] = 20'd783;   // 765 byte/125us
+    glbpwid = glbpwid + 1'b1;
+    end
+    #(700000);
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXHO;sliceid=sliceid+1)//slice48
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*HONUM
+    begin
+    cfgpwbw[glbpwid] = 20'd0;   // 765 byte/125us
+    glbpwid = glbpwid + 1'b1;
+    end
+    #(700000);
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXHO;sliceid=sliceid+1)//slice48
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*HONUM
+    begin
+    cfgpwbw[glbpwid] = 20'd783;   // 765 byte/125us
+    glbpwid = glbpwid + 1'b1;
+    end
+    #(700000);
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXHO;sliceid=sliceid+1)//slice48
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*HONUM
+    begin
+    cfgpwbw[glbpwid] = 20'd0;   // 765 byte/125us
+    glbpwid = glbpwid + 1'b1;
+    end
+    #(700000);
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXHO;sliceid=sliceid+1)//slice48
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*HONUM
+    begin
+    cfgpwbw[glbpwid] = 20'd783;   // 765 byte/125us
+    glbpwid = glbpwid + 1'b1;
+    end
+    #(700000);
+ // End test lost blk
+ -----/\----- EXCLUDED -----/\----- */
+
+
+/* -----\/----- EXCLUDED -----\/-----
+    #(250000);
+    //write64(25'h500004,{1'b1,45'd0});
+
+    #(10_000_000);
+    //write64(25'h500004,{1'b0,45'd0});
+$display("Config TB CLA");
+glbpwid = 0;
+for (sliceid=0;sliceid<`MAXLO;sliceid=sliceid+1)//slice48
+for (slice24=0;slice24<`MAXOC24;slice24=slice24+1) // slice 24
+for (stsid=0;stsid<`MAXSTS;stsid=stsid+1)    // number of global PW = `MAXPW*2*LONUM
+for (vtgid=0;vtgid<`MAXVTG;vtgid=vtgid+1)
+for (vtid=0;vtid<`MAXVT;vtid=vtid+1)
+//if (glbpwid < `MAXPW*`MAXOC24*LONUM)       
+    begin          
+    $display("CLA pw%d @time%t",glbpwid[12:0],$time);
+    cfgpwlen[glbpwid] = `ifndef    LENCOVER pklen `else pklen + glbpwid[9:0] `endif;
+    cfgpwbw[glbpwid] = 20'd27;   // 765 byte/125us
+    cfgpwtyp[glbpwid] = 3'd0;
+    cfgpwport[glbpwid] = glbpwid[1:0];
+    cfgpwen[glbpwid] = 1'd1;
+    cfgpwcep[glbpwid] = 1'd0;
+    cfgpwcepj1[glbpwid] = 14'd1;
+    cfgpwlbit[glbpwid] = 1'd0;
+    cfgpwrbit[glbpwid] = 1'd0;
+    cfgpwnbit[glbpwid] = 1'd0;
+    cfgpwpbit[glbpwid] = 1'd0;
+    cfgpwuneq[glbpwid] = 1'd0;
+    glbpwid = glbpwid + 1;  
+    end
+ -----/\----- EXCLUDED -----/\----- */
+        
+    end
+
+////////////////////////////////////////////////////////////////////////////////
+//
+initial
+    begin
+    $timeformat(-3,3," ms",12);
+    forever
+        begin    
+        #(250000);
+        $display("TB_TIME:---------------------------------------------- %t",$time);
+        //read64(25'hC0A00,rdata);  // interrupt status
+        //read64(25'hC0A10,rdata);  // interrupt status
+        //read64(25'hC0A20,rdata);  // interrupt status
+        //read64(25'hC0A80,rdata);  // interrupt status
+        //for (k=0;k<`MAXPW;k=k+1)    
+        //    begin
+            //read(25'h514000+k,rdata);
+            //write(25'h558000,16'h8000);
+            //read(25'h558000,rdata);
+            //read(25'h550000,rdata);
+            //write(25'h550000,16'h000);
+            //read(25'h550000,rdata);
+            //read(25'h558001,rdata);
+            //read(25'h558001,rdata);
+            
+            //read(25'h1E68000+k,rdata);// current status pwid
+            //if (k[4:0] == 0)    read(25'h1E6C000+k[9:5],rdata);   // interrupt OR group32 status
+        
+            //if (k==0)   read(25'h1E6FFF0+k,rdata);// interrupt OR group 1024 status
+            //if (k==0)   read(25'h1E70000+k,rdata);// interupr OR pin status
+        //    end
+        //read128(25'h50000d,rdata);
+/* -----\/----- EXCLUDED -----\/-----
+        read(25'h5a0002,rdata);
+        read(25'h5a0003,rdata);
+        read(25'h5a0004,rdata);
+        read(25'h5a0005,rdata);
+        write(25'h5a0002,rdata);
+        write(25'h5a0003,rdata);
+        write(25'h5a0004,rdata);
+        write(25'h5a0005,rdata);
+ -----/\----- EXCLUDED -----/\----- */
+        
+        end
+    end
+
+////////////////////////////////////////////////////////////////////////////////
+// Test
+/* -----\/----- EXCLUDED -----\/-----
+reg     clk125;
+reg     rst125;
+
+initial
+    begin
+    clk125 = 1'b0;
+    forever clk125 = #(`HALFCYCLE250*2) ~clk125; 
+    end
+initial
+    begin
+    rst125 = 1'b1;
+    #(3000);
+    rst125 = 1'b0;
+    #(2000000);
+    rst125 = 1'b1;
+    #(500000);
+    rst125 = 1'b0;
+    #(2000000);
+    rst125 = 1'b1;
+    #(500000);
+    rst125 = 1'b0;
+    #(2000000);
+    rst125 = 1'b1;
+    #(500000);
+    rst125 = 1'b0;
+    end
+wire [7:0]  gmii_txdat;
+wire        gmii_txen;
+wire        gmii_txerr;
+
+es_1588gmii_diag    gmii_diag
+    (
+     .clk(clk155), //CPU clk @125 or 155.52Mhz
+     .rst(rst),
+     //GMII interface:
+     .gmii_txclk(clk125),//1G(@125)/2G5(@312.5)     
+     .gmii_txrst(rst125),
+
+     .gmii_rxclk(clk125),//1G(@125)/2G5(@312.5)
+     .gmii_rxrst(rst125),     
+     // Tx path:
+     .gmii_txdat(gmii_txdat),
+     .gmii_txen(gmii_txen),
+     .gmii_txerr(gmii_txerr),
+     // Rx path:
+     .gmii_rxdat(gmii_txdat),
+     .gmii_rxdv(gmii_txen),
+     .gmii_rxerr(gmii_txerr),
+     // Out control & mon status for IP:
+     .o_control(),
+     .i_status(0),
+     .o_linkstatus(), // out link status to LED.
+     // CPU interface:
+     .eupce_(1'b1),
+     .eupa(0),
+     .euprnw(0),
+     .eupdi(0),
+     .eupdo(),
+     .eupack(),
+     .eupint()     
+     );
+ -----/\----- EXCLUDED -----/\----- */
+
+/* -----\/----- EXCLUDED -----\/-----
+// Cach viet 1:
+assign      mux = sela ? a : selb ? b : c;
+
+// Cach viet 2
+always @ (sela or selb or a or b or c)
+    begin
+    case ({sela,selb})
+        2'b1x:  mux = a;
+        2'bx1:  mux = b;
+        default:mux = c;
+    endcase
+    end
+ -----/\----- EXCLUDED -----/\----- */
+
+          
+            
+endmodule 

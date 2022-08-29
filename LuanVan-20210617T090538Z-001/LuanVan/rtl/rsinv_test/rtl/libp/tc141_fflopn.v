@@ -1,0 +1,49 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : tc141_fflopn.v
+// Description  : .
+//
+// Author       : cuongbht@HW-BHTCUONG
+// Author Slogan: try not to become a man of success,
+//              : but rather, try to become a man of value
+// Created On   : Wed Dec 10 10:20:38 2014
+// History (Date, Changed By)
+//
+////////////////////////////////////////////////////////////////////////////////
+
+module tc141_fflopn
+    (
+     clk    ,
+     rstn   ,
+     din    ,
+     pdin   
+     
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+parameter       NPP = 2;// NPP >= 2
+
+////////////////////////////////////////////////////////////////////////////////
+// Port declarations
+input           clk ;
+input           rstn;
+input           din ;
+output          pdin;
+
+////////////////////////////////////////////////////////////////////////////////
+// Output declarations
+
+////////////////////////////////////////////////////////////////////////////////
+// Local logic and instantiation
+wire [NPP-1:0]  dinpp;
+assign          pdin = (~dinpp[1]) & dinpp[0];
+
+tc141_fflopx #(NPP)   cr_dinpp(clk,rstn,{din,dinpp[NPP-1:1]},dinpp);
+
+
+
+
+endmodule 

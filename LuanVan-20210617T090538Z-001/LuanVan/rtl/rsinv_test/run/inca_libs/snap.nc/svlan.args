@@ -1,0 +1,36 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
+-y
+../ippackage/ipddr2phy/core
+-y
+../ippackage/ipspi3linkif/core
+-y
+../ippackage/ippcrc/core
+-y
+../ippackage/ippcsge/core
+-y
+../ippackage/ipsmacge/core
+-y
+../lib/atvn/lib_v/macro
+-y
+../lib/atvn/lib_v/ram
+-y
+../rtl/corexxx/
+-y
+../rtl/libp/
+-y
+../testbench/source/
+-y
+../testbench/testcase/
++liborder
++libext+.vt
++libext+.v
++libext+.V
++incdir+.
++nowarn+TFNPC
++nowarn+CUVWSP
++nowarn+TFMPC
++nowarn+CUVWSP
++define+approximate

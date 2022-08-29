@@ -1,0 +1,321 @@
+ncverilog: 08.20-s015: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+TOOL:	ncverilog	08.20-s015: Started on May 24, 2019 at 16:46:18 ICT
+ncverilog
+	-f top.vc
+		./tb_ex_sim.vt
+		-y
+		../ippackage/ipddr2phy/core
+		-y
+		../ippackage/ipspi3linkif/core
+		-y
+		../ippackage/ippcrc/core
+		-y
+		../ippackage/ippcsge/core
+		-y
+		../ippackage/ipsmacge/core
+		-y
+		../lib/atvn/lib_v/macro
+		-y
+		../lib/atvn/lib_v/ram
+		-y
+		../rtl/core/
+		-y
+		../rtl/libp/
+		-y
+		../testbench/source/
+		-y
+		../testbench/testcase/
+		+liborder
+		+libext+.vt+.v+.V+
+		+incdir+.+
+		+nowarnTFNPC
+		+nowarnTFMPC
+		+define+approximate
+		+notimingchecks
+		+nclibdirname+inca_libs
+	-l
+	ncverilog.log
+	+profile
+	+access+r+w
+file: ./tb_ex_sim.vt
+	module worklib.tb_ex_sim:vt
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOF: Library file or directory "../ippackage/ipddr2phy/core" does not exist.
+ncvlog: *W,LIBNOF: Library file or directory "../ippackage/ipspi3linkif/core" does not exist.
+ncvlog: *W,LIBNOF: Library file or directory "../rtl/libp/" does not exist.
+file: ../lib/atvn/lib_v/macro/fflopx.v
+	module macro.fflopx:v
+		errors: 0, warnings: 0
+file: ../rtl/core//ecc_core.v
+	module rtl.ecc_core:v
+		errors: 0, warnings: 0
+file: ../rtl/core//ecc_core.v
+file: ../rtl/core//mainctrl.v
+	module rtl.mainctrl:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wrap.v
+	module rtl.auc_wrap:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wrap.v
+file: ../rtl/core//aluwrap.v
+	module rtl.aluwrap:v
+		errors: 0, warnings: 0
+file: ../rtl/core//aluwrap.v
+file: ../rtl/core//auc_decoder.v
+	module rtl.auc_decoder:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_decoder.v
+file: ../rtl/core//auc_rand_wrap.v
+	module rtl.auc_rand_wrap:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_rand_wrap.v
+file: ../rtl/core//auc_naf.v
+	module rtl.auc_naf:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_naf.v
+file: ../rtl/core//auc_wmul.v
+	module rtl.auc_wmul:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul.v
+file: ../rtl/core//auc_mmul.v
+	module rtl.auc_mmul:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_mmul.v
+file: ../rtl/core//rsinv.v
+	module rtl.rsinv:v
+		errors: 0, warnings: 0
+file: ../rtl/core//alram113x.v
+	module rtl.alram113x:v
+		errors: 0, warnings: 0
+file: ../rtl/core//alram113x.v
+file: ../rtl/core//ffxkclkx.v
+	module rtl.ffxkclkx:v
+		errors: 0, warnings: 0
+file: ../rtl/core//ffxkclkx.v
+file: ../rtl/core//modfa.v
+	module rtl.modfa:v
+		errors: 0, warnings: 0
+file: ../rtl/core//modfa.v
+file: ../rtl/core//montprowrap.v
+	module rtl.montprowrap:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montprowrap.v
+file: ../rtl/core//montinv.v
+	module rtl.montinv:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montinv.v
+file: ../rtl/core//cswap.v
+	module rtl.cswap:v
+		errors: 0, warnings: 0
+file: ../rtl/core//cswap.v
+file: ../rtl/core//auc_rand.v
+	module rtl.auc_rand:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_rand.v
+file: ../rtl/core//aladder.v
+	module rtl.aladder:v
+		errors: 0, warnings: 0
+file: ../rtl/core//aladder.v
+file: ../rtl/core//auc_wmul_pre.v
+	module rtl.auc_wmul_pre:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul_decoder.v
+	module rtl.auc_wmul_decoder:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul_main.v
+	module rtl.auc_wmul_main:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul_conv.v
+	module rtl.auc_wmul_conv:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul_dbl.v
+	module rtl.auc_wmul_dbl:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_wmul_add.v
+	module rtl.auc_wmul_add:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_mmulinit.v
+	module rtl.auc_mmulinit:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_mmulcomp.v
+	module rtl.auc_mmulcomp:v
+		errors: 0, warnings: 0
+file: ../rtl/core//auc_mmulfinal.v
+	module rtl.auc_mmulfinal:v
+		errors: 0, warnings: 0
+file: ../rtl/core//alram112x.v
+	module rtl.alram112x:v
+		errors: 0, warnings: 0
+file: ../rtl/core//alram112x.v
+file: ../rtl/core//ffxkclk.v
+	module rtl.ffxkclk:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montpro.v
+	module rtl.montpro:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montpro.v
+file: ../rtl/core//montinvp1.v
+	module rtl.montinvp1:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montinvp1.v
+file: ../rtl/core//montinvp2.v
+	module rtl.montinvp2:v
+		errors: 0, warnings: 0
+file: ../rtl/core//montinvp2.v
+file: ../rtl/core//mux_xx1.v
+	module rtl.mux_xx1:v
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOU: Library "../ippackage/ippcrc/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../ippackage/ippcsge/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../ippackage/ipsmacge/core" given but not used.
+ncvlog: *W,LIBNOU: Library "../lib/atvn/lib_v/ram" given but not used.
+ncvlog: *W,LIBNOU: Library "../testbench/source/" given but not used.
+ncvlog: *W,LIBNOU: Library "../testbench/testcase/" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 9
+		Caching library 'macro' ....... Done
+		Caching library 'worklib' ....... Done
+		Caching library 'rtl' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		macro.fflopx:v <0x095e3bf5>
+			streams:   2, words:   744
+		macro.fflopx:v <0x3c424475>
+			streams:   2, words:   514
+		macro.fflopx:v <0x5ccaca28>
+			streams:   2, words:   406
+		rtl.aladder:v <0x0a976c38>
+			streams:   3, words:  2188
+		rtl.aladder:v <0x6d77bc41>
+			streams:   3, words:  1943
+		rtl.alram112x:v <0x4ae8f107>
+			streams:   6, words:  2823
+		rtl.alram113x:v <0x60d038dc>
+			streams:   2, words:   548
+		rtl.aluwrap:v <0x0aa2a8d4>
+			streams:  28, words: 13459
+		rtl.auc_decoder:v <0x1de6fa31>
+			streams:  13, words:  8128
+		rtl.auc_mmul:v <0x1032d7d5>
+			streams:  23, words:  7113
+		rtl.auc_mmulcomp:v <0x32fc1e3d>
+			streams:  24, words: 33391
+		rtl.auc_mmulfinal:v <0x0b4c9eb4>
+			streams:  17, words: 12840
+		rtl.auc_mmulinit:v <0x4c5b9a04>
+			streams:  29, words: 17231
+		rtl.auc_naf:v <0x288d6421>
+			streams:  40, words: 39392
+		rtl.auc_rand:v <0x40b9244c>
+			streams:  10, words:  3787
+		rtl.auc_rand_wrap:v <0x6dba61a6>
+			streams:   1, words:   137
+		rtl.auc_wmul:v <0x02353e2f>
+			streams:  19, words:  5925
+		rtl.auc_wmul_add:v <0x6d729cfa>
+			streams: 103, words: 74914
+		rtl.auc_wmul_conv:v <0x55233807>
+			streams:  16, words: 10467
+		rtl.auc_wmul_dbl:v <0x75e4921e>
+			streams:  70, words: 54201
+		rtl.auc_wmul_decoder:v <0x051caaae>
+			streams:   7, words:  3378
+		rtl.auc_wmul_main:v <0x41117eae>
+			streams:  33, words: 17846
+		rtl.auc_wmul_pre:v <0x6b14181f>
+			streams:  20, words: 19578
+		rtl.auc_wrap:v <0x7a8cd589>
+			streams:  25, words: 13267
+		rtl.cswap:v <0x11489a9b>
+			streams:   6, words:  3447
+		rtl.ffxkclk:v <0x0fe1d7c6>
+			streams:   5, words:   815
+		rtl.ffxkclk:v <0x1d302285>
+			streams:   5, words:   819
+		rtl.ffxkclk:v <0x2a7e6d44>
+			streams:   5, words:   821
+		rtl.ffxkclkx:v <0x1b653220>
+			streams:   0, words:     0
+		rtl.ffxkclkx:v <0x28ef9ebb>
+			streams:   0, words:     0
+		rtl.ffxkclkx:v <0x42d144f9>
+			streams:   0, words:     0
+		rtl.ffxkclkx:v <0x49ca6aee>
+			streams:   0, words:     0
+		rtl.ffxkclkx:v <0x6aa53721>
+			streams:   0, words:     0
+		rtl.mainctrl:v <0x6be0b893>
+			streams: 105, words: 84987
+		rtl.modfa:v <0x1544bc00>
+			streams:  19, words:  9169
+		rtl.montinvp1:v <0x0f00b442>
+			streams:  25, words: 20368
+		rtl.montinvp2:v <0x589cb8dc>
+			streams:  13, words:  5364
+		rtl.montpro:v <0x1ab7af71>
+			streams:  10, words:  4854
+		rtl.montprowrap:v <0x0f690ba7>
+			streams:  10, words:  2996
+		rtl.mux_xx1:v <0x070e7dd3>
+			streams:   1, words:   408
+		rtl.rsinv:v <0x7f344273>
+			streams:  42, words: 15075
+		worklib.tb_ex_sim:vt <0x2950c505>
+			streams:   9, words: 21769
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:               2653      35
+		Registers:             2846     243
+		Scalar wires:          2893       -
+		Expanded wires:        2571      13
+		Vectored wires:        2816       -
+		Always blocks:         2702     107
+		Initial blocks:        2582      10
+		Cont. assignments:     5240     363
+		Pseudo assignments:      60      46
+		Simulation timescale:   1ps
+	Writing initial simulation snapshot: worklib.tb_ex_sim:vt
+Loading snapshot worklib.tb_ex_sim:vt .................... Done
+ncsim> source /opt/tools/bin/ca/82/tools/inca/files/ncsimrc
+ncsim> run
+ECDHE GEN X255 begin at              1200000
+Input
+k = 0900000000000000000000000000000000000000000000000000000000000000
+ECDHE GEN X255 test is done at         659738250000
+ Output: 422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079
+ Expected : 422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079
+ECDHE GEN with X25519 is working
+ECDHE COMP X255 begin at         659740450000
+Input
+u = e5210f12786811d3f4b7959d0538ae2c31dbe7106fc03c3efc4cd549c715a493
+k = 4b66e9d4d1b4673c5ad22691957d6af5c11b6421e0ea01d42ca4169e7918ba0d
+ECDHE COMP X255 test is done at        1319481050000
+ Output: 95cbde9476e8907d7aade45cb4b873f88b595a68799fa152e6f8f7647aac7957
+ Expected : 95cbde9476e8907d7aade45cb4b873f88b595a68799fa152e6f8f7647aac7957
+ECDHE COMP with X25519 is working
+ECDHE GEN P256 begin at        1319483350000
+Input
+k = ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632541
+ECDHE GEN P256 test is done at        2448236950000
+ Output: 76a94d138a6b41858b821c629836315fcd28392eff6ca038a5eb4787e1277c6e
+ Expected : 76a94d138a6b41858b821c629836315fcd28392eff6ca038a5eb4787e1277c6e
+ECDHE GEN P256 is working
+ECDSA P256 begin at        2448239250000
+Input
+hash = a41a41a12a799548211c410c65d8133afde34d28bdd542e4b680cf2899c8a8c4
+private key = c477f9f65c22cce20657faa5b2d1d8122336f851a508a1ed04e479c34985bf96
+k = 7a1a7e52797fc8caaa435d2a4dace39158504bf204fbe19f14dbb427faee50ae
+ECDSA P256 test is done at        3665875950000
+ Output: 2b42f576d07f4165ff65d1f3b1500f81e44c316f1f0b3ef57325b69aca46104f
+ Expected : 2b42f576d07f4165ff65d1f3b1500f81e44c316f1f0b3ef57325b69aca46104f
+ECDSA P256 R is working
+ Output: dc42c2122d6392cd3e3a993a89502a8198c1886fe69d262c4b329bdb6b63faf1
+ Expected : dc42c2122d6392cd3e3a993a89502a8198c1886fe69d262c4b329bdb6b63faf1
+ECDSA P256 S is working
+Simulation complete via $finish(1) at time 3665927050 NS + 0
+./tb_ex_sim.vt:290 $finish;
+ncsim> exit
+TOOL:	ncverilog	08.20-s015: Exiting on May 24, 2019 at 16:52:24 ICT  (total: 00:06:06)

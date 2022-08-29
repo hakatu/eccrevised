@@ -1,0 +1,403 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : define.v
+// Description  : .
+//
+// Author       : vuht@ES-HTVU
+// Created On   : Mon Jul 21 09:32:23 2014
+// History (Date, Changed By)
+//
+////////////////////////////////////////////////////////////////////////////////
+// Project define
+`define YYMMDD_VER  32'h17050921
+`define PRODUCT     32'h60290022
+//For Ceina Version
+
+`define JTAG_ID              32'd0
+`define METADATA_VERSION     32'd2
+`define YEAR                 32'd2017
+`define WEEK                 32'd19
+`define UNIQUE_BUILD_ID      32'd01
+`define ISO8601_TIMESTAMP    {"2017-05-09T17:01:31+0700",{8{8'h0}}}
+`define CHIP_TYPE            {"FPGA",{12{8'h0}}}
+`define CHIP_FAMILY          {"CEM",{13{8'h0}}} //CEM - DIM
+`define CHIP_ARCH            {"MRO",{13{8'h0}}} //MRO - PDH
+`define AUTHOR               {"ArriveTech",{6{8'h0}}}
+`define BUILD_NAME_NUMBER    640'd0
+`define SCM                  640'd0
+//End Ceina Version
+
+`define INT_ID      16'h4503
+`define XILINX
+`define ALTERA_SYN_RAM_NOT_RD_X_OFF
+`define XRAMDISTMAXSIZE 2048
+`define XRAMDISTMAXDEPTH 127
+`define USE_XILINX_DEV
+
+`define INFER_RAM
+
+`include "af6cci0011_pm_glb_define.vh"
+//------------------------------------------------------------------------------
+// define for FPGA's name is ProductID_ProductName_ProductFunction_revision_releasedate
+
+// ProductFunction:
+// - Diag
+// - 1OC48
+// - ...
+
+// revision is the last two digits of YYMMDD_VER
+// releasedate is the date when generate bitstream
+
+//`define ProductID AF6CNC0022
+//`define ProductName OCNMRO
+//`define ProductFunction 20G
+
+//------------------------------------------------------------------------------
+// define for CPU
+
+`define TOP_OFF_CPU_SEL
+//`define TOP_OFF_CPU_SYNC
+
+
+//------------------------------------------------------------------------------
+// define for IP
+//`define   TOP_OFF_PCIE
+`define   TOP_OFF_ILA_MIG2x64
+`define   TOP_OFF_ILA_MIG2x32
+`define   SERDES_ILA_OFF
+//`define   FEC_40G_OFF
+`define   TOP_OFF_DDR_SRST
+`define   TOP_OFF_SPSER
+//`define   TOP_OFF_SFP
+//`define   TOP_OFF_40G
+//`define   TOP_OFF_OH
+//`define   TOP_OFF_MATE
+`define   TOP_OFF_KBYTE 
+//`define   TOP_OFF_DCC
+//`define   TOP_OFF_QDR21
+`define   TOP_OFF_DDR44
+//`define   TOP_OFF_DDR43
+//`define   TOP_OFF_DDR42
+//`define   TOP_OFF_DDR41
+//`define   TOP_OFF_INT_DIAG
+//`define   TOP_OFF_FLCTR_DIAG
+//`define   TOP_OFF_UART_DIAG
+//`define   TOP_OFF_REFOUT
+//`define   TOP_OFF_MONCLK_HIGH
+//`define   TOP_OFF_MONCLK_MULTI
+//`define   TOP_OFF_MONCLK_SLOW
+`define   TOP_OFF_SGMII_DIAG
+`define   TOP_OFF_SFP_DIAG
+`define TOP_STM64_DIAG_OFF
+`define TOP_OFF_XFI_DIAG
+`define TOP_OFF_OCNX_DIAG
+`define TOP_OFF_TSI_DIAG
+`define   TOP_OFF_DDR_TEST
+
+`define     TOP_OFF_QDR_ECC
+
+`define RTL_OFF_SEU
+//`define RTL_OFF_SYSMON
+//------------------------------------------------------------------------------
+// define for Diagnostic code
+`define  DDR_DIAG_PRBS
+//`define HW_MEM_DIAG //turn off DDR diag
+//------------------------------------------------------------------------------
+// define for CORE
+`define  RTL_CLA_GENRAM
+
+
+//`define  RTL_ON_PRBSCHECK
+`define  RTL_PDA_RAM_XILINX
+
+//`define RTL_OFF_PWDEBUG
+
+//`define RTL_OFF_CORE
+`define RTL_RAMCFG_PARITY
+// CORE define
+//`define   RTL_OFF_OC48_SLICE7TO8
+//`define   RTL_OFF_OC48_SLICE3TO8
+//`define   RTL_OFF_OC48_SLICE5TO8
+`define RTL_OFF_DEBUG
+`define RTL_OFF_DEBUGTOOL
+
+//`define RTL_OFF_DCCK
+`define RTL_OFF_PTP
+//`define RTL_OFF_ETH_PASS
+//`define RTL_OFF_GLBPMC
+//`define RTL_OFF_OCN
+//`define RTL_OFF_POH
+//`define RTL_OFF_HOTDM
+//`define RTL_OFF_PLA
+//`define RTL_ON_PLA_INFOINT
+//`define RTL_OFF_PDA
+//`define RTL_OFF_PWE
+//`define RTL_OFF_CLA
+//`define RTL_OFF_PMC
+//`define RTL_OFF_PRM
+//`define RTL_OFF_INTPMC
+//`define RTL_OFF_LOTDM
+//`define RTL_OFF_BERT
+`define RTL_OFF_AME
+//`define RTL_OFF_AME_VT_TABLE
+//`define RTL_OFF_ETH
+//`define RTL_OFF_ETH_40G
+`define RTL_OFF_PWE_CNT
+`define RTL_OFF_LOTDM_LOOPDET
+//`define RTL_OFF_CDR_TSGEN
+`define RTL_OFF_PDH_DS1E1RXFRM_CNT
+`define RTL_OFF_PDH_RXDE3_REICNT
+`define RTL_OFF_PDH_RXDE3_FBECNT
+`define RTL_OFF_PDH_RXDE3_LCVCNT
+`define RTL_OFF_PDH_RXDE3_PARCNT
+`define RTL_OFF_PDH_RXDE3_CPCNT
+
+
+////////////////////////////////////////////////////////////////////
+// OCN define
+`define RTL_OCN_SYN
+`define RTL_ON_OCNSTATUS
+//`define RTL_ON_DIAG_OCN
+`define RTL_TIMING_OCN1_OFF
+`define RTL_TIMING_OCN2_OFF
+`define RTL_TIMING_OCN3_OFF
+`define RTL_TIMING_OCN4_OFF
+//`define RTL_TIMING_EXT1_OFF
+//`define RTL_TIMING_EXT2_OFF
+`define RTL_TIMING_EXT3_OFF
+`define RTL_OCN_CNC20G
+`define RTL_OCN_ON_PGEPAR
+
+// POH define
+//`define POHMSGDDRSIM
+//`define POHBERDDRSIM
+//`define POHDEBUG
+`define RTLPOHAF6ALMRESTOFF
+//`define RTL_OFF_POHBER
+`define RTLPOHAF6CNC0022
+
+////////////////////////////////////////////////////////////////////
+//PDH
+`define RTL_DEBUG_BERT_OFF
+
+//`define RTL_OFF_BERT
+//`define RTL_OFF_PDH_LOOPDET
+
+`define RTL_BERT5_OFF
+`define RTL_BERT6_OFF
+`define RTL_BERT4_OFF
+`define RTL_BERT7_OFF
+    
+// define for AF6Z2 Logic optimization
+`define PDH_RTL_NO_PDHOVERSDH   // no PDH over SDH support
+
+// define to use register instead of RAM
+`define RTL_PDH_LOOPDET_MEM_REG
+
+//RXMUX FIFO
+`define RTL_OFF_PDH_RXMUX_DE1FIFO
+//`define RTL_PDH_PRBSDEBUG_RXDE1
+
+//`define RTL_PDH_SPEMAP_OFF
+`define RTL_PDH_VTMAP_JTA_OFF
+`define RTL_PDH_VTMAP_FFSTK_OFF
+//`define RTL_PDH_VTMAP_BITFIFO_OFF
+`define RTL_PDH_VTDEMAP_SMOOTHER_OFF
+`define RTL_PDH_VTDEMAP_SMOOTHER_DEBUG_OFF
+//`define RTL_PDH_VTMAP_LOOPFIFO_OFF
+
+`define RTL_OFF_PDH_FDL
+//`define RTL_OFF_PDH_RXDE1MUX
+//`define RTL_OFF_PDH_LOCALLB
+//`define RTL_OFF_PDH_DS1E1RMTLB
+//`define RTL_OFF_PDH_LOCALLB_LINE
+`define RTL_OFF_PDH_LOCALLB_PAYLOAD
+//`define RTL_OFF_PDH_DS1E1RMTLB_LINE
+//`define RTL_OFF_PDH_DS1E1RMTLB_PAYLOAD
+
+//`define RTL_OFF_PDH_DS1E1RXPRM
+
+//`define RTL_DB_LC_OFF
+`define RTL_OFF_PDH_DS1E1TXSIG
+`define RTL_OFF_PDH_DS1E1RXFRM_BERTMON
+`define RTL_OFF_PDH_DS1E1TXFRM_BERTGEN
+
+//`define RTL_OFF_CEP
+
+//`define RTL_OFF_PDH_RXM13E13
+//`define RTL_OFF_PDH_TXM13E13
+
+//`define RTL_PDH_RXM23_OFF_LOOPFIFO
+//`define RTL_OFF_PDH_RXM23
+//`define RTL_OFF_PDH_RXE23
+`define RTL_OFF_PDH_DE3_BERT0
+`define RTL_OFF_PDH_DE3_BERT1
+`define RTL_OFF_PDH_DE3_BERT2
+`define RTL_OFF_PDH_DE3_BERT3
+//`define RTL_OFF_PDH_RXM12E12
+//`define RTL_OFF_PDH_TXM13E13_M12
+//`define RTL_OFF_PDH_TXM23_MODE
+//`define RTL_OFF_PDH_TXE23
+//`define RTL_OFF_PDH_TXE23_MODE
+//`define RTL_PDH_TXM23_OFF_LOOPFIFO
+//`define RTL_OFF_PDH_TXM13E13_M13FIFO
+//`define RTL_OFF_PDH_TXM23E23_DE2VLGEN
+`define RTL_OFF_PDH_TXDE3_GENVL
+
+`define RTL_OFF_PDH_VTDEMAP_statusbufarb
+`define RTL_OFF_PDH_VTMAP_statusbufarb
+
+`define RTL_OFF_PDH_RxDE1_statusbufarb
+`define RTL_OFF_PDH_TxDE1_statusbufarb
+
+`define RTL_OFF_PDH_RxDE3OH_statusbufarb
+`define RTL_OFF_PDH_RxDE2_statusbufarb
+`define RTL_OFF_PDH_TxDE2_statusbufarb
+`define RTL_PDH_TxDE2_JTA_OFF
+
+//`define RTL_OFF_PDH_RxDE1_INT
+
+`define RTL_PDH_e3g832tracerx_OFF
+`define RTL_OFF_PDH_DE3_CBIT_SSM
+
+////////////////////////////////////////////////////////////////////
+//CDR
+//`define RTL_CDR_ON_DEBUGTOOL
+//`define RTL_TIMING_ENG_OFF
+
+//`define RTL_CDR_ENG_OFF
+
+//`define RTL_CDR_DDR_INT
+//`define RTL_CDR_SYN_TIMING
+
+
+//`define RTL_TIMING_VC3_OFF
+`define RTL_TIMING_VC3STS_OFF
+//`define RTL_TIMING_DE3_OFF
+//`define RTL_TIMING_VT_OFF
+//`define RTL_OFF_EPARENG
+//`define RTL_TIMING_VC3CFG_OFF
+
+//`define RTL_TIMING_OCN1_OFF
+//`define RTL_TIMING_OCN2_OFF
+//`define RTL_TIMING_OCN3_OFF
+//`define RTL_TIMING_OCN4_OFF
+`define RTL_TIMING_OCN5_OFF
+`define RTL_TIMING_OCN6_OFF
+`define RTL_TIMING_OCN7_OFF
+`define RTL_TIMING_OCN8_OFF
+
+//`define RTL_TIMING_EXT1_OFF
+`define RTL_TIMING_EXT2_OFF
+`define RTL_TIMING_EXT3_OFF
+
+`define  RTL_CDR_JA_TX_OFF
+
+`define RTL_ACR_SLC0
+
+`define SLC0 0
+`define SLC1 1
+`define SLC2 2
+`define SLC3 3
+`define SLC4 4
+`define SLC5 5
+`define SLC6 6
+`define SLC7 7
+
+//`define RTL_DCR_RX_OFF
+//`define RTL_DCR_TX_OFF
+ 
+`define RTL_CDR_TSPKTGEN_SLC0_OFF
+//`define RTL_CDR_TSPKTGEN_SLC1_OFF
+//`define RTL_CDR_TSPKTGEN_SLC2_OFF
+//`define RTL_CDR_TSPKTGEN_SLC3_OFF
+`define CDR_SHAP_DEBUG_OFF
+
+////////////////////////////////////////////////////////////////////////////////
+// PM define
+`define CORE_PM_OFF_PW_CNT
+    
+// Global PMC define
+//`define RTL_OFF_FFCV_DE3
+//`define RTL_OFF_FFCV_PDH
+`define RTL_OFF_FFCV_POHPM
+`define AF6CNC0022_MRO20G
+`define RTL_OFF_PMC2PAGE_DEBUG
+
+////////////////////////////////////////////////////////////////////////////////
+// 100FX define
+`define RTL_100BASEFX_DIAG_OFF
+`define RTL_100BASEFX_DEBUG_OFF
+
+////////////////////////////////////////////////////////////////////////////////
+// DCC define
+`define RTL_ENC_POS_FIXTIMING
+
+// PRM define
+`define MDL_PRM_DEBUG_OFF
+
+// PDA define
+`define RTL_OFF_PDA_PRBSCHECK
+
+// Loopcode
+`define RTL_DB_LC_OFF
+
+//------------------
+`ifdef                  RTL_OFF_OC48_SLICE2TO8
+
+`define                 RTL_OFF_HO48_SLICE2
+`define                 RTL_OFF_HO48_SLICE3
+`define                 RTL_OFF_HO48_SLICE4
+`define                 RTL_OFF_HO48_SLICE5
+`define                 RTL_OFF_HO48_SLICE6
+`define                 RTL_OFF_HO48_SLICE7
+`define                 RTL_OFF_HO48_SLICE8
+
+`define                 RTL_OFF_LO48_SLICE2
+`define                 RTL_OFF_LO48_SLICE3
+`define                 RTL_OFF_LO48_SLICE4
+`define                 RTL_OFF_LO48_SLICE5
+`define                 RTL_OFF_LO48_SLICE6
+`define                 RTL_OFF_LO48_SLICE7
+`define                 RTL_OFF_LO48_SLICE8
+
+`else 
+`ifdef                  RTL_OFF_OC48_SLICE3TO8
+
+`define                 RTL_OFF_HO48_SLICE3
+`define                 RTL_OFF_HO48_SLICE4
+`define                 RTL_OFF_HO48_SLICE5
+`define                 RTL_OFF_HO48_SLICE6
+`define                 RTL_OFF_HO48_SLICE7
+`define                 RTL_OFF_HO48_SLICE8
+
+`define                 RTL_OFF_LO48_SLICE3
+`define                 RTL_OFF_LO48_SLICE4
+`define                 RTL_OFF_LO48_SLICE5
+`define                 RTL_OFF_LO48_SLICE6
+`define                 RTL_OFF_LO48_SLICE7
+`define                 RTL_OFF_LO48_SLICE8
+
+`else
+`ifdef                  RTL_OFF_OC48_SLICE5TO8
+
+`define                 RTL_OFF_HO48_SLICE5
+`define                 RTL_OFF_HO48_SLICE6
+`define                 RTL_OFF_HO48_SLICE7
+`define                 RTL_OFF_HO48_SLICE8
+
+`define                 RTL_OFF_LO48_SLICE5
+`define                 RTL_OFF_LO48_SLICE6
+`define                 RTL_OFF_LO48_SLICE7
+`define                 RTL_OFF_LO48_SLICE8
+
+`else
+
+`endif
+`endif
+
+`endif
+
+//------------------

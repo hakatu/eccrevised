@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : csa.v
+// Description  : .
+//
+// Author       : hungnt@HW-NTHUNG
+// Created On   : Thu Dec 20 14:04:13 2018
+// History (Date, Changed By)
+//
+////////////////////////////////////////////////////////////////////////////////
+
+module csa
+    (
+     a,//input
+     b,
+     c,
+     
+     d,//output //carry
+     e //sum
+     );
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+
+parameter WID = 32;
+
+////////////////////////////////////////////////////////////////////////////////
+// Output declarations
+
+input [WID-1:0] a;
+input [WID-1:0] b;
+input [WID-1:0] c;
+
+output [WID-1:0] d;
+output [WID-1:0] e;
+
+////////////////////////////////////////////////////////////////////////////////
+// Parameter declarations
+
+////////////////////////////////////////////////////////////////////////////////
+// Local logic and instantiation
+
+genvar i;
+
+generate
+for(i = 0; i<WID; i = i+1)
+    begin : FAgen
+    full_adder fai
+            (
+             .a(a[i]),
+             .b(b[i]),
+             .c_i(c[i]),
+             .sum(e[i]),
+             .c_o(d[i])
+             );
+    end
+endgenerate
+
+endmodule 

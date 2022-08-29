@@ -1,0 +1,417 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Arrive Technologies
+//
+// Filename     : mem_phy16.vt
+// Description  : Altera hardmacro for DDR2 interface.
+//                Created based on the study on Altera's model for Modelsim only
+//                Tested on: Stratix III 340k
+// Author       : ctmtu
+// Created On   : Wed Jun 10 16:22:32 2009
+// History (Date, Changed By)
+//  Sat Jun 13 15:35:23 2009, ctmtu,
+//      It simulates the DDR read valid on-board more exactly than the previous file.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+
+module mem_phy16 
+    (
+    pll_ref_clk,
+    global_reset_n,
+    soft_reset_n,
+    local_address,
+    local_read_req,
+    local_wdata,
+    local_write_req,
+    local_size,
+    local_be,
+    local_refresh_req,
+    local_burstbegin,
+    ctl_ready,
+    ctl_wdata_req,
+    ctl_rdata,
+    ctl_rdata_valid,
+    ctl_refresh_ack,
+    ctl_mem_addr_h,
+    ctl_mem_addr_l,
+    ctl_mem_ba_h,
+    ctl_mem_ba_l,
+    ctl_mem_cas_n_h,
+    ctl_mem_cas_n_l,
+    ctl_mem_cke_h,
+    ctl_mem_cke_l,
+    ctl_mem_cs_n_h,
+    ctl_mem_cs_n_l,
+    ctl_mem_odt_h,
+    ctl_mem_odt_l,
+    ctl_mem_ras_n_h,
+    ctl_mem_ras_n_l,
+    ctl_mem_we_n_h,
+    ctl_mem_we_n_l,
+    ctl_mem_be,
+    ctl_mem_dqs_burst,
+    ctl_mem_wdata,
+    ctl_mem_wdata_valid,
+    ctl_init_done,
+    ctl_doing_rd,
+    ctl_add_1t_ac_lat,
+    ctl_add_1t_odt_lat,
+    ctl_add_intermediate_regs,
+    ctl_negedge_en,
+    dqs_offset_delay_ctrl,
+    dqs_delay_ctrl_import,
+    oct_ctl_rs_value,
+    oct_ctl_rt_value,
+    local_autopch_req,
+    local_powerdn_req,
+    local_self_rfsh_req,
+    ctl_self_rfsh_ack,
+    ctl_powerdn_ack,
+    pll_reconfig_data_in,
+    pll_reconfig_enable,
+    pll_reconfig_configupdate,
+    reset_request_n,
+    phy_clk,
+    reset_phy_clk_n,
+    aux_half_rate_clk,
+    aux_full_rate_clk,
+    aux_scan_clk,
+    local_ready,
+    local_rdata,
+    local_rdata_valid,
+    local_init_done,
+    local_refresh_ack,
+    local_wdata_req,
+    ctl_address,
+    ctl_read_req,
+    ctl_wdata,
+    ctl_write_req,
+    ctl_size,
+    ctl_be,
+    ctl_refresh_req,
+    ctl_burstbegin,
+    ctl_mem_rdata,
+    ctl_mem_rdata_valid,
+    ctl_rlat,
+    ctl_usr_mode_rdy,
+    mem_addr,
+    mem_ba,
+    mem_cas_n,
+    mem_cke,
+    mem_cs_n,
+    mem_dm,
+    mem_odt,
+    mem_ras_n,
+    mem_we_n,
+    mem_reset_n,
+    resynchronisation_successful,
+    postamble_successful,
+    tracking_successful,
+    tracking_adjustment_up,
+    tracking_adjustment_down,
+    dqs_delay_ctrl_export,
+    dll_reference_clk,
+    local_self_rfsh_ack,
+    local_powerdn_ack,
+    ctl_autopch_req,
+    ctl_powerdn_req,
+    ctl_self_rfsh_req,
+    pll_reconfig_scandone,
+    pll_reconfig_data_out,
+    mem_clk,
+    mem_clk_n,
+    mem_dq,
+    mem_dqs,
+    mem_dqsn,
+               
+    //PLL share clocks (Slave)
+    phy_clk_1x,
+    ac_clk_1x,
+    mem_clk_2x,
+    write_clk_2x,
+    mem_clk_ext_2x 
+    );
+
+
+input       pll_ref_clk;
+input       global_reset_n;
+input       soft_reset_n;
+input [22:0] local_address;
+input        local_read_req;
+input [63:0] local_wdata;
+input        local_write_req;
+input [0:0]  local_size;
+input [7:0]  local_be;
+input        local_refresh_req;
+input        local_burstbegin;
+input        ctl_ready;
+input        ctl_wdata_req;
+input [63:0] ctl_rdata;
+input        ctl_rdata_valid;
+input        ctl_refresh_ack;
+input [12:0] ctl_mem_addr_h;
+input [12:0] ctl_mem_addr_l;
+input [1:0]  ctl_mem_ba_h;
+input [1:0]  ctl_mem_ba_l;
+input        ctl_mem_cas_n_h;
+input        ctl_mem_cas_n_l;
+input [0:0]  ctl_mem_cke_h;
+input [0:0]  ctl_mem_cke_l;
+input [0:0]  ctl_mem_cs_n_h;
+input [0:0]  ctl_mem_cs_n_l;
+input [0:0]  ctl_mem_odt_h;
+input [0:0]  ctl_mem_odt_l;
+input        ctl_mem_ras_n_h;
+input        ctl_mem_ras_n_l;
+input        ctl_mem_we_n_h;
+input        ctl_mem_we_n_l;
+input [7:0]  ctl_mem_be;
+input        ctl_mem_dqs_burst;
+input [63:0] ctl_mem_wdata;
+input        ctl_mem_wdata_valid;
+input        ctl_init_done;
+input        ctl_doing_rd;
+input        ctl_add_1t_ac_lat;
+input        ctl_add_1t_odt_lat;
+input        ctl_add_intermediate_regs;
+input        ctl_negedge_en;
+input [5:0]  dqs_offset_delay_ctrl;
+input [5:0]  dqs_delay_ctrl_import;
+input [13:0] oct_ctl_rs_value;
+input [13:0] oct_ctl_rt_value;
+input        local_autopch_req;
+input        local_powerdn_req;
+input        local_self_rfsh_req;
+input        ctl_self_rfsh_ack;
+input        ctl_powerdn_ack;
+input        pll_reconfig_data_in;
+input        pll_reconfig_enable;
+input        pll_reconfig_configupdate;
+output       reset_request_n;
+output       phy_clk;
+output       reset_phy_clk_n;
+output       aux_half_rate_clk;
+output       aux_full_rate_clk;
+output       aux_scan_clk;
+output       local_ready;
+output [63:0] local_rdata;
+output        local_rdata_valid;
+output        local_init_done;
+output        local_refresh_ack;
+output        local_wdata_req;
+output [22:0] ctl_address;
+output        ctl_read_req;
+output [63:0] ctl_wdata;
+output        ctl_write_req;
+output [0:0]  ctl_size;
+output [7:0]  ctl_be;
+output        ctl_refresh_req;
+output        ctl_burstbegin;
+output [63:0] ctl_mem_rdata;
+output        ctl_mem_rdata_valid;
+output [4:0]  ctl_rlat;
+output        ctl_usr_mode_rdy;
+output [12:0] mem_addr;
+output [1:0]  mem_ba;
+output        mem_cas_n;
+output [0:0]  mem_cke;
+output [0:0]  mem_cs_n;
+output [1:0]  mem_dm;
+output [0:0]  mem_odt;
+output        mem_ras_n;
+output        mem_we_n;
+output        mem_reset_n;
+output        resynchronisation_successful;
+output        postamble_successful;
+output        tracking_successful;
+output        tracking_adjustment_up;
+output        tracking_adjustment_down;
+output [5:0]  dqs_delay_ctrl_export;
+output        dll_reference_clk;
+output        local_self_rfsh_ack;
+output        local_powerdn_ack;
+output        ctl_autopch_req;
+output        ctl_powerdn_req;
+output        ctl_self_rfsh_req;
+output        pll_reconfig_scandone;
+output        pll_reconfig_data_out;
+inout [0:0]   mem_clk;
+inout [0:0]   mem_clk_n;
+inout [15:0]  mem_dq;
+inout [1:0]   mem_dqs;
+inout [1:0]   mem_dqsn;
+
+input          phy_clk_1x;
+input          ac_clk_1x;
+input          mem_clk_2x;
+input          write_clk_2x;
+input          mem_clk_ext_2x;
+    
+// generate clock 272.16, cycle = 1.837ns
+parameter      CLK2X_HCYC = 1.837;
+
+wire           rst_;
+assign         rst_ = global_reset_n;
+
+reg            clk272;
+initial
+    begin
+    clk272 = 1'b0;
+    forever #CLK2X_HCYC clk272 = ~clk272;
+    end
+
+reg            ac_clk;
+always @ (posedge clk272 or negedge rst_)
+    if (~rst_) ac_clk <= 1'b0;
+    else        
+        begin
+        ac_clk = #(CLK2X_HCYC*2/3) ~ac_clk;
+        end
+
+wire            write_clk;
+assign  #(CLK2X_HCYC/2)     write_clk   = clk272;
+
+initial
+    begin
+    force phy_clk_1x = ac_clk;
+    force mem_clk_2x = clk272;
+    force write_clk_2x = write_clk;
+    end
+
+wire [0:0]      mem_clk;
+assign          mem_clk = mem_clk_2x;
+
+wire [0:0]      mem_clk_n;
+assign          mem_clk_n   = ~mem_clk;
+
+reg [ 12: 0]    mem_addr;
+reg [  1: 0]    mem_ba;
+reg             mem_cas_n;
+reg [  0: 0]    mem_cke;
+reg [  0: 0]    mem_cs_n;
+reg [  0: 0]    mem_odt;
+reg             mem_ras_n;
+reg             mem_we_n;
+
+always @ (posedge write_clk_2x)
+    begin
+    if (phy_clk_1x)
+        begin
+        mem_addr    = ctl_mem_addr_h;
+        mem_ba      = ctl_mem_ba_h;
+        mem_cas_n   = ctl_mem_cas_n_h;
+        mem_cke     = ctl_mem_cke_h;
+        mem_cs_n    = ctl_mem_cs_n_h;
+        mem_odt     = ctl_mem_odt_h;
+        mem_ras_n   = ctl_mem_ras_n_h;
+        mem_we_n    = ctl_mem_we_n_h;
+        end
+    else
+        begin
+        mem_addr    = ctl_mem_addr_l;
+        mem_ba      = ctl_mem_ba_l;
+        mem_cas_n   = ctl_mem_cas_n_l;
+        mem_cke     = ctl_mem_cke_l;
+        mem_cs_n    = ctl_mem_cs_n_l;
+        mem_odt     = ctl_mem_odt_l;
+        mem_ras_n   = ctl_mem_ras_n_l;
+        mem_we_n    = ctl_mem_we_n_l;
+        end
+    end
+
+// write
+reg [ 15: 0]    mem_dq_o;
+wire [  1: 0]    mem_dqs_o;
+wire [  1: 0]    mem_dqsn_o;
+always @ (posedge write_clk_2x or negedge write_clk_2x)
+    begin
+    case ({write_clk_2x,phy_clk_1x})
+        2'b01: mem_dq_o = ctl_mem_wdata[63:48];
+        2'b11: mem_dq_o = ctl_mem_wdata[47:32];
+        2'b00: mem_dq_o = ctl_mem_wdata[31:16];
+        2'b10: mem_dq_o = ctl_mem_wdata[15:0];
+    endcase     
+    end
+
+assign    mem_dqs_o     = {2{mem_clk_2x}};
+assign    mem_dqsn_o    = {2{~mem_clk_2x}};
+wire [15:0]         mem_dq;
+wire [1:0]          mem_dqs,mem_dqsn;
+
+wire                ctl_mem_wdata_valid1;
+fflopx #(1)         mem_wvalidpl (mem_clk_2x,rst_,ctl_mem_wdata_valid,ctl_mem_wdata_valid1);
+
+assign              mem_dq  = (ctl_mem_wdata_valid|ctl_mem_wdata_valid1) ? mem_dq_o : {16{1'bz}};
+assign              mem_dqs = (ctl_mem_wdata_valid|ctl_mem_wdata_valid1) ? mem_dqs_o : {2{1'bz}};
+assign              mem_dqsn    = (ctl_mem_wdata_valid|ctl_mem_wdata_valid1) ? mem_dqsn_o : {2{1'bz}};
+
+wire [  1: 0]   mem_dm = 2'd0;
+
+
+// read
+wire [31:0]     vl_shift;
+
+fflopx #(32)    vl_shiftpl (phy_clk_1x,rst_,{vl_shift[30:0],ctl_doing_rd},vl_shift);
+reg [63:0]      mem_dq_i;
+
+always @ (posedge write_clk_2x or negedge write_clk_2x)
+    begin
+    case ({phy_clk_1x,mem_clk_2x})
+        2'b01: mem_dq_i[63:48] = mem_dq;
+        2'b10: mem_dq_i[47:32] = mem_dq;
+        2'b11: mem_dq_i[31:16] = mem_dq;
+        2'b00: mem_dq_i[15:0] = mem_dq;
+    endcase
+    end
+
+wire        rdata_vld;
+assign      rdata_vld =  vl_shift[4];
+
+wire [63:0] rdata_in;
+fflopx #(64)     mem_rdatapl (write_clk_2x,rst_,mem_dq_i,rdata_in);
+
+wire [15:0] rdata_vld_shift;
+fflopx #(16) rdata_vldpl (phy_clk_1x,rst_,{rdata_vld_shift[14:0],rdata_vld},rdata_vld_shift);
+
+reg [63:0]  rdata_in_shift [16:0];
+integer     i;
+
+always @ (posedge phy_clk_1x)
+    begin
+    rdata_in_shift[0] <= rdata_in;  
+    for (i=1;i<17;i=i+1) rdata_in_shift[i] <= rdata_in_shift[i-1];
+    end
+
+wire [63:0]       rdata_in1,rdata_in2,rdata_in3,rdata_in4,rdata_in5;
+fflopx #(64*5)    rdata_inpl (phy_clk_1x,rst_,{rdata_in,rdata_in1,rdata_in2,rdata_in3,rdata_in4},
+                                              {rdata_in1,rdata_in2,rdata_in3,rdata_in4,rdata_in5});
+
+assign            ctl_mem_rdata_valid = rdata_vld_shift[15];
+assign            ctl_mem_rdata       = rdata_in_shift[16];
+
+//--------------------------------------------------
+assign      ctl_usr_mode_rdy = ctl_init_done;
+reg         ctl_write_req,ctl_read_req;
+
+always @ (posedge phy_clk_1x or negedge rst_)
+    if (~rst_)
+        begin
+        ctl_write_req = 1'b1;
+        ctl_read_req  = 1'b1;
+        end
+    else
+        begin
+        if (ctl_init_done)
+            begin
+            ctl_write_req <= 1'b0;
+            ctl_read_req  <= ctl_write_req;
+            end
+        end
+
+
+assign      reset_phy_clk_n = rst_;
+assign      ctl_address = 0;
+
+endmodule

@@ -1,0 +1,24 @@
+tb_rsinv.v
+
+-y ../ippackage/ipddr2phy/core
+-y ../ippackage/ipspi3linkif/core
+-y ../ippackage/ippcrc/core
+-y ../ippackage/ippcsge/core
+-y ../ippackage/ipsmacge/core
+-y ../lib/atvn/lib_v/macro
+-y ../lib/atvn/lib_v/ram
+
+-y ../rtl/corexxx/
+//-y	../../01_RTL/gcc_over_gfpf/
+-y ../rtl/libp/
+-y ../testbench/source/
+-y ../testbench/testcase/
+
++liborder
++libext+.vt+.v+.V+
++incdir+.+
++nowarnTFNPC
++nowarnTFMPC
++define+approximate
++notimingchecks		// required for rams in rtl sims - remove for gate sims!
++nclibdirname+inca_libs		// moving INCA lib to a specific folder, do not on H:\

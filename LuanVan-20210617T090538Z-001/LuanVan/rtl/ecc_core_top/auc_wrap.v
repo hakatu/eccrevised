@@ -90,7 +90,7 @@ localparam          RAND    = 3'b000;
 localparam          INVS    = 3'b001;
 localparam          R       = 3'b010;
 localparam          S       = 3'b011;
-localparam          WMUL    = 3'b100;
+//localparam          WMUL    = 3'b100;
 localparam          MMUL    = 3'b101;
 
 // status
@@ -138,7 +138,7 @@ wire                en_rand;
 wire                en_invs;
 wire                en_r;
 wire                en_s;
-wire                en_wmul;
+//wire                en_wmul;
 wire                en_mmul;
 
 wire                dec_wen;
@@ -165,7 +165,7 @@ auc_decoder
      .en_invs(en_invs),
      .en_r(en_r),
      .en_s(en_s),
-     .en_wmul(en_wmul),                 // weierstrass multiplication
+     //.en_wmul(en_wmul),                 // weierstrass multiplication
      .en_mmul(en_mmul),                 // montgomery multiplication
      // RAM control
      .dec_wen(dec_wen),
@@ -206,7 +206,7 @@ auc_rand_wrap
 
 //================================================
 // NAF
-
+/* //obs wnaf wmmul
 wire                naf_shft_rdy;
 wire [SH_WID-1:0]   naf_shft_vlue;
 wire                naf_shft_last;
@@ -237,10 +237,10 @@ auc_naf
      .naf_shft_vlue(naf_shft_vlue),
      .naf_shft_last(naf_shft_last)
      );
-
+*/
 //================================================
 // Weiertrass multiplication
-
+/*
 wire                wmul_vld;
 wire                wmul_shft_en;
 wire [3:0]          wmul_opcode;
@@ -288,7 +288,7 @@ auc_wmul
      .wmul_wen(wmul_wen),
      .wmul_wdat(wmul_wdat)
      );
-
+*/
 //================================================
 // Montgomery multiplication
 
@@ -380,7 +380,7 @@ fflopx #(1) irsi_start (clk, rst, rsi_start, rsi_start_ff);
 // RAM 3clk
 
 wire [WIDTH-1:0]    ram_rdat;
-assign              wmul_rdat   = ram_rdat;
+//assign              wmul_rdat   = ram_rdat;
 
 reg [ADDR-1:0]      ram_radd;
 reg [WIDTH-1:0]     ram_wdat;
@@ -412,7 +412,7 @@ always @(*)
         INVS:   ram_radd    <= rsi_radd;
         R:      ram_radd    <= rsi_radd;
         S:      ram_radd    <= rsi_radd;
-        WMUL:   ram_radd    <= wmul_radd;
+        //WMUL:   ram_radd    <= wmul_radd;
         MMUL:   ram_radd    <= mmul_radd;
         default:ram_radd    <= rsi_radd;
     endcase
@@ -431,7 +431,7 @@ always @(*)
         INVS:   ram_wen <= rsi_wen;     // No data in 
         R:      ram_wen <= rsi_wen;     // No data in
         S:      ram_wen <= mux_ctrl? dec_wen: rsi_wen;
-        WMUL:   ram_wen <= mux_ctrl? dec_wen: wmul_wen;
+        //WMUL:   ram_wen <= mux_ctrl? dec_wen: wmul_wen;
         MMUL:   ram_wen <= mux_ctrl? dec_wen: mmul_wen;
         default:ram_wen <= rsi_wen;
     endcase
@@ -444,7 +444,7 @@ always @(*)
         INVS:   ram_wadd    <= rsi_wadd;
         R:      ram_wadd    <= rsi_wadd;
         S:      ram_wadd    <= mux_ctrl? dec_wadd: rsi_wadd;
-        WMUL:   ram_wadd    <= mux_ctrl? dec_wadd: wmul_wadd;
+        //WMUL:   ram_wadd    <= mux_ctrl? dec_wadd: wmul_wadd;
         MMUL:   ram_wadd    <= mux_ctrl? dec_wadd: mmul_wadd;
         default:ram_wadd    <= rsi_wadd;
     endcase
@@ -457,7 +457,7 @@ always @(*)
         INVS:   ram_wdat    <= rsi_wdat;
         R:      ram_wdat    <= rsi_wdat;
         S:      ram_wdat    <= mux_ctrl? dec_wdat: rsi_wdat;
-        WMUL:   ram_wdat    <= mux_ctrl? dec_wdat: wmul_wdat;
+        //WMUL:   ram_wdat    <= mux_ctrl? dec_wdat: wmul_wdat;
         MMUL:   ram_wdat    <= mux_ctrl? dec_wdat: mmul_wdat;
         default:ram_wdat    <= rsi_wdat;
     endcase
@@ -468,22 +468,22 @@ always @(*)
 
 assign              au_dat1     = ram_rdat;
 
-wire [WIDTH-1:0]    au_dat2_mux;
-assign              au_dat2_mux = (wmul_const == INIT)? ram_rdat: wmul_const;
+//wire [WIDTH-1:0]    au_dat2_mux;
+//assign              au_dat2_mux = (wmul_const == INIT)? ram_rdat: wmul_const;
 
 ffxkclkx #(1,WIDTH) iau_dat2 (clk, rst, au_dat2_mux, au_dat2);
                    
-assign              au_carry    = (auc_mode[2:0] == WMUL)? wmul_carry:
+assign              au_carry    = //(auc_mode[2:0] == WMUL)? wmul_carry:
                     (auc_mode[2:0] == MMUL)? mmul_carry: 1'b0;
 
-assign              au_opcode   = (auc_mode[2:0] == WMUL)? wmul_opcode: 
+assign              au_opcode   = //(auc_mode[2:0] == WMUL)? wmul_opcode: 
                     (auc_mode[2:0] == MMUL)? mmul_opcode: rsi_opcode;
 
 wire                mmul_start_ff;
 fflopx #(1) immul_start (clk, rst, mmul_start, mmul_start_ff);
 
 wire                au_start_mux;
-assign              au_start_mux = (auc_mode[2:0] == WMUL)? wmul_start: 
+assign              au_start_mux = //(auc_mode[2:0] == WMUL)? wmul_start: 
                     (auc_mode[2:0] == MMUL)? mmul_start_ff: rsi_start_ff;
 
 ffxkclkx #(3,1) iau_start (clk, rst, au_start_mux, au_start);
@@ -502,7 +502,7 @@ always @(*)
         INVS:   auc_vld_mux <= rsi_vld;
         R:      auc_vld_mux <= rsi_vld;
         S:      auc_vld_mux <= rsi_vld;
-        WMUL:   auc_vld_mux <= wmul_vld;
+        //WMUL:   auc_vld_mux <= wmul_vld;
         MMUL:   auc_vld_mux <= mmul_vld;
         default:auc_vld_mux <= rsi_vld;
     endcase
@@ -536,7 +536,7 @@ always @(posedge clk)
              INVS:      auc_status  <= DONE;
              R:         auc_status  <= (ram_wdat == INIT)? ERROR: DONE;
              S:         auc_status  <= (ram_wdat == INIT)? ERROR: DONE;
-             WMUL:      auc_status  <= DONE;
+             //WMUL:      auc_status  <= DONE;
              MMUL:      auc_status  <= DONE;
              default:   auc_status  <= IDLE;
         endcase

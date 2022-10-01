@@ -38,17 +38,19 @@ localparam      INIT    = 0;
 
 // Main FSM parameter
 localparam      IDLE    = 2'b00;
-localparam      ECDSA_SIGN  = 2'b01;
+//localparam      ECDSA_SIGN  = 2'b01;
 localparam      ECDHE_GEN   = 2'b10;
 localparam      ECDHE_COMP  = 2'b11;
 
 // ECDSA_SIGN parameter
+/*
 localparam      DSA_RX  = 3'b000;
 localparam      DSARAN  = 3'b001;
 localparam      DSAINV  = 3'b010;
 localparam      DSAMUL  = 3'b011;
 localparam      SIGN_R  = 3'b100;
 localparam      SIGN_S  = 3'b101;
+*/
 
 // ECDHE_GEN parameter
 localparam      GENIDL  = 2'b00;
@@ -61,8 +63,8 @@ localparam      COMMUL  = 1'b1;
 
 // P-256
 
-localparam      XP256   = 256'h6B17D1F2_E12C4247_F8BCE6E5_63A440F2_77037D81_2DEB33A0_F4A13945_D898C296;
-localparam      YP256   = 256'h4FE342E2_FE1A7F9B_8EE7EB4A_7C0F9E16_2BCE3357_6B315ECE_CBB64068_37BF51F5;
+//localparam      XP256   = 256'h6B17D1F2_E12C4247_F8BCE6E5_63A440F2_77037D81_2DEB33A0_F4A13945_D898C296;
+//localparam      YP256   = 256'h4FE342E2_FE1A7F9B_8EE7EB4A_7C0F9E16_2BCE3357_6B315ECE_CBB64068_37BF51F5;
 
 // X25519
 
@@ -116,11 +118,11 @@ reg [3:0]           auc_mode;
 ////////////////////////////////////////////////////////////////////////////////
 // Local logic and instantiation
 
-reg [2:0]           dsa_state;
+//reg [2:0]           dsa_state;
 reg [1:0]           gen_state;
 reg                 com_state;
 
-reg                 dsa_end;    // ECDSA_SIGN finish
+//reg                 dsa_end;    // ECDSA_SIGN finish
 reg                 gen_end;    // ECDHE_GEN finish
 reg                 com_end;    // ECDHE_COMP finish
 reg                 com_err;
@@ -138,14 +140,14 @@ always @(posedge clk)
         case(main_state)
             IDLE:
                 case ({start, mode[1:0]})
-                    3'b100: main_state  <= ECDSA_SIGN;
+                    //3'b100: main_state  <= ECDSA_SIGN;
                     3'b101: main_state  <= ECDHE_GEN;
                     3'b110: main_state  <= ECDHE_COMP;
                     3'b111: main_state  <= ECDHE_COMP;
                     default: main_state <= IDLE;
                 endcase
-            ECDSA_SIGN:
-                if (dsa_end)    main_state  <= IDLE;
+            //ECDSA_SIGN:
+            //    if (dsa_end)    main_state  <= IDLE;
             ECDHE_GEN:
                 if (gen_end)    main_state  <= IDLE;
             ECDHE_COMP:
@@ -257,9 +259,9 @@ always @(posedge clk)
 //================================================
 // ECDSA_SIGN FSM
 
-reg [2:0]       dsa_state_1;
-reg [2:0]       dsa_state_2;
-reg [2:0]       dsa_state_3;
+//reg [2:0]       dsa_state_1;
+//reg [2:0]       dsa_state_2;
+//reg [2:0]       dsa_state_3;
 
 wire            auc_done;
 assign          auc_done = (auc_status == ST_DONE);
@@ -267,6 +269,7 @@ assign          auc_done = (auc_status == ST_DONE);
 wire            auc_err;
 assign          auc_err = (auc_status == ST_ERR);
 
+/*
 always @(posedge clk)
     begin
     if (rst)
@@ -396,7 +399,7 @@ always @(posedge clk)
         endcase
         end
     end
-
+*/
 //================================================
 // ECDHE_GEN FSM
 
@@ -454,13 +457,13 @@ always @(posedge clk)
                         gen_state_1 <= gen_state_2;
                         gen_state   <= gen_state_1;
                         end
-                    else                                // Weierstrass
+                    /*else                                // Weierstrass
                         begin
                         gen_state_3 <= auc_done? GENMUL: gen_state_3;
                         gen_state_2 <= gen_state_3;
                         gen_state_1 <= gen_state_2;
                         gen_state   <= gen_state_1; 
-                        end
+                        end*/
                     end
                 end
             GENMUL:
@@ -586,7 +589,7 @@ always @(posedge clk)
         auc_mode    <= INIT;
         end
     //============================================
-    else if (main_state == ECDSA_SIGN)
+    /*else if (main_state == ECDSA_SIGN)
         begin
         // input_mem[0]: hashed message
         // input_mem[1]: private key
@@ -760,6 +763,7 @@ always @(posedge clk)
             default:;
         endcase
         end
+    */
     //============================================
     else if (main_state == ECDHE_GEN)
         begin
@@ -814,6 +818,7 @@ always @(posedge clk)
                         auc_mode    <= auc_mode;
                         end
                     end
+                /*
                 else if (gen_state_1 == GENMUL)         // Weierstrass                  
                     begin
                     auc_dat     <= YP256;
@@ -838,6 +843,7 @@ always @(posedge clk)
                     auc_start   <= 1'b1;
                     auc_mode    <= {mode[2], AUC_WMUL};
                     end
+                */
                 else
                     begin
                     auc_dat     <= auc_dat;
@@ -912,6 +918,7 @@ always @(posedge clk)
                         auc_mode    <= {mode[2], AUC_MMUL};
                         end
                     end
+                /*
                 else                                    // Weierstrass curve
                     begin
                     if (com_state_1 == COMMUL)                          
@@ -945,6 +952,7 @@ always @(posedge clk)
                         auc_mode    <= {mode[2], AUC_WMUL};
                         end
                     end
+                */
                 end
             COMMUL:
                 begin
@@ -981,11 +989,11 @@ assign          rx_random = (main_state == ECDHE_GEN) && (gen_state == GENRAN);
 wire            rx_xcoord;
 assign          rx_xcoord = (main_state == ECDHE_GEN) && (gen_state == GENMUL);
 
-wire            rx_sign_r;
-assign          rx_sign_r = (main_state == ECDSA_SIGN) && (dsa_state == SIGN_R);
+//wire            rx_sign_r;
+//assign          rx_sign_r = (main_state == ECDSA_SIGN) && (dsa_state == SIGN_R);
 
-wire            rx_sign_s;
-assign          rx_sign_s = (main_state == ECDSA_SIGN) && (dsa_state == SIGN_S);
+//wire            rx_sign_s;
+//assign          rx_sign_s = (main_state == ECDSA_SIGN) && (dsa_state == SIGN_S);
 
 wire            rx_secret;
 assign          rx_secret = (main_state == ECDHE_COMP) && (com_state == COMMUL) && ~com_err;
@@ -997,10 +1005,11 @@ always @(posedge clk)
     if (auc_done)
         begin
         // ECDSA_SIGN
-        if (rx_sign_r)      rx_mem[0]   <= auc_rslt;
-        else if (rx_sign_s) rx_mem[1]   <= auc_rslt;
+        //if (rx_sign_r)      rx_mem[0]   <= auc_rslt;
+        //else if (rx_sign_s) rx_mem[1]   <= auc_rslt;
         // ECDHE_GEN
-        else if (rx_random) rx_mem[0]   <= auc_rslt;
+        //else
+        if (rx_random) rx_mem[0]   <= auc_rslt;
         else if (rx_xcoord) rx_mem[1]   <= auc_rslt;
         // ECDHE_COMP
         else if (rx_secret) rx_mem[0]   <= auc_rslt;
@@ -1010,19 +1019,19 @@ always @(posedge clk)
 //================================================
 // Tx data to outside
 
-reg             dsa_end_ff;
+//reg             dsa_end_ff;
 reg             gen_end_ff;
 
 always @(posedge clk)
     begin
     if (rst)
         begin
-        dsa_end_ff  <= 1'b0;
+        //dsa_end_ff  <= 1'b0;
         gen_end_ff  <= 1'b0;
         end
     else
         begin
-        dsa_end_ff  <= dsa_end;
+        //dsa_end_ff  <= dsa_end;
         gen_end_ff  <= gen_end;
         end
     end
@@ -1039,7 +1048,8 @@ always @(posedge clk)
         case(main_state)
             IDLE:
                 begin
-                if (dsa_end_ff || gen_end_ff)
+                //if (dsa_end_ff || gen_end_ff)
+                if (gen_end_ff)
                     begin
                     dout    <= rx_mem[1];
                     status  <= ST_DONE;
@@ -1050,6 +1060,7 @@ always @(posedge clk)
                     status  <= ST_IDLE;
                     end
                 end
+            /*
             ECDSA_SIGN:
                 begin
                 if (dsa_end)
@@ -1063,6 +1074,7 @@ always @(posedge clk)
                     status  <= ST_COMP;
                     end
                 end
+            */
             ECDHE_GEN:
                 begin
                 if (gen_end)

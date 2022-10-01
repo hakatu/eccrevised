@@ -24,7 +24,7 @@ module auc_decoder
      en_invs,
      en_r,
      en_s,
-     en_wmul,   // weierstrass multiplication
+     //en_wmul,   // weierstrass multiplication
      en_mmul,   // montgomery multiplication
      // RAM control
      dec_wen,
@@ -45,7 +45,7 @@ localparam          RAND    = 3'b000;
 localparam          INVS    = 3'b001;
 localparam          R       = 3'b010;
 localparam          S       = 3'b011;
-localparam          WMUL    = 3'b100;
+//localparam          WMUL    = 3'b100;
 localparam          MMUL    = 3'b101;
 
 localparam          INIT    = 0;
@@ -100,7 +100,7 @@ output              en_rand;
 output              en_invs;
 output              en_r;
 output              en_s;
-output              en_wmul;
+//output              en_wmul;
 output              en_mmul;
 
 output              dec_wen;
@@ -117,7 +117,7 @@ reg                 en_rand;
 reg                 en_invs;
 reg                 en_r;
 reg                 en_s;
-reg                 en_wmul;
+//reg                 en_wmul;
 reg                 en_mmul;
 
 wire                dec_wen;
@@ -143,7 +143,7 @@ always @(*)
     en_invs <= neg_start && (auc_mode == INVS);
     en_r    <= neg_start && (auc_mode == R);
     en_s    <= neg_start && (auc_mode == S);
-    en_wmul <= neg_start && (auc_mode == WMUL);
+    //en_wmul <= neg_start && (auc_mode == WMUL);
     en_mmul <= neg_start && (auc_mode == MMUL);
     end
 
@@ -200,7 +200,7 @@ always @(posedge clk)
                 else if (dec_rx2)   dec_wadd    <= PKEY;
                 else                dec_wadd    <= BLNK;
                 end
-            WMUL:
+            /*WMUL:
                 begin
                 if (dec_rx1)        dec_wadd    <= ZRRAM;
                 else if (dec_rx2)   dec_wadd    <= ONERAM;
@@ -209,6 +209,7 @@ always @(posedge clk)
                 else if (dec_rx5)   dec_wadd    <= K_NUM;
                 else                dec_wadd    <= BLNK;
                 end
+            */    
             MMUL:
                 begin
                 if (dec_rx1)        dec_wadd    <= ZRRAM;
@@ -238,7 +239,7 @@ always @(posedge clk)
     else if (auc_start)
         begin
         case(auc_mode[2:0])
-            WMUL:
+            /*WMUL:
                 if (dec_rx5)
                     begin
                     dec_rannum  <= auc_dat;
@@ -249,6 +250,7 @@ always @(posedge clk)
                     dec_rannum  <= dec_rannum;
                     dec_ranvld  <= 1'b0;
                     end
+            */
             MMUL:
                 if (dec_rx4)
                     begin

@@ -1,0 +1,326 @@
+`timescale 1ns/1ns
+module tb_ex_sim;
+
+//================================================
+
+parameter           WIDTH   = 256;
+parameter           ADDR    = 5;
+parameter           WINDOW  = 4;
+parameter           CBIT    = 8;
+parameter           DEPTH   = 1<<ADDR;
+
+//================================================
+
+reg               clk;
+reg               rst;
+
+// IP core
+reg [3*WIDTH-1:0] din;
+reg [2:0]         mode; 
+reg               start;
+wire [WIDTH-1:0]  dout;
+wire [1:0]        status;
+
+reg [WIDTH-1:0]   test_num;
+reg [WIDTH-1:0]   expected;
+reg [WIDTH-1:0]   expectedr;
+reg [WIDTH-1:0]   expecteds;
+
+ecc_core
+    #(
+      .WIDTH(WIDTH),
+      .ADDR(ADDR),
+      .WINDOW(WINDOW),
+      .CBIT(CBIT),
+      .DEPTH(DEPTH)
+      ) iecc_core
+    (
+     .clk(clk),
+     .rst(rst),
+     // IP core
+     .din(din),       //3*WID
+     .mode(mode),
+     .start(start),
+     .dout(dout),
+     .status(status),
+     // Simulation random number
+     .test_num(test_num)
+     );
+
+wire              vld;
+assign            vld = status[1] == 1'b1;
+wire              vld1;
+wire              vld2;
+fflopx #(1) iffvld1(clk,rst,vld,vld1);
+fflopx #(1) iffvld2(clk,rst,vld1,vld2);
+
+always begin
+clk = 0;
+#50 clk =1;
+#50;
+end
+
+initial begin
+/*
+rst = 1'b0;
+din[WIDTH-1:0] = 256'hA41A41A12A799548211C410C65D8133AFDE34D28BDD542E4B680CF2899C8A8C4;
+din[2*WIDTH-1: WIDTH] = 256'hC477F9F65C22CCE20657FAA5B2D1D8122336F851A508A1ED04E479C34985BF96;
+din[3*WIDTH-1: 2*WIDTH] = 0;
+mode = 3'b000;  // ECDHE GEN
+start = 1'b0;
+test_num = 256'h7A1A7E52797FC8CAAA435D2A4DACE39158504BF204FBE19F14DBB427FAEE50AD;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 16;
+
+#100 rst = 1'b1;
+din[WIDTH-1:0] = 256'hA41A41A12A799548211C410C65D8133AFDE34D28BDD542E4B680CF2899C8A8C4;
+din[2*WIDTH-1: WIDTH] = 256'hC477F9F65C22CCE20657FAA5B2D1D8122336F851A508A1ED04E479C34985BF96;
+din[3*WIDTH-1: 2*WIDTH] = 0;
+mode = 3'b000;  // ECDHE GEN
+start = 1'b0;
+test_num = 256'h7A1A7E52797FC8CAAA435D2A4DACE39158504BF204FBE19F14DBB427FAEE50AD;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 16;
+
+#1000 rst = 1'b0;
+din[WIDTH-1:0] = 256'hA41A41A12A799548211C410C65D8133AFDE34D28BDD542E4B680CF2899C8A8C4;
+din[2*WIDTH-1: WIDTH] = 256'hC477F9F65C22CCE20657FAA5B2D1D8122336F851A508A1ED04E479C34985BF96;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b1;  // ECDHE GEN
+start = 1'b1;
+test_num = 256'h7A1A7E52797FC8CAAA435D2A4DACE39158504BF204FBE19F14DBB427FAEE50AD;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 16;
+
+#100 rst = 1'b0;
+din[WIDTH-1:0] = 256'hA41A41A12A799548211C410C65D8133AFDE34D28BDD542E4B680CF2899C8A8C4;
+din[2*WIDTH-1: WIDTH] = 256'hC477F9F65C22CCE20657FAA5B2D1D8122336F851A508A1ED04E479C34985BF96;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b000;  // ECDHE GEN
+start = 1'b0;
+test_num = 256'h7A1A7E52797FC8CAAA435D2A4DACE39158504BF204FBE19F14DBB427FAEE50AD;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 16;
+
+
+
+//======================X25519===================================
+
+rst = 1'b0;
+din[WIDTH-1:0] = 256'he6db6867583030db3594c1a424b15f7c726624ec26b3353b10a903a6d0ab1c4c;
+din[2*WIDTH-1: WIDTH] = 256'ha546e36bf0527c9d3b16154b82465edd62144c0ac1fc5a18506a2244ba449ac4;
+din[3*WIDTH-1: 2*WIDTH] = 0;
+mode = 3'b110;  // ECDHE GEN
+start = 1'b0;
+test_num = 0;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 2;
+
+#100 rst = 1'b1;
+din[WIDTH-1:0] = 256'he6db6867583030db3594c1a424b15f7c726624ec26b3353b10a903a6d0ab1c4c;
+din[2*WIDTH-1: WIDTH] = 256'ha546e36bf0527c9d3b16154b82465edd62144c0ac1fc5a18506a2244ba449ac4;
+din[3*WIDTH-1: 2*WIDTH] = 0;
+mode = 3'b110;  // ECDHE GEN
+start = 1'b0;
+test_num = 0;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 2;
+
+#1000 rst = 1'b0;
+din[WIDTH-1:0] = 256'h0900000000000000000000000000000000000000000000000000000000000000;
+din[2*WIDTH-1: WIDTH] = 256'h0900000000000000000000000000000000000000000000000000000000000000;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b101;  // ECDHE GEN
+start = 1'b1;
+test_num = 256'h0900000000000000000000000000000000000000000000000000000000000000 - 256'd1;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 2;
+
+#100 rst = 1'b0;
+din[WIDTH-1:0] = 256'h0900000000000000000000000000000000000000000000000000000000000000;
+din[2*WIDTH-1: WIDTH] = 256'h0900000000000000000000000000000000000000000000000000000000000000;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b101;  // ECDHE GEN
+start = 1'b0;
+test_num = 256'h0900000000000000000000000000000000000000000000000000000000000000 - 256'd1;
+//test_num = 256'd28948025760307534517734791687894775804466072615242963443097661355606862201086;
+//test_num = 2;
+*/
+
+////////////////////////ECDHE X25519 GEN///////////////
+
+rst = 1'b0;
+#100 rst = 1'b1;
+#100 rst = 1'b0;
+#1000;
+din[WIDTH-1:0] = 256'h0900000000000000000000000000000000000000000000000000000000000000;
+din[2*WIDTH-1: WIDTH] = 256'd0;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b101;  // ECDHE GEN X255
+start = 1'b1;
+test_num = 256'h0900000000000000000000000000000000000000000000000000000000000000 - 256'd1;
+expected = 256'h422c8e7a6227d7bca1350b3e2bb7279f7897b87bb6854b783c60e80311ae3079;
+$display ("ECDHE GEN X255 begin at %t",$time);
+$display ("Input");
+$display ("k = %h",test_num + 256'd1);
+#100 start = 1'b0;
+wait(vld1)
+begin
+$display ("ECDHE GEN X255 test is done at %t", $time);
+$display (" Output: %h", dout);
+$display (" Expected : %h", expected);
+if(dout == expected)
+    $display("ECDHE GEN with X25519 is working");
+else
+    $display("ECDHE GEN with X25519 is not working");
+end
+#1000;
+
+////////////////////////ECDHE X25519 COMP///////////////
+
+rst = 1'b0;
+#100 rst = 1'b1;
+#100 rst = 1'b0;
+#1000;
+din[WIDTH-1:0] = 256'he5210f12786811d3f4b7959d0538ae2c31dbe7106fc03c3efc4cd549c715a493;//u
+din[2*WIDTH-1: WIDTH] = 256'h4b66e9d4d1b4673c5ad22691957d6af5c11b6421e0ea01d42ca4169e7918ba0d;//k
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b110;  // ECDHE COMP X255
+start = 1'b1;
+test_num = 256'h0;
+expected = 256'h95cbde9476e8907d7aade45cb4b873f88b595a68799fa152e6f8f7647aac7957;
+$display ("ECDHE COMP X255 begin at %t",$time);
+$display ("Input");
+$display ("u = %h",din[WIDTH-1:0]);
+$display ("k = %h",din[2*WIDTH-1: WIDTH]);
+#100 start = 1'b0;
+wait(vld)
+begin
+$display ("ECDHE COMP X255 test is done at %t", $time);
+$display (" Output: %h", dout);
+$display (" Expected : %h", expected);
+if(dout == expected)
+    $display("ECDHE COMP with X25519 is working");
+else
+    $display("ECDHE COMP with X25519 is not working");
+end
+#1000;
+
+////////////////////////ECDHE P256 GEN///////////////
+
+rst = 1'b0;
+#100 rst = 1'b1;
+#100 rst = 1'b0;
+#1000;
+din[WIDTH-1:0] = 256'h0;
+din[2*WIDTH-1: WIDTH] = 256'd0;
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b001;  // ECDHE GEN
+start = 1'b1;
+test_num = 256'd115792089210356248762697446949407573529996955224135760342422259061068512044353 - 256'd1;
+expected = 256'h76A94D138A6B41858B821C629836315FCD28392EFF6CA038A5EB4787E1277C6E;
+#100 start = 1'b0;
+$display ("ECDHE GEN P256 begin at %t",$time);
+$display ("Input");
+$display ("k = %h",test_num + 256'd1);
+wait(vld1)
+begin
+$display ("ECDHE GEN P256 test is done at %t", $time);
+$display (" Output: %h", dout);
+$display (" Expected : %h", expected);
+if(dout == expected)
+    $display("ECDHE GEN P256 is working");
+else
+    $display("ECDHE GEN P256 is not working");
+end
+#1000;
+
+////////////////////////ECDSA P256    ///////////////
+
+rst = 1'b0;
+#100 rst = 1'b1;
+#100 rst = 1'b0;
+#1000;
+din[WIDTH-1:0] = 256'hA41A41A12A799548211C410C65D8133AFDE34D28BDD542E4B680CF2899C8A8C4;//hash message
+din[2*WIDTH-1: WIDTH] = 256'hC477F9F65C22CCE20657FAA5B2D1D8122336F851A508A1ED04E479C34985BF96;//private key
+din[3*WIDTH-1:2*WIDTH] = 0;
+mode = 3'b000;  // ECDSA GEN
+start = 1'b1;
+test_num = 256'h7A1A7E52797FC8CAAA435D2A4DACE39158504BF204FBE19F14DBB427FAEE50AE - 256'd1;//K
+expectedr = 256'h2B42F576D07F4165FF65D1F3B1500F81E44C316F1F0B3EF57325B69ACA46104F;
+expecteds = 256'hDC42C2122D6392CD3E3A993A89502A8198C1886FE69D262C4B329BDB6B63FAF1;
+#100 start = 1'b0;
+/*
+wait(vld)
+begin
+$display (" Output: %h", dout);
+$display (" Expected : %h", test_num);
+if(dout == test_num)
+    $display("ECDSA with P256 K is working");
+else
+    $display("ECDSA GEN with P256 K is not working");
+end
+ */
+$display ("ECDSA P256 begin at %t",$time);
+$display ("Input");
+$display ("hash = %h",din[WIDTH-1:0]);
+$display ("private key = %h",din[2*WIDTH-1: WIDTH]);
+$display ("k = %h",test_num + 256'd1);
+wait(vld)
+begin
+$display ("ECDSA P256 test is done at %t", $time);
+$display (" Output: %h", dout);
+$display (" Expected : %h", expectedr);
+if(dout == expectedr)
+    $display("ECDSA P256 R is working");
+else
+    $display("ECDSA P256 R is not working");
+end
+wait(vld1)
+begin
+$display (" Output: %h", dout);
+$display (" Expected : %h", expecteds);
+if(dout == expecteds)
+    $display("ECDSA P256 S is working");
+else
+    $display("ECDSA P256 S is not working");
+end
+#1000;
+#50000;
+$finish;
+end
+
+initial begin
+$monitor ("mmul_cnt_state = %d", iecc_core.iauc_wrap.iauc_mmul.iauc_mmul_comp.cnt);
+end
+
+initial begin
+$monitor ("wmul_main_state = %d", iecc_core.iauc_wrap.iauc_wmul.iauc_wmul_main.main_step);
+end
+/*
+always @(iecc_core.iauc_wrap.iauc_mmul.iauc_mmul_comp.cnt) begin  
+  $display("mmul_cnt_state = %d", iecc_core.iauc_wrap.iauc_mmul.iauc_mmul_comp.cnt);
+end
+
+always @(iecc_core.iauc_wrap.iauc_wmul.iauc_wmul_main.main_step) begin  
+  $display("wmul_main_state = %d", iecc_core.iauc_wrap.iauc_wmul.iauc_wmul_main.main_step);
+end
+*/
+/*
+always @(posedge clk)
+    begin
+    if (status == 2'b10)
+        $display (" Output: %h", dout);
+    end
+*/
+/*
+//dump wave
+initial begin
+$shm_open ("my_waves");
+$shm_probe (tb_ex_sim,"AC");//ACM
+$recordfile("testsample.trn");
+$recordvars();
+end
+*/
+
+endmodule

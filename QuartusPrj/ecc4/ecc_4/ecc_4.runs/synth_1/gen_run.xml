@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbv484-1" LaunchTime="1665132341">
+  <File Type="PA-TCL" Name="ecc_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ecc_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="ecc_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ecc_top.vds"/>
+  <File Type="RDS-UTIL" Name="ecc_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ecc_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ecc_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ecc_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ecc_top_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/alram112x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/alram112x.v"/>
+        <Attr Name="ImportTime" Val="1558641508"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/alram113x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/alram113x.v"/>
+        <Attr Name="ImportTime" Val="1558641508"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/aluwrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/aluwrap.v"/>
+        <Attr Name="ImportTime" Val="1665072059"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_decoder.v"/>
+        <Attr Name="ImportTime" Val="1665128419"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_mmul.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_mmul.v"/>
+        <Attr Name="ImportTime" Val="1558641508"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_mmulcomp.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_mmulcomp.v"/>
+        <Attr Name="ImportTime" Val="1558641508"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_mmulfinal.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_mmulfinal.v"/>
+        <Attr Name="ImportTime" Val="1558641510"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_mmulinit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_mmulinit.v"/>
+        <Attr Name="ImportTime" Val="1558641510"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_rand.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_rand.v"/>
+        <Attr Name="ImportTime" Val="1558641510"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_rand_wrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_rand_wrap.v"/>
+        <Attr Name="ImportTime" Val="1558641512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wrap.v"/>
+        <Attr Name="ImportTime" Val="1665128243"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/cla.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/cla.v"/>
+        <Attr Name="ImportTime" Val="1558641514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/cswap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/cswap.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/ecc_core.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/ecc_core.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/fflopknx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/fflopknx.v"/>
+        <Attr Name="ImportTime" Val="1558555470"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/fflopx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/fflopx.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/ffxkclk.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/ffxkclk.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/ffxkclkx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/ffxkclkx.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/full_adder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/full_adder.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/full_sub.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/full_sub.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/mainctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/mainctrl.v"/>
+        <Attr Name="ImportTime" Val="1665129906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/modfa.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/modfa.v"/>
+        <Attr Name="ImportTime" Val="1558641520"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montinv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montinv.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montinvp1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montinvp1.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montinvp2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montinvp2.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montpro.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montpro.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montprowrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montprowrap.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/mux_xx1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/mux_xx1.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/rsinv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/rsinv.v"/>
+        <Attr Name="ImportTime" Val="1665130257"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/rtldbgsipo1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/rtldbgsipo1.v"/>
+        <Attr Name="ImportTime" Val="1558555474"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/ecc_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/ecc_top.v"/>
+        <Attr Name="ImportTime" Val="1558555468"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_naf.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_naf.v"/>
+        <Attr Name="ImportTime" Val="1558641510"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul.v"/>
+        <Attr Name="ImportTime" Val="1558641512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_add.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_add.v"/>
+        <Attr Name="ImportTime" Val="1558641512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_conv.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_conv.v"/>
+        <Attr Name="ImportTime" Val="1558641512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_dbl.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_dbl.v"/>
+        <Attr Name="ImportTime" Val="1558641514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_decoder.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_decoder.v"/>
+        <Attr Name="ImportTime" Val="1558641514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_main.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_main.v"/>
+        <Attr Name="ImportTime" Val="1558641514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/auc_wmul_pre.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/auc_wmul_pre.v"/>
+        <Attr Name="ImportTime" Val="1558641514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/complement_2.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/complement_2.v"/>
+        <Attr Name="ImportTime" Val="1558641516"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/lv_rd256wrap.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/lv_rd256wrap.v"/>
+        <Attr Name="ImportTime" Val="1558641518"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/mds_ecc_4/montexp.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../mdsim/mds_ecc_4/montexp.v"/>
+        <Attr Name="ImportTime" Val="1558641522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ecc_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

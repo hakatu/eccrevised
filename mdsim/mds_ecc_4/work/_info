@@ -1,0 +1,1029 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Paper/ECC Revised/mdsim/mds_ecc_3
+T_opt
+!s110 1665071883
+Vbcg5GmLf;c]`Wkm]L4KIN0
+Z1 04 9 4 work tb_ex_sim fast 0
+=1-3003c8d4a537-633efb0b-b6-1b7c
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1665130281
+V1I0cSCbZ9I=2dClBY[M8h1
+R1
+=3-3003c8d4a537-633fdf29-107-55dc
+R2
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1666376100
+VLcV]A?eH2daSh3VVj@C[b3
+R1
+=1-3003c8d4a537-6352e1a3-38f-2568
+o-quiet -auto_acc_if_foreign -work work +acc
+R3
+n@_opt2
+R4
+valram112x
+Z5 !s110 1665130265
+!i10b 1
+!s100 GbA>f7E9MYzZkj99?k;JB0
+Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IWTngIh2UF0[4co5cITj^V0
+Z7 dD:/Paper/ECC Revised/mdsim/mds_ecc_4
+Z8 w1558641508
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram112x.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/alram112x.v
+!i122 134
+L0 15 76
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z11 !s108 1665130265.000000
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram112x.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram112x.v|
+!i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+valram113x
+R5
+!i10b 1
+!s100 >I6^]mD1blOIiLJFGHUh73
+R6
+IjBd>l0RgRT[eD3eX0:S]J1
+R7
+R8
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram113x.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/alram113x.v
+!i122 135
+Z13 L0 14 62
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram113x.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/alram113x.v|
+!i113 0
+R12
+R3
+valuwrap
+R5
+!i10b 1
+!s100 aK`I=mkamJmKo6GJaUc]b0
+R6
+IHG6iUd^e`b2?]VRdL3gQj0
+R7
+w1665072059
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/aluwrap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/aluwrap.v
+!i122 136
+L0 16 464
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/aluwrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/aluwrap.v|
+!i113 0
+R12
+R3
+vauc_decoder
+R5
+!i10b 1
+!s100 AQ;2gEb8k@k19[BY?YWno0
+R6
+IhDXCXSe4HM0D9TjjTD6L<0
+R7
+w1665128419
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_decoder.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_decoder.v
+!i122 137
+L0 14 263
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_decoder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_decoder.v|
+!i113 0
+R12
+R3
+vauc_mmul
+R5
+!i10b 1
+!s100 lDQ4@OH5hFRCH=a8G]8c:2
+R6
+INPj=8aQZ5bPIJ:m4;elMc1
+R7
+R8
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmul.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmul.v
+!i122 138
+L0 15 391
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmul.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmul.v|
+!i113 0
+R12
+R3
+vauc_mmulcomp
+R5
+!i10b 1
+!s100 n?1Sh7[<=3T4eRgCkjUlE0
+R6
+I9ASe`4gVNmLOjn7zj@DjI2
+R7
+R8
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulcomp.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulcomp.v
+!i122 139
+L0 14 1076
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulcomp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulcomp.v|
+!i113 0
+R12
+R3
+vauc_mmulfinal
+R5
+!i10b 1
+!s100 bEXjWb;;3FKIoc:RY7HW82
+R6
+I>ROQh[l[lDhoQOg:C8IhC0
+R7
+Z14 w1558641510
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulfinal.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulfinal.v
+!i122 140
+L0 14 475
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulfinal.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulfinal.v|
+!i113 0
+R12
+R3
+vauc_mmulinit
+R5
+!i10b 1
+!s100 FfK5B9:?A;BH@]7aM0LOW1
+R6
+ICIFh?fIZ0LF:698fYAc?21
+R7
+R14
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulinit.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulinit.v
+!i122 141
+L0 14 456
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulinit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_mmulinit.v|
+!i113 0
+R12
+R3
+vauc_naf
+R5
+!i10b 1
+!s100 >JE7gkYfC`eJ=S5c6U]mj2
+R6
+I<XK1S;[MCiheadVYI:n:H3
+R7
+R14
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_naf.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_naf.v
+!i122 142
+L0 14 322
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_naf.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_naf.v|
+!i113 0
+R12
+R3
+vauc_rand
+R5
+!i10b 1
+!s100 j64TZ2i_ZCOO]4K;^kZXH3
+R6
+In4mcPk9F[]OfKSNWD<IG?3
+R7
+R14
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand.v
+!i122 143
+L0 14 163
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand.v|
+!i113 0
+R12
+R3
+vauc_rand_wrap
+R5
+!i10b 1
+!s100 Ijd5lFob`YE517He9RJ5?2
+R6
+IDzONMNBNR`hYN<4;BbIzF0
+R7
+Z15 w1558641512
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand_wrap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand_wrap.v
+!i122 144
+L0 14 88
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand_wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_rand_wrap.v|
+!i113 0
+R12
+R3
+vauc_wmul
+R5
+!i10b 1
+!s100 g7n90IPj32nl7_[QN9YTz2
+R6
+IhO;GI3H2n1U4=@`S=7IZD1
+R7
+R15
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul.v
+!i122 145
+L0 14 433
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul.v|
+!i113 0
+R12
+R3
+vauc_wmul_add
+R5
+!i10b 1
+!s100 FjHC`^``FanTDJVRYKcQS0
+R6
+IBT_hl140IP6bHTM;`oRD13
+R7
+R15
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_add.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_add.v
+!i122 146
+L0 14 1034
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_add.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_add.v|
+!i113 0
+R12
+R3
+vauc_wmul_conv
+R5
+!i10b 1
+!s100 0M?k7n6SC9ON^P_RhQ3?N1
+R6
+IZBM?fIUM[h::9i:]dKZ2B3
+R7
+R15
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_conv.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_conv.v
+!i122 147
+L0 14 265
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_conv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_conv.v|
+!i113 0
+R12
+R3
+vauc_wmul_dbl
+R5
+!i10b 1
+!s100 3`_G4W4>A=Kf8L?kJBnNg1
+R6
+I?<b@3<9WgNQ>J`l:mJZ6T0
+R7
+Z16 w1558641514
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_dbl.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_dbl.v
+!i122 148
+L0 14 775
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_dbl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_dbl.v|
+!i113 0
+R12
+R3
+vauc_wmul_decoder
+R5
+!i10b 1
+!s100 5B@VzlJK3^VZlK_1bK1_20
+R6
+ILIkKHR>7WQKe5FS3a5Y3_1
+R7
+R16
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_decoder.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_decoder.v
+!i122 149
+L0 14 133
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_decoder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_decoder.v|
+!i113 0
+R12
+R3
+vauc_wmul_main
+R5
+!i10b 1
+!s100 X4j`4k:Rb8T_R:1HS3CeN2
+R6
+Ig:P3MLG:O2]mX<1z8F@Xc3
+R7
+R16
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_main.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_main.v
+!i122 150
+L0 14 391
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_main.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_main.v|
+!i113 0
+R12
+R3
+vauc_wmul_pre
+R5
+!i10b 1
+!s100 Xm2?N[[[aN0RNzG:Kka1X1
+R6
+Ik1V:7=>;7UVb4@HUHLZ`z1
+R7
+R16
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_pre.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_pre.v
+!i122 151
+L0 14 422
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_pre.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wmul_pre.v|
+!i113 0
+R12
+R3
+vauc_wrap
+R5
+!i10b 1
+!s100 2Lc:l39=<3l;YG40O]];00
+R6
+IWMBJHoDgf@_[bC7mkXVQD3
+R7
+w1665128243
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wrap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wrap.v
+!i122 152
+L0 14 539
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/auc_wrap.v|
+!i113 0
+R12
+R3
+vcla
+Z17 !s110 1665130266
+!i10b 1
+!s100 =JS7OG2RPa2n<9Q1Nng6[1
+R6
+I7e2]JHag7glb>lPzWaTlX0
+R7
+R16
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/cla.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/cla.v
+!i122 153
+R13
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/cla.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/cla.v|
+!i113 0
+R12
+R3
+vcomplement_2
+R17
+!i10b 1
+!s100 ]ZI<l1P;jz><ZOd6E5U0F3
+R6
+I3VOm2K^KZ3W9<K>bDhe@N0
+R7
+w1558641516
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/complement_2.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/complement_2.v
+!i122 154
+Z18 L0 14 56
+R9
+R10
+r1
+!s85 0
+31
+Z19 !s108 1665130266.000000
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/complement_2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/complement_2.v|
+!i113 0
+R12
+R3
+vcswap
+R17
+!i10b 1
+!s100 RAfZoKEo6n^95:fWM?J;A0
+R6
+I8385@dRoRfPQ2i9BFe50d0
+R7
+Z20 w1558641518
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/cswap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/cswap.v
+!i122 155
+L0 14 143
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/cswap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/cswap.v|
+!i113 0
+R12
+R3
+vecc_core
+R17
+!i10b 1
+!s100 8`9icMSF=TIO7Z9GIf8=B1
+R6
+I1>NoN;==1gDY`a:hke2W?0
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_core.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_core.v
+!i122 156
+L0 14 149
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_core.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_core.v|
+!i113 0
+R12
+R3
+vecc_top
+R17
+!i10b 1
+!s100 LYBXBM>>]:i8L1PC7oSXH0
+R6
+I2@mCkn:KdZMd_5Ccb<eDW3
+R7
+w1558555468
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_top.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_top.v
+!i122 157
+L0 14 124
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/ecc_top.v|
+!i113 0
+R12
+R3
+vfflopknx
+R17
+!i10b 1
+!s100 omIHJ=j;N1W8YCOFb;Qz;3
+R6
+IPX:WddQEe46YkZG`Hj^5l1
+R7
+w1558555470
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopknx.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopknx.v
+!i122 158
+L0 14 68
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopknx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopknx.v|
+!i113 0
+R12
+R3
+vfflopx
+R17
+!i10b 1
+!s100 c[XDNRVEALC[aoHXQC2K[2
+R6
+IS181YzL_KNT8jO8RLRNkB1
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopx.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopx.v
+!i122 159
+L0 14 25
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/fflopx.v|
+!i113 0
+R12
+R3
+vffxkclk
+R17
+!i10b 1
+!s100 g^0dKMEcU0XE7<k>>76Dc3
+R6
+I_X>S7MA]ezn8O`F=TgQZL2
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclk.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclk.v
+!i122 160
+Z21 L0 14 36
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclk.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclk.v|
+!i113 0
+R12
+R3
+vffxkclkx
+R17
+!i10b 1
+!s100 fJn4gcoh0JOXPL2gBVj<W2
+R6
+Ig43VG^J9QllDHJ3m7Zl6:0
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclkx.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclkx.v
+!i122 161
+R21
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclkx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/ffxkclkx.v|
+!i113 0
+R12
+R3
+vfull_adder
+R17
+!i10b 1
+!s100 6A4>[gE<<AI3hAf5O`Z110
+R6
+Im2D7en`98WdeLX@_>S0=e3
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_adder.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/full_adder.v
+!i122 162
+L0 14 32
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_adder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_adder.v|
+!i113 0
+R12
+R3
+vfull_sub
+R17
+!i10b 1
+!s100 _?X]]lFjbnITU]iIU?Xj62
+R6
+I5019HVK>^WYR3<W=1f1_G1
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_sub.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/full_sub.v
+!i122 163
+R18
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_sub.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/full_sub.v|
+!i113 0
+R12
+R3
+vlv_rd256wrap
+R17
+!i10b 1
+!s100 4REDa6g_Uj5agFf[HF[2@0
+R6
+Ijd]<cneMV@7HCjk<J>^EU3
+R7
+R20
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/lv_rd256wrap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/lv_rd256wrap.v
+!i122 164
+L0 16 48
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/lv_rd256wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/lv_rd256wrap.v|
+!i113 0
+R12
+R3
+vmainctrl
+R17
+!i10b 1
+!s100 RdHB;1?48>SZKk1AT[9<43
+R6
+I0F_`:R@Sfn_;1V`8ZB4S12
+R7
+w1665129906
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/mainctrl.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/mainctrl.v
+!i122 165
+L0 14 1100
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/mainctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/mainctrl.v|
+!i113 0
+R12
+R3
+vmodfa
+R17
+!i10b 1
+!s100 M`4z[4Mm=E`LzEGRO]Fcg0
+R6
+IELc]OTle[X]5PQE?1k]6e1
+R7
+w1558641520
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/modfa.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/modfa.v
+!i122 166
+L0 14 175
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/modfa.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/modfa.v|
+!i113 0
+R12
+R3
+vmontexp
+R17
+!i10b 1
+!s100 DSB3d8b>mU]F;2b0Pe<_z2
+R6
+IV8AWbM5?mY]T9gF3OJ_H<1
+R7
+Z22 w1558641522
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montexp.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montexp.v
+!i122 167
+L0 14 296
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montexp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montexp.v|
+!i113 0
+R12
+R3
+vmontinv
+R17
+!i10b 1
+!s100 immN<kVekESPO>S><R^m63
+R6
+I[7GBBAm@RLzhQm3:dVQ9`0
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinv.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montinv.v
+!i122 168
+L0 14 64
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinv.v|
+!i113 0
+R12
+R3
+vmontinvp1
+R17
+!i10b 1
+!s100 f7IQQTLO?KS:][7BWKOoH3
+R6
+I`i_nHYFB_K4^e?I<=OQko1
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp1.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp1.v
+!i122 169
+L0 14 212
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp1.v|
+!i113 0
+R12
+R3
+vmontinvp2
+R17
+!i10b 1
+!s100 caN8Wf6`fQ_VgKA^HNa=g2
+R6
+Iz3?@Obi6h93_EK^[AzMlD0
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp2.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp2.v
+!i122 170
+L0 14 102
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montinvp2.v|
+!i113 0
+R12
+R3
+vmontpro
+R17
+!i10b 1
+!s100 H<VSb?kR1B[1J1]CPom<`2
+R6
+IbjAihd[=EI:_o_MP@f>LJ2
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montpro.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montpro.v
+!i122 171
+L0 14 116
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montpro.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montpro.v|
+!i113 0
+R12
+R3
+vmontprowrap
+R17
+!i10b 1
+!s100 QSCkU4QLM1M]D=29g6I4`2
+R6
+IG1ozhgF=[<L=C3DKNYDk92
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/montprowrap.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/montprowrap.v
+!i122 172
+L0 13 141
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/montprowrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/montprowrap.v|
+!i113 0
+R12
+R3
+vmux_xx1
+R17
+!i10b 1
+!s100 llEm9NFG0WaAd`K6Vm_6?0
+R6
+IElP>f?Q5QO0>_YXMiljM51
+R7
+R22
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/mux_xx1.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/mux_xx1.v
+!i122 173
+L0 14 30
+R9
+R10
+r1
+!s85 0
+31
+R19
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/mux_xx1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/mux_xx1.v|
+!i113 0
+R12
+R3
+vrsinv
+!s110 1666376078
+!i10b 1
+!s100 ]70h[`e>1Rc^;TLZkl2^c1
+R6
+I?LNimQ52ElUT:hRm8=bV<2
+R7
+w1665130257
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/rsinv.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/rsinv.v
+!i122 177
+L0 14 484
+R9
+R10
+r1
+!s85 0
+31
+!s108 1666376078.000000
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/rsinv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/rsinv.v|
+!i113 0
+R12
+R3
+vrtldbgsipo1
+Z23 !s110 1665130267
+!i10b 1
+!s100 d14haWC0F3<ReST?1iLk02
+R6
+I4J9_G6@nQX3L^673_60>I0
+R7
+w1558555474
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/rtldbgsipo1.v
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/rtldbgsipo1.v
+!i122 175
+L0 14 58
+R9
+R10
+r1
+!s85 0
+31
+Z24 !s108 1665130267.000000
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/rtldbgsipo1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/rtldbgsipo1.v|
+!i113 0
+R12
+R3
+vtb_ex_sim
+R23
+!i10b 1
+!s100 iFL6<7eh5ie?UJWIH:@102
+R6
+ILn8QlaULHj@FA898>H2HU2
+R7
+w1665128489
+8D:/Paper/ECC Revised/mdsim/mds_ecc_4/tb_ex_sim.vt
+FD:/Paper/ECC Revised/mdsim/mds_ecc_4/tb_ex_sim.vt
+!i122 176
+L0 2 325
+R9
+R10
+r1
+!s85 0
+31
+R24
+!s107 D:/Paper/ECC Revised/mdsim/mds_ecc_4/tb_ex_sim.vt|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/mdsim/mds_ecc_4/tb_ex_sim.vt|
+!i113 0
+R12
+R3

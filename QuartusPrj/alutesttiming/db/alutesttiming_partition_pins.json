@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "status[0]",
+					"strict" : false
+				},
+				{
+					"name" : "status[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rswap",
+					"strict" : false
+				},
+				{
+					"name" : "vld",
+					"strict" : false
+				},
+				{
+					"name" : "r",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "swapop",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "c",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[3]",
+					"strict" : false
+				},
+				{
+					"name" : "swapvl",
+					"strict" : false
+				},
+				{
+					"name" : "b",
+					"strict" : false
+				},
+				{
+					"name" : "a",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1661759074">
+  <File Type="PA-TCL" Name="ecc_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="ecc_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ecc_top.vds"/>
+  <File Type="RDS-UTIL" Name="ecc_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ecc_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ecc_top.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/aladder_bb.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/aladder_bb.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/alram112x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/alram112x.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/alram113x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/alram113x.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/aluwrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/aluwrap.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_decoder.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_mmul.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_mmul.v"/>
+        <Attr Name="ImportTime" Val="1558641418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_mmulcomp.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_mmulcomp.v"/>
+        <Attr Name="ImportTime" Val="1558641420"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_mmulfinal.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_mmulfinal.v"/>
+        <Attr Name="ImportTime" Val="1558641420"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_mmulinit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_mmulinit.v"/>
+        <Attr Name="ImportTime" Val="1558641420"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_naf.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_naf.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_rand.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_rand.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_rand_wrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_rand_wrap.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_add.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_add.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_conv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_conv.v"/>
+        <Attr Name="ImportTime" Val="1558641422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_dbl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_dbl.v"/>
+        <Attr Name="ImportTime" Val="1558641424"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_decoder.v"/>
+        <Attr Name="ImportTime" Val="1558641424"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_main.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_main.v"/>
+        <Attr Name="ImportTime" Val="1558641424"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wmul_pre.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wmul_pre.v"/>
+        <Attr Name="ImportTime" Val="1558641424"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/auc_wrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/auc_wrap.v"/>
+        <Attr Name="ImportTime" Val="1558641426"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/cswap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/cswap.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/ecc_core.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/ecc_core.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/fflopknx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/fflopknx.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/fflopx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/fflopx.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/ffxkclk.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/ffxkclk.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/ffxkclkx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/ffxkclkx.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/mainctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/mainctrl.v"/>
+        <Attr Name="ImportTime" Val="1558641432"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/modfa.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/modfa.v"/>
+        <Attr Name="ImportTime" Val="1558641432"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montinv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montinv.v"/>
+        <Attr Name="ImportTime" Val="1558641434"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montinvp1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montinvp1.v"/>
+        <Attr Name="ImportTime" Val="1558641434"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montinvp2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montinvp2.v"/>
+        <Attr Name="ImportTime" Val="1558641434"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montpro.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montpro.v"/>
+        <Attr Name="ImportTime" Val="1558641434"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montprowrap.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montprowrap.v"/>
+        <Attr Name="ImportTime" Val="1558641436"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/mux_xx1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/mux_xx1.v"/>
+        <Attr Name="ImportTime" Val="1558641436"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/rsinv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/rsinv.v"/>
+        <Attr Name="ImportTime" Val="1558641436"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/rtldbgsipo1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/rtldbgsipo1.v"/>
+        <Attr Name="ImportTime" Val="1558641436"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/ecc_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/ecc_top.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/aladder.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/aladder.v"/>
+        <Attr Name="ImportTime" Val="1558641416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/cla.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/cla.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/complement_2.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/complement_2.v"/>
+        <Attr Name="ImportTime" Val="1558641428"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/full_adder.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/full_adder.v"/>
+        <Attr Name="ImportTime" Val="1558641430"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/full_sub.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/full_sub.v"/>
+        <Attr Name="ImportTime" Val="1558641432"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/lv_rd256wrap.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/lv_rd256wrap.v"/>
+        <Attr Name="ImportTime" Val="1558641432"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/montexp.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/montexp.v"/>
+        <Attr Name="ImportTime" Val="1558641432"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lv_2pl/tb_ex_sim.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/lv_2pl/tb_ex_sim.v"/>
+        <Attr Name="ImportTime" Val="1661757692"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ecc_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

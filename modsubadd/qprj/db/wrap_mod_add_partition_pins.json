@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "add_nu",
+					"strict" : false
+				},
+				{
+					"name" : "done_add",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "start_add",
+					"strict" : false
+				},
+				{
+					"name" : "sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "nu_1",
+					"strict" : false
+				},
+				{
+					"name" : "nu_2",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

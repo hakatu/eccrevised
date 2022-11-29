@@ -1,0 +1,9 @@
+
+State Machine - |alutesttiming|aluwrap:ialuwrap|state
+Name state.SWAP state.NOR state.MUL state.INV state.FA state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.FA 0 0 0 0 1 1 
+state.INV 0 0 0 1 0 1 
+state.MUL 0 0 1 0 0 1 
+state.NOR 0 1 0 0 0 1 
+state.SWAP 1 0 0 0 0 1 

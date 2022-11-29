@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Failed - Sat Oct 22 01:47:18 2022
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Revision Name : modfa2test
+Top-level Entity Name : modfa2test
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total block memory bits : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+Total DLLs : N/A until Partition Merge

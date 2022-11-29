@@ -1,0 +1,880 @@
+
+*** Running vivado
+    with args -log ecc_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ecc_top.tcl
+
+
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source ecc_top.tcl -notrace
+Command: synth_design -top ecc_top -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19496
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1275.379 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ecc_top' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ecc_top.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 3 - type: integer 
+	Parameter W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ffxkclk' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+	Parameter K bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclk' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx__parameterized0' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 3 - type: integer 
+	Parameter W bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx__parameterized0' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx__parameterized1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 3 - type: integer 
+	Parameter W bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx__parameterized1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'rtldbgsipo1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+	Parameter ODAT_B bound to: 768 - type: integer 
+	Parameter IDAT_B bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fflopknx' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 768 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fflopknx__parameterized0' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx__parameterized0' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fflopknx__parameterized1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx__parameterized1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'rtldbgsipo1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+INFO: [Synth 8-6157] synthesizing module 'rtldbgsipo1__parameterized0' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+	Parameter ODAT_B bound to: 256 - type: integer 
+	Parameter IDAT_B bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fflopknx__parameterized2' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx__parameterized2' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fflopknx__parameterized3' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx__parameterized3' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'rtldbgsipo1__parameterized0' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+INFO: [Synth 8-6157] synthesizing module 'rtldbgsipo1__parameterized1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+	Parameter ODAT_B bound to: 1 - type: integer 
+	Parameter IDAT_B bound to: 256 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fflopknx__parameterized4' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+	Parameter W_B bound to: 0 - type: integer 
+WARNING: [Synth 8-693] zero replication count - replication ignored [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'fflopknx__parameterized4' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'rtldbgsipo1__parameterized1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rtldbgsipo1.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ecc_core' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ecc_core.v:14]
+INFO: [Synth 8-6157] synthesizing module 'mainctrl' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mainctrl.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+INFO: [Synth 8-226] default block is never used [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mainctrl.v:138]
+INFO: [Synth 8-226] default block is never used [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mainctrl.v:512]
+INFO: [Synth 8-226] default block is never used [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mainctrl.v:878]
+INFO: [Synth 8-6155] done synthesizing module 'mainctrl' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mainctrl.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wrap' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wrap.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+	Parameter WINDOW bound to: 4 - type: integer 
+	Parameter CBIT bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'auc_decoder' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_decoder.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fflopx' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopx' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fflopx__parameterized0' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopx__parameterized0' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_decoder' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_decoder.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_rand_wrap' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_rand_wrap.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'auc_rand' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_rand.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fflopx__parameterized1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fflopx__parameterized1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_rand' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_rand.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_rand_wrap' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_rand_wrap.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_naf' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_naf.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter WINDOW bound to: 4 - type: integer 
+	Parameter CBIT bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'aladder' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/aladder_bb.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'aladder' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/aladder_bb.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'auc_naf' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_naf.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+	Parameter WINDOW bound to: 4 - type: integer 
+	Parameter CBIT bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_pre' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_pre.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_pre' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_pre.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_decoder' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_decoder.v:14]
+	Parameter ADDR bound to: 5 - type: integer 
+	Parameter WINDOW bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_decoder' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_decoder.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_main' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_main.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_main' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_main.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_conv' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_conv.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_conv' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_conv.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_dbl' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_dbl.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_dbl' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_dbl.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_wmul_add' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_add.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter ADDR bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul_add' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul_add.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_wmul' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wmul.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_mmul' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmul.v:15]
+	Parameter WID bound to: 256 - type: integer 
+	Parameter AWID bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'auc_mmulinit' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulinit.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_mmulinit' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulinit.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_mmulcomp' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulcomp.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_mmulcomp' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulcomp.v:14]
+INFO: [Synth 8-6157] synthesizing module 'auc_mmulfinal' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulfinal.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_mmulfinal' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmulfinal.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_mmul' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_mmul.v:15]
+INFO: [Synth 8-6157] synthesizing module 'rsinv' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rsinv.v:14]
+	Parameter WID bound to: 256 - type: integer 
+	Parameter AWID bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rsinv' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rsinv.v:14]
+INFO: [Synth 8-6157] synthesizing module 'alram113x' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/alram113x.v:14]
+	Parameter WID bound to: 256 - type: integer 
+	Parameter AWID bound to: 5 - type: integer 
+	Parameter DEP bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'alram112x' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/alram112x.v:15]
+	Parameter WID bound to: 256 - type: integer 
+	Parameter AWID bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'alram112x' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/alram112x.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'alram113x' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/alram113x.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx__parameterized2' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 1 - type: integer 
+	Parameter W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ffxkclk__parameterized0' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+	Parameter K bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclk__parameterized0' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx__parameterized2' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx__parameterized3' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 1 - type: integer 
+	Parameter W bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx__parameterized3' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'auc_wrap' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/auc_wrap.v:14]
+INFO: [Synth 8-6157] synthesizing module 'aluwrap' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/aluwrap.v:16]
+	Parameter WID bound to: 256 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'modfa' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/modfa.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ffxkclkx__parameterized4' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+	Parameter K bound to: 2 - type: integer 
+	Parameter W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ffxkclk__parameterized1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+	Parameter K bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclk__parameterized1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclk.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'ffxkclkx__parameterized4' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ffxkclkx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'modfa' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/modfa.v:14]
+INFO: [Synth 8-6157] synthesizing module 'montprowrap' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montprowrap.v:13]
+INFO: [Synth 8-6157] synthesizing module 'montpro' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montpro.v:14]
+	Parameter WID bound to: 256 - type: integer 
+	Parameter ZERO bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'mux_xx1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mux_xx1.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux_xx1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/mux_xx1.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'montpro' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montpro.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'montprowrap' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montprowrap.v:13]
+INFO: [Synth 8-6157] synthesizing module 'montinv' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinv.v:14]
+INFO: [Synth 8-6157] synthesizing module 'montinvp1' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinvp1.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter CWID bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'montinvp1' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinvp1.v:14]
+INFO: [Synth 8-6157] synthesizing module 'montinvp2' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinvp2.v:14]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter CWID bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'montinvp2' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinvp2.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'montinv' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/montinv.v:14]
+INFO: [Synth 8-6157] synthesizing module 'cswap' [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/cswap.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'cswap' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/cswap.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'aluwrap' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/aluwrap.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'ecc_core' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ecc_core.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'ecc_top' (0#1) [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/ecc_top.v:14]
+WARNING: [Synth 8-6014] Unused sequential element mainfsm_reg was removed.  [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/rsinv.v:125]
+WARNING: [Synth 8-7129] Port rst in module ffxkclk__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module ffxkclk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module ffxkclk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module alram112x is either unconnected or has no load
+WARNING: [Synth 8-7129] Port init_audat[7] in module auc_mmulinit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module fflopknx is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1275.379 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1275.379 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1275.379 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'main_state_reg' in module 'mainctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0010 |                               00
+              ECDSA_SIGN |                             1000 |                               01
+               ECDHE_GEN |                             0100 |                               10
+              ECDHE_COMP |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'main_state_reg' using encoding 'one-hot' in module 'mainctrl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1275.379 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input  256 Bit       Adders := 1     
+	   3 Input  256 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 6     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 5     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	              768 Bit    Registers := 2     
+	              257 Bit    Registers := 6     
+	              256 Bit    Registers := 52    
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 27    
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 19    
+	                2 Bit    Registers := 16    
+	                1 Bit    Registers := 368   
++---RAMs : 
+	               8K Bit	(32 X 256 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  257 Bit        Muxes := 6     
+	   3 Input  257 Bit        Muxes := 1     
+	   9 Input  257 Bit        Muxes := 5     
+	   4 Input  257 Bit        Muxes := 1     
+	   9 Input  256 Bit        Muxes := 1     
+	   7 Input  256 Bit        Muxes := 2     
+	   2 Input  256 Bit        Muxes := 58    
+	   4 Input  256 Bit        Muxes := 8     
+	   3 Input  256 Bit        Muxes := 6     
+	  21 Input  256 Bit        Muxes := 1     
+	  26 Input  256 Bit        Muxes := 1     
+	   2 Input  255 Bit        Muxes := 10    
+	   3 Input  255 Bit        Muxes := 2     
+	   5 Input  255 Bit        Muxes := 1     
+	   2 Input  252 Bit        Muxes := 2     
+	   3 Input   10 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 2     
+	  33 Input    6 Bit        Muxes := 1     
+	  46 Input    6 Bit        Muxes := 1     
+	   3 Input    5 Bit        Muxes := 2     
+	   6 Input    5 Bit        Muxes := 3     
+	  11 Input    5 Bit        Muxes := 1     
+	  12 Input    5 Bit        Muxes := 5     
+	   5 Input    5 Bit        Muxes := 2     
+	  10 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 70    
+	   4 Input    5 Bit        Muxes := 4     
+	  21 Input    5 Bit        Muxes := 1     
+	  26 Input    5 Bit        Muxes := 1     
+	   7 Input    5 Bit        Muxes := 1     
+	  22 Input    5 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 1     
+	   9 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 14    
+	   4 Input    4 Bit        Muxes := 5     
+	   5 Input    4 Bit        Muxes := 3     
+	  12 Input    4 Bit        Muxes := 3     
+	  21 Input    4 Bit        Muxes := 3     
+	  26 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 3     
+	   6 Input    4 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 22    
+	  10 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 2     
+	   7 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 4     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 25    
+	   4 Input    2 Bit        Muxes := 7     
+	  10 Input    2 Bit        Muxes := 2     
+	  21 Input    2 Bit        Muxes := 1     
+	  26 Input    2 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 3     
+	   6 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 210   
+	   7 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 35    
+	  12 Input    1 Bit        Muxes := 15    
+	   5 Input    1 Bit        Muxes := 2     
+	  10 Input    1 Bit        Muxes := 13    
+	  21 Input    1 Bit        Muxes := 13    
+	  26 Input    1 Bit        Muxes := 12    
+	  11 Input    1 Bit        Muxes := 1     
+	  20 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'irtldbgsipo3/xflidat_l/pp_s1.d_reg_reg' and it is trimmed from '256' to '1' bits. [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/fflopknx.v:56]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:29 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------+------------+---------------+----------------+
+|Module Name  | RTL Object | Depth x Width | Implemented As | 
++-------------+------------+---------------+----------------+
+|auc_wmul_dbl | dbl_wadd   | 32x5          | LUT            | 
+|auc_mmulcomp | rom__1     | 64x5          | LUT            | 
+|auc_wmul_dbl | dbl_wadd   | 32x5          | LUT            | 
+|auc_mmulcomp | comp_ra0   | 64x5          | LUT            | 
++-------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|\iecc_core/iauc_wrap  | ialram113x/ialram112x/mem_reg | 32 x 256(READ_FIRST)   | W |   | 32 x 256(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:31 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|\iecc_core/iauc_wrap  | ialram113x/ialram112x/mem_reg | 32 x 256(READ_FIRST)   | W |   | 32 x 256(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++----------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:01:40 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:48 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:48 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:35 ; elapsed = 00:01:51 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:35 ; elapsed = 00:01:51 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|ecc_top     | iecc_core/iauc_wrap/iau_start/i_bit[0].flxodat/shift_dat_reg[2] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ecc_top     | iffxkclkx4/i_bit[0].flxodat/shift_dat_reg[2]                    | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ecc_top     | irtldbgsipo2/xflidat_l/pp_s1.d_reg_reg[0]                       | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|ecc_top     | iffxkclkx5/i_bit[0].flxodat/shift_dat_reg[2]                    | 3      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|ecc_top     | irtldbgsipo1/xflidat_l/pp_s1.d_reg_reg[0]                       | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |aladder       |         9|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |aladder  |     9|
+|10    |BUFG     |     1|
+|11    |CARRY4   |   529|
+|12    |LUT1     |   389|
+|13    |LUT2     |  2192|
+|14    |LUT3     |  6443|
+|15    |LUT4     |   903|
+|16    |LUT5     |  2607|
+|17    |LUT6     |  2247|
+|18    |MUXF7    |     4|
+|19    |RAMB36E1 |     4|
+|20    |SRL16E   |     6|
+|21    |FDRE     |  9711|
+|22    |FDSE     |    23|
+|23    |IBUF     |     8|
+|24    |OBUF     |     3|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------------+----------------------------+------+
+|      |Instance                     |Module                      |Cells |
++------+-----------------------------+----------------------------+------+
+|1     |top                          |                            | 27383|
+|2     |  iffxkclkx2                 |ffxkclkx__parameterized0    |     9|
+|3     |    \i_bit[0].flxodat        |ffxkclk_7                   |     3|
+|4     |    \i_bit[1].flxodat        |ffxkclk_8                   |     3|
+|5     |    \i_bit[2].flxodat        |ffxkclk_9                   |     3|
+|6     |  iecc_core                  |ecc_core                    | 27152|
+|7     |    ialuwrap                 |aluwrap                     | 14795|
+|8     |      icswap                 |cswap                       |  1034|
+|9     |        ifflopx1             |fflopx__parameterized1_277  |     1|
+|10    |      imodfa                 |modfa                       |  2193|
+|11    |        iff_cin              |ffxkclkx__parameterized4    |     7|
+|12    |          \i_bit[0].flxodat  |ffxkclk__parameterized1     |     7|
+|13    |      imontinv               |montinv                     |  6940|
+|14    |        phase1               |montinvp1                   |  6124|
+|15    |        phase2               |montinvp2                   |   816|
+|16    |      imontprowrap           |montprowrap                 |  2609|
+|17    |        iff1                 |fflopx__parameterized0_273  |   256|
+|18    |        iff2                 |fflopx__parameterized0_274  |   256|
+|19    |        iff3                 |fflopx__parameterized0_275  |    10|
+|20    |        iff4                 |fflopx__parameterized1_276  |     1|
+|21    |        imontpro             |montpro                     |  1566|
+|22    |    iauc_wrap                |auc_wrap                    | 11873|
+|23    |      ialram113x             |alram113x                   |     9|
+|24    |        ialram112x           |alram112x                   |     9|
+|25    |      iau_dat2               |ffxkclkx__parameterized3    |   256|
+|26    |        \i_bit[0].flxodat    |ffxkclk__parameterized0_17  |     1|
+|27    |        \i_bit[100].flxodat  |ffxkclk__parameterized0_18  |     1|
+|28    |        \i_bit[101].flxodat  |ffxkclk__parameterized0_19  |     1|
+|29    |        \i_bit[102].flxodat  |ffxkclk__parameterized0_20  |     1|
+|30    |        \i_bit[103].flxodat  |ffxkclk__parameterized0_21  |     1|
+|31    |        \i_bit[104].flxodat  |ffxkclk__parameterized0_22  |     1|
+|32    |        \i_bit[105].flxodat  |ffxkclk__parameterized0_23  |     1|
+|33    |        \i_bit[106].flxodat  |ffxkclk__parameterized0_24  |     1|
+|34    |        \i_bit[107].flxodat  |ffxkclk__parameterized0_25  |     1|
+|35    |        \i_bit[108].flxodat  |ffxkclk__parameterized0_26  |     1|
+|36    |        \i_bit[109].flxodat  |ffxkclk__parameterized0_27  |     1|
+|37    |        \i_bit[10].flxodat   |ffxkclk__parameterized0_28  |     1|
+|38    |        \i_bit[110].flxodat  |ffxkclk__parameterized0_29  |     1|
+|39    |        \i_bit[111].flxodat  |ffxkclk__parameterized0_30  |     1|
+|40    |        \i_bit[112].flxodat  |ffxkclk__parameterized0_31  |     1|
+|41    |        \i_bit[113].flxodat  |ffxkclk__parameterized0_32  |     1|
+|42    |        \i_bit[114].flxodat  |ffxkclk__parameterized0_33  |     1|
+|43    |        \i_bit[115].flxodat  |ffxkclk__parameterized0_34  |     1|
+|44    |        \i_bit[116].flxodat  |ffxkclk__parameterized0_35  |     1|
+|45    |        \i_bit[117].flxodat  |ffxkclk__parameterized0_36  |     1|
+|46    |        \i_bit[118].flxodat  |ffxkclk__parameterized0_37  |     1|
+|47    |        \i_bit[119].flxodat  |ffxkclk__parameterized0_38  |     1|
+|48    |        \i_bit[11].flxodat   |ffxkclk__parameterized0_39  |     1|
+|49    |        \i_bit[120].flxodat  |ffxkclk__parameterized0_40  |     1|
+|50    |        \i_bit[121].flxodat  |ffxkclk__parameterized0_41  |     1|
+|51    |        \i_bit[122].flxodat  |ffxkclk__parameterized0_42  |     1|
+|52    |        \i_bit[123].flxodat  |ffxkclk__parameterized0_43  |     1|
+|53    |        \i_bit[124].flxodat  |ffxkclk__parameterized0_44  |     1|
+|54    |        \i_bit[125].flxodat  |ffxkclk__parameterized0_45  |     1|
+|55    |        \i_bit[126].flxodat  |ffxkclk__parameterized0_46  |     1|
+|56    |        \i_bit[127].flxodat  |ffxkclk__parameterized0_47  |     1|
+|57    |        \i_bit[128].flxodat  |ffxkclk__parameterized0_48  |     1|
+|58    |        \i_bit[129].flxodat  |ffxkclk__parameterized0_49  |     1|
+|59    |        \i_bit[12].flxodat   |ffxkclk__parameterized0_50  |     1|
+|60    |        \i_bit[130].flxodat  |ffxkclk__parameterized0_51  |     1|
+|61    |        \i_bit[131].flxodat  |ffxkclk__parameterized0_52  |     1|
+|62    |        \i_bit[132].flxodat  |ffxkclk__parameterized0_53  |     1|
+|63    |        \i_bit[133].flxodat  |ffxkclk__parameterized0_54  |     1|
+|64    |        \i_bit[134].flxodat  |ffxkclk__parameterized0_55  |     1|
+|65    |        \i_bit[135].flxodat  |ffxkclk__parameterized0_56  |     1|
+|66    |        \i_bit[136].flxodat  |ffxkclk__parameterized0_57  |     1|
+|67    |        \i_bit[137].flxodat  |ffxkclk__parameterized0_58  |     1|
+|68    |        \i_bit[138].flxodat  |ffxkclk__parameterized0_59  |     1|
+|69    |        \i_bit[139].flxodat  |ffxkclk__parameterized0_60  |     1|
+|70    |        \i_bit[13].flxodat   |ffxkclk__parameterized0_61  |     1|
+|71    |        \i_bit[140].flxodat  |ffxkclk__parameterized0_62  |     1|
+|72    |        \i_bit[141].flxodat  |ffxkclk__parameterized0_63  |     1|
+|73    |        \i_bit[142].flxodat  |ffxkclk__parameterized0_64  |     1|
+|74    |        \i_bit[143].flxodat  |ffxkclk__parameterized0_65  |     1|
+|75    |        \i_bit[144].flxodat  |ffxkclk__parameterized0_66  |     1|
+|76    |        \i_bit[145].flxodat  |ffxkclk__parameterized0_67  |     1|
+|77    |        \i_bit[146].flxodat  |ffxkclk__parameterized0_68  |     1|
+|78    |        \i_bit[147].flxodat  |ffxkclk__parameterized0_69  |     1|
+|79    |        \i_bit[148].flxodat  |ffxkclk__parameterized0_70  |     1|
+|80    |        \i_bit[149].flxodat  |ffxkclk__parameterized0_71  |     1|
+|81    |        \i_bit[14].flxodat   |ffxkclk__parameterized0_72  |     1|
+|82    |        \i_bit[150].flxodat  |ffxkclk__parameterized0_73  |     1|
+|83    |        \i_bit[151].flxodat  |ffxkclk__parameterized0_74  |     1|
+|84    |        \i_bit[152].flxodat  |ffxkclk__parameterized0_75  |     1|
+|85    |        \i_bit[153].flxodat  |ffxkclk__parameterized0_76  |     1|
+|86    |        \i_bit[154].flxodat  |ffxkclk__parameterized0_77  |     1|
+|87    |        \i_bit[155].flxodat  |ffxkclk__parameterized0_78  |     1|
+|88    |        \i_bit[156].flxodat  |ffxkclk__parameterized0_79  |     1|
+|89    |        \i_bit[157].flxodat  |ffxkclk__parameterized0_80  |     1|
+|90    |        \i_bit[158].flxodat  |ffxkclk__parameterized0_81  |     1|
+|91    |        \i_bit[159].flxodat  |ffxkclk__parameterized0_82  |     1|
+|92    |        \i_bit[15].flxodat   |ffxkclk__parameterized0_83  |     1|
+|93    |        \i_bit[160].flxodat  |ffxkclk__parameterized0_84  |     1|
+|94    |        \i_bit[161].flxodat  |ffxkclk__parameterized0_85  |     1|
+|95    |        \i_bit[162].flxodat  |ffxkclk__parameterized0_86  |     1|
+|96    |        \i_bit[163].flxodat  |ffxkclk__parameterized0_87  |     1|
+|97    |        \i_bit[164].flxodat  |ffxkclk__parameterized0_88  |     1|
+|98    |        \i_bit[165].flxodat  |ffxkclk__parameterized0_89  |     1|
+|99    |        \i_bit[166].flxodat  |ffxkclk__parameterized0_90  |     1|
+|100   |        \i_bit[167].flxodat  |ffxkclk__parameterized0_91  |     1|
+|101   |        \i_bit[168].flxodat  |ffxkclk__parameterized0_92  |     1|
+|102   |        \i_bit[169].flxodat  |ffxkclk__parameterized0_93  |     1|
+|103   |        \i_bit[16].flxodat   |ffxkclk__parameterized0_94  |     1|
+|104   |        \i_bit[170].flxodat  |ffxkclk__parameterized0_95  |     1|
+|105   |        \i_bit[171].flxodat  |ffxkclk__parameterized0_96  |     1|
+|106   |        \i_bit[172].flxodat  |ffxkclk__parameterized0_97  |     1|
+|107   |        \i_bit[173].flxodat  |ffxkclk__parameterized0_98  |     1|
+|108   |        \i_bit[174].flxodat  |ffxkclk__parameterized0_99  |     1|
+|109   |        \i_bit[175].flxodat  |ffxkclk__parameterized0_100 |     1|
+|110   |        \i_bit[176].flxodat  |ffxkclk__parameterized0_101 |     1|
+|111   |        \i_bit[177].flxodat  |ffxkclk__parameterized0_102 |     1|
+|112   |        \i_bit[178].flxodat  |ffxkclk__parameterized0_103 |     1|
+|113   |        \i_bit[179].flxodat  |ffxkclk__parameterized0_104 |     1|
+|114   |        \i_bit[17].flxodat   |ffxkclk__parameterized0_105 |     1|
+|115   |        \i_bit[180].flxodat  |ffxkclk__parameterized0_106 |     1|
+|116   |        \i_bit[181].flxodat  |ffxkclk__parameterized0_107 |     1|
+|117   |        \i_bit[182].flxodat  |ffxkclk__parameterized0_108 |     1|
+|118   |        \i_bit[183].flxodat  |ffxkclk__parameterized0_109 |     1|
+|119   |        \i_bit[184].flxodat  |ffxkclk__parameterized0_110 |     1|
+|120   |        \i_bit[185].flxodat  |ffxkclk__parameterized0_111 |     1|
+|121   |        \i_bit[186].flxodat  |ffxkclk__parameterized0_112 |     1|
+|122   |        \i_bit[187].flxodat  |ffxkclk__parameterized0_113 |     1|
+|123   |        \i_bit[188].flxodat  |ffxkclk__parameterized0_114 |     1|
+|124   |        \i_bit[189].flxodat  |ffxkclk__parameterized0_115 |     1|
+|125   |        \i_bit[18].flxodat   |ffxkclk__parameterized0_116 |     1|
+|126   |        \i_bit[190].flxodat  |ffxkclk__parameterized0_117 |     1|
+|127   |        \i_bit[191].flxodat  |ffxkclk__parameterized0_118 |     1|
+|128   |        \i_bit[192].flxodat  |ffxkclk__parameterized0_119 |     1|
+|129   |        \i_bit[193].flxodat  |ffxkclk__parameterized0_120 |     1|
+|130   |        \i_bit[194].flxodat  |ffxkclk__parameterized0_121 |     1|
+|131   |        \i_bit[195].flxodat  |ffxkclk__parameterized0_122 |     1|
+|132   |        \i_bit[196].flxodat  |ffxkclk__parameterized0_123 |     1|
+|133   |        \i_bit[197].flxodat  |ffxkclk__parameterized0_124 |     1|
+|134   |        \i_bit[198].flxodat  |ffxkclk__parameterized0_125 |     1|
+|135   |        \i_bit[199].flxodat  |ffxkclk__parameterized0_126 |     1|
+|136   |        \i_bit[19].flxodat   |ffxkclk__parameterized0_127 |     1|
+|137   |        \i_bit[1].flxodat    |ffxkclk__parameterized0_128 |     1|
+|138   |        \i_bit[200].flxodat  |ffxkclk__parameterized0_129 |     1|
+|139   |        \i_bit[201].flxodat  |ffxkclk__parameterized0_130 |     1|
+|140   |        \i_bit[202].flxodat  |ffxkclk__parameterized0_131 |     1|
+|141   |        \i_bit[203].flxodat  |ffxkclk__parameterized0_132 |     1|
+|142   |        \i_bit[204].flxodat  |ffxkclk__parameterized0_133 |     1|
+|143   |        \i_bit[205].flxodat  |ffxkclk__parameterized0_134 |     1|
+|144   |        \i_bit[206].flxodat  |ffxkclk__parameterized0_135 |     1|
+|145   |        \i_bit[207].flxodat  |ffxkclk__parameterized0_136 |     1|
+|146   |        \i_bit[208].flxodat  |ffxkclk__parameterized0_137 |     1|
+|147   |        \i_bit[209].flxodat  |ffxkclk__parameterized0_138 |     1|
+|148   |        \i_bit[20].flxodat   |ffxkclk__parameterized0_139 |     1|
+|149   |        \i_bit[210].flxodat  |ffxkclk__parameterized0_140 |     1|
+|150   |        \i_bit[211].flxodat  |ffxkclk__parameterized0_141 |     1|
+|151   |        \i_bit[212].flxodat  |ffxkclk__parameterized0_142 |     1|
+|152   |        \i_bit[213].flxodat  |ffxkclk__parameterized0_143 |     1|
+|153   |        \i_bit[214].flxodat  |ffxkclk__parameterized0_144 |     1|
+|154   |        \i_bit[215].flxodat  |ffxkclk__parameterized0_145 |     1|
+|155   |        \i_bit[216].flxodat  |ffxkclk__parameterized0_146 |     1|
+|156   |        \i_bit[217].flxodat  |ffxkclk__parameterized0_147 |     1|
+|157   |        \i_bit[218].flxodat  |ffxkclk__parameterized0_148 |     1|
+|158   |        \i_bit[219].flxodat  |ffxkclk__parameterized0_149 |     1|
+|159   |        \i_bit[21].flxodat   |ffxkclk__parameterized0_150 |     1|
+|160   |        \i_bit[220].flxodat  |ffxkclk__parameterized0_151 |     1|
+|161   |        \i_bit[221].flxodat  |ffxkclk__parameterized0_152 |     1|
+|162   |        \i_bit[222].flxodat  |ffxkclk__parameterized0_153 |     1|
+|163   |        \i_bit[223].flxodat  |ffxkclk__parameterized0_154 |     1|
+|164   |        \i_bit[224].flxodat  |ffxkclk__parameterized0_155 |     1|
+|165   |        \i_bit[225].flxodat  |ffxkclk__parameterized0_156 |     1|
+|166   |        \i_bit[226].flxodat  |ffxkclk__parameterized0_157 |     1|
+|167   |        \i_bit[227].flxodat  |ffxkclk__parameterized0_158 |     1|
+|168   |        \i_bit[228].flxodat  |ffxkclk__parameterized0_159 |     1|
+|169   |        \i_bit[229].flxodat  |ffxkclk__parameterized0_160 |     1|
+|170   |        \i_bit[22].flxodat   |ffxkclk__parameterized0_161 |     1|
+|171   |        \i_bit[230].flxodat  |ffxkclk__parameterized0_162 |     1|
+|172   |        \i_bit[231].flxodat  |ffxkclk__parameterized0_163 |     1|
+|173   |        \i_bit[232].flxodat  |ffxkclk__parameterized0_164 |     1|
+|174   |        \i_bit[233].flxodat  |ffxkclk__parameterized0_165 |     1|
+|175   |        \i_bit[234].flxodat  |ffxkclk__parameterized0_166 |     1|
+|176   |        \i_bit[235].flxodat  |ffxkclk__parameterized0_167 |     1|
+|177   |        \i_bit[236].flxodat  |ffxkclk__parameterized0_168 |     1|
+|178   |        \i_bit[237].flxodat  |ffxkclk__parameterized0_169 |     1|
+|179   |        \i_bit[238].flxodat  |ffxkclk__parameterized0_170 |     1|
+|180   |        \i_bit[239].flxodat  |ffxkclk__parameterized0_171 |     1|
+|181   |        \i_bit[23].flxodat   |ffxkclk__parameterized0_172 |     1|
+|182   |        \i_bit[240].flxodat  |ffxkclk__parameterized0_173 |     1|
+|183   |        \i_bit[241].flxodat  |ffxkclk__parameterized0_174 |     1|
+|184   |        \i_bit[242].flxodat  |ffxkclk__parameterized0_175 |     1|
+|185   |        \i_bit[243].flxodat  |ffxkclk__parameterized0_176 |     1|
+|186   |        \i_bit[244].flxodat  |ffxkclk__parameterized0_177 |     1|
+|187   |        \i_bit[245].flxodat  |ffxkclk__parameterized0_178 |     1|
+|188   |        \i_bit[246].flxodat  |ffxkclk__parameterized0_179 |     1|
+|189   |        \i_bit[247].flxodat  |ffxkclk__parameterized0_180 |     1|
+|190   |        \i_bit[248].flxodat  |ffxkclk__parameterized0_181 |     1|
+|191   |        \i_bit[249].flxodat  |ffxkclk__parameterized0_182 |     1|
+|192   |        \i_bit[24].flxodat   |ffxkclk__parameterized0_183 |     1|
+|193   |        \i_bit[250].flxodat  |ffxkclk__parameterized0_184 |     1|
+|194   |        \i_bit[251].flxodat  |ffxkclk__parameterized0_185 |     1|
+|195   |        \i_bit[252].flxodat  |ffxkclk__parameterized0_186 |     1|
+|196   |        \i_bit[253].flxodat  |ffxkclk__parameterized0_187 |     1|
+|197   |        \i_bit[254].flxodat  |ffxkclk__parameterized0_188 |     1|
+|198   |        \i_bit[255].flxodat  |ffxkclk__parameterized0_189 |     1|
+|199   |        \i_bit[25].flxodat   |ffxkclk__parameterized0_190 |     1|
+|200   |        \i_bit[26].flxodat   |ffxkclk__parameterized0_191 |     1|
+|201   |        \i_bit[27].flxodat   |ffxkclk__parameterized0_192 |     1|
+|202   |        \i_bit[28].flxodat   |ffxkclk__parameterized0_193 |     1|
+|203   |        \i_bit[29].flxodat   |ffxkclk__parameterized0_194 |     1|
+|204   |        \i_bit[2].flxodat    |ffxkclk__parameterized0_195 |     1|
+|205   |        \i_bit[30].flxodat   |ffxkclk__parameterized0_196 |     1|
+|206   |        \i_bit[31].flxodat   |ffxkclk__parameterized0_197 |     1|
+|207   |        \i_bit[32].flxodat   |ffxkclk__parameterized0_198 |     1|
+|208   |        \i_bit[33].flxodat   |ffxkclk__parameterized0_199 |     1|
+|209   |        \i_bit[34].flxodat   |ffxkclk__parameterized0_200 |     1|
+|210   |        \i_bit[35].flxodat   |ffxkclk__parameterized0_201 |     1|
+|211   |        \i_bit[36].flxodat   |ffxkclk__parameterized0_202 |     1|
+|212   |        \i_bit[37].flxodat   |ffxkclk__parameterized0_203 |     1|
+|213   |        \i_bit[38].flxodat   |ffxkclk__parameterized0_204 |     1|
+|214   |        \i_bit[39].flxodat   |ffxkclk__parameterized0_205 |     1|
+|215   |        \i_bit[3].flxodat    |ffxkclk__parameterized0_206 |     1|
+|216   |        \i_bit[40].flxodat   |ffxkclk__parameterized0_207 |     1|
+|217   |        \i_bit[41].flxodat   |ffxkclk__parameterized0_208 |     1|
+|218   |        \i_bit[42].flxodat   |ffxkclk__parameterized0_209 |     1|
+|219   |        \i_bit[43].flxodat   |ffxkclk__parameterized0_210 |     1|
+|220   |        \i_bit[44].flxodat   |ffxkclk__parameterized0_211 |     1|
+|221   |        \i_bit[45].flxodat   |ffxkclk__parameterized0_212 |     1|
+|222   |        \i_bit[46].flxodat   |ffxkclk__parameterized0_213 |     1|
+|223   |        \i_bit[47].flxodat   |ffxkclk__parameterized0_214 |     1|
+|224   |        \i_bit[48].flxodat   |ffxkclk__parameterized0_215 |     1|
+|225   |        \i_bit[49].flxodat   |ffxkclk__parameterized0_216 |     1|
+|226   |        \i_bit[4].flxodat    |ffxkclk__parameterized0_217 |     1|
+|227   |        \i_bit[50].flxodat   |ffxkclk__parameterized0_218 |     1|
+|228   |        \i_bit[51].flxodat   |ffxkclk__parameterized0_219 |     1|
+|229   |        \i_bit[52].flxodat   |ffxkclk__parameterized0_220 |     1|
+|230   |        \i_bit[53].flxodat   |ffxkclk__parameterized0_221 |     1|
+|231   |        \i_bit[54].flxodat   |ffxkclk__parameterized0_222 |     1|
+|232   |        \i_bit[55].flxodat   |ffxkclk__parameterized0_223 |     1|
+|233   |        \i_bit[56].flxodat   |ffxkclk__parameterized0_224 |     1|
+|234   |        \i_bit[57].flxodat   |ffxkclk__parameterized0_225 |     1|
+|235   |        \i_bit[58].flxodat   |ffxkclk__parameterized0_226 |     1|
+|236   |        \i_bit[59].flxodat   |ffxkclk__parameterized0_227 |     1|
+|237   |        \i_bit[5].flxodat    |ffxkclk__parameterized0_228 |     1|
+|238   |        \i_bit[60].flxodat   |ffxkclk__parameterized0_229 |     1|
+|239   |        \i_bit[61].flxodat   |ffxkclk__parameterized0_230 |     1|
+|240   |        \i_bit[62].flxodat   |ffxkclk__parameterized0_231 |     1|
+|241   |        \i_bit[63].flxodat   |ffxkclk__parameterized0_232 |     1|
+|242   |        \i_bit[64].flxodat   |ffxkclk__parameterized0_233 |     1|
+|243   |        \i_bit[65].flxodat   |ffxkclk__parameterized0_234 |     1|
+|244   |        \i_bit[66].flxodat   |ffxkclk__parameterized0_235 |     1|
+|245   |        \i_bit[67].flxodat   |ffxkclk__parameterized0_236 |     1|
+|246   |        \i_bit[68].flxodat   |ffxkclk__parameterized0_237 |     1|
+|247   |        \i_bit[69].flxodat   |ffxkclk__parameterized0_238 |     1|
+|248   |        \i_bit[6].flxodat    |ffxkclk__parameterized0_239 |     1|
+|249   |        \i_bit[70].flxodat   |ffxkclk__parameterized0_240 |     1|
+|250   |        \i_bit[71].flxodat   |ffxkclk__parameterized0_241 |     1|
+|251   |        \i_bit[72].flxodat   |ffxkclk__parameterized0_242 |     1|
+|252   |        \i_bit[73].flxodat   |ffxkclk__parameterized0_243 |     1|
+|253   |        \i_bit[74].flxodat   |ffxkclk__parameterized0_244 |     1|
+|254   |        \i_bit[75].flxodat   |ffxkclk__parameterized0_245 |     1|
+|255   |        \i_bit[76].flxodat   |ffxkclk__parameterized0_246 |     1|
+|256   |        \i_bit[77].flxodat   |ffxkclk__parameterized0_247 |     1|
+|257   |        \i_bit[78].flxodat   |ffxkclk__parameterized0_248 |     1|
+|258   |        \i_bit[79].flxodat   |ffxkclk__parameterized0_249 |     1|
+|259   |        \i_bit[7].flxodat    |ffxkclk__parameterized0_250 |     1|
+|260   |        \i_bit[80].flxodat   |ffxkclk__parameterized0_251 |     1|
+|261   |        \i_bit[81].flxodat   |ffxkclk__parameterized0_252 |     1|
+|262   |        \i_bit[82].flxodat   |ffxkclk__parameterized0_253 |     1|
+|263   |        \i_bit[83].flxodat   |ffxkclk__parameterized0_254 |     1|
+|264   |        \i_bit[84].flxodat   |ffxkclk__parameterized0_255 |     1|
+|265   |        \i_bit[85].flxodat   |ffxkclk__parameterized0_256 |     1|
+|266   |        \i_bit[86].flxodat   |ffxkclk__parameterized0_257 |     1|
+|267   |        \i_bit[87].flxodat   |ffxkclk__parameterized0_258 |     1|
+|268   |        \i_bit[88].flxodat   |ffxkclk__parameterized0_259 |     1|
+|269   |        \i_bit[89].flxodat   |ffxkclk__parameterized0_260 |     1|
+|270   |        \i_bit[8].flxodat    |ffxkclk__parameterized0_261 |     1|
+|271   |        \i_bit[90].flxodat   |ffxkclk__parameterized0_262 |     1|
+|272   |        \i_bit[91].flxodat   |ffxkclk__parameterized0_263 |     1|
+|273   |        \i_bit[92].flxodat   |ffxkclk__parameterized0_264 |     1|
+|274   |        \i_bit[93].flxodat   |ffxkclk__parameterized0_265 |     1|
+|275   |        \i_bit[94].flxodat   |ffxkclk__parameterized0_266 |     1|
+|276   |        \i_bit[95].flxodat   |ffxkclk__parameterized0_267 |     1|
+|277   |        \i_bit[96].flxodat   |ffxkclk__parameterized0_268 |     1|
+|278   |        \i_bit[97].flxodat   |ffxkclk__parameterized0_269 |     1|
+|279   |        \i_bit[98].flxodat   |ffxkclk__parameterized0_270 |     1|
+|280   |        \i_bit[99].flxodat   |ffxkclk__parameterized0_271 |     1|
+|281   |        \i_bit[9].flxodat    |ffxkclk__parameterized0_272 |     1|
+|282   |      iau_start              |ffxkclkx_11                 |     2|
+|283   |        \i_bit[0].flxodat    |ffxkclk_16                  |     2|
+|284   |      iauc_decoder           |auc_decoder                 |    35|
+|285   |        ifflopx              |fflopx                      |     2|
+|286   |        ifflopx1             |fflopx__parameterized0      |     5|
+|287   |      iauc_mmul              |auc_mmul                    |  3227|
+|288   |        iauc_mmul_comp       |auc_mmulcomp                |  1135|
+|289   |        iauc_mmul_final      |auc_mmulfinal               |   828|
+|290   |        iauc_mmul_init       |auc_mmulinit                |  1254|
+|291   |      iauc_naf               |auc_naf                     |  3928|
+|292   |        ifflopx              |fflopx__parameterized1_14   |   290|
+|293   |        ifflopx1             |fflopx__parameterized1_15   |     3|
+|294   |      iauc_rand_wrap         |auc_rand_wrap               |  1269|
+|295   |        iauc_rand            |auc_rand                    |  1269|
+|296   |          ifflopx            |fflopx__parameterized1_13   |   266|
+|297   |      iauc_wmul              |auc_wmul                    |  2394|
+|298   |        iauc_wmul_add        |auc_wmul_add                |   632|
+|299   |        iauc_wmul_conv       |auc_wmul_conv               |   295|
+|300   |        iauc_wmul_dbl        |auc_wmul_dbl                |   589|
+|301   |        iauc_wmul_decoder    |auc_wmul_decoder            |    31|
+|302   |        iauc_wmul_main       |auc_wmul_main               |   774|
+|303   |        iauc_wmul_pre        |auc_wmul_pre                |    68|
+|304   |      iffxkclkx              |ffxkclkx__parameterized2    |     2|
+|305   |        \i_bit[0].flxodat    |ffxkclk__parameterized0     |     2|
+|306   |      immul_start            |fflopx__parameterized1      |     1|
+|307   |      irsi_start             |fflopx__parameterized1_12   |     1|
+|308   |      irsinv                 |rsinv                       |   419|
+|309   |    imainctrl                |mainctrl                    |   484|
+|310   |  iffxkclkx1                 |ffxkclkx                    |     2|
+|311   |    \i_bit[0].flxodat        |ffxkclk_10                  |     2|
+|312   |  iffxkclkx4                 |ffxkclkx_0                  |     2|
+|313   |    \i_bit[0].flxodat        |ffxkclk_6                   |     2|
+|314   |  iffxkclkx5                 |ffxkclkx__parameterized1    |     4|
+|315   |    \i_bit[0].flxodat        |ffxkclk_4                   |     2|
+|316   |    \i_bit[1].flxodat        |ffxkclk_5                   |     2|
+|317   |  iffxkclkx6                 |ffxkclkx_1                  |     2|
+|318   |    \i_bit[0].flxodat        |ffxkclk                     |     2|
+|319   |  irtldbgsipo1               |rtldbgsipo1                 |     4|
+|320   |    xflidat_l                |fflopknx__parameterized0_3  |     2|
+|321   |    xflodat                  |fflopknx                    |     1|
+|322   |  irtldbgsipo2               |rtldbgsipo1__parameterized0 |     4|
+|323   |    xflidat_l                |fflopknx__parameterized0    |     2|
+|324   |    xflodat                  |fflopknx__parameterized2_2  |     1|
+|325   |  irtldbgsipo3               |rtldbgsipo1__parameterized1 |     2|
+|326   |    xflidat_l                |fflopknx__parameterized2    |     2|
++------+-----------------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1345.254 ; gain = 69.875
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1345.254 ; gain = 69.875
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1345.254 ; gain = 69.875
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.469 . Memory (MB): peak = 1345.254 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 537 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1345.254 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: b7a56467
+INFO: [Common 17-83] Releasing license: Synthesis
+123 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:02:02 . Memory (MB): peak = 1345.254 ; gain = 69.875
+INFO: [Common 17-1381] The checkpoint 'D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/synth_1/ecc_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ecc_top_utilization_synth.rpt -pb ecc_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 29 14:46:50 2022...

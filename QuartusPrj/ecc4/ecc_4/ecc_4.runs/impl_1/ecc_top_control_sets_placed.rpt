@@ -1,0 +1,105 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Fri Oct  7 15:51:46 2022
+| Host         : DESKTOP-HITIO21 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file ecc_top_control_sets_placed.rpt
+| Design       : ecc_top
+| Device       : xc7a200t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    27 |
+|    Minimum number of control sets                        |    27 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    72 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    27 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    17 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             870 |          255 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |            1386 |          527 |
+| Yes          | No                    | No                     |               5 |            2 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            4131 |         1538 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                           Enable Signal                           |                          Set/Reset Signal                         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                                                   | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_final/finalisswapx33      |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/imainctrl/auc_mode_reg[0]_0[0]                          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | iecc_core/imainctrl/gen_state_1                                   | rst_IBUF                                                          |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_comp/compisswapz2         |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_comp/compisprekt1         |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_init/initisinitx2         |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/enidle                                         |                                                                   |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_comp/cnt[7]_i_1__0_n_0    | rst_IBUF                                                          |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/imainctrl/SR[0]                                         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/E[0]                           | iecc_core/ialuwrap/imontinv/phase1/inven_reg                      |                9 |             10 |         1.11 |
+|  clk_IBUF_BUFG | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_init/kdecode[253]_i_2_n_0 | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_init/kdecode[253]_i_1_n_0 |               63 |            251 |         3.98 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/u_reg[0]_1                     | iecc_core/ialuwrap/imontinv/phase1/inven_reg                      |              194 |            253 |         1.30 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/u_reg[0]_0                     | iecc_core/ialuwrap/imontinv/phase1/inven_reg                      |              111 |            253 |         2.28 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_init/init_wd[254]_i_1_n_0 |               91 |            255 |         2.80 |
+|  clk_IBUF_BUFG | iecc_core/iauc_wrap/iauc_mmul/iauc_mmul_init/initisinitx32vld     | rst_IBUF                                                          |               62 |            255 |         4.11 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imodfa/sum[255]_i_1_n_0                        | rst_IBUF                                                          |               72 |            256 |         3.56 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase2/state_reg[0]_0                 | rst_IBUF                                                          |               75 |            256 |         3.41 |
+|  clk_IBUF_BUFG | iecc_core/iauc_wrap/iauc_rand_wrap/iauc_rand/random[255]_i_1_n_0  | rst_IBUF                                                          |               63 |            256 |         4.06 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/u[254]_i_1_n_0                 | rst_IBUF                                                          |              198 |            257 |         1.30 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/v[255]_i_1_n_0                 | rst_IBUF                                                          |              139 |            261 |         1.88 |
+|  clk_IBUF_BUFG |                                                                   | iecc_core/ialuwrap/imontprowrap/imontpro/SR[0]                    |              163 |            265 |         1.63 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/imontinv/phase1/r                              | rst_IBUF                                                          |              118 |            268 |         2.27 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/icswap/ifflopx1/au_vld                         | rst_IBUF                                                          |              167 |            512 |         3.07 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/enidle                                         | rst_IBUF                                                          |              136 |            512 |         3.76 |
+|  clk_IBUF_BUFG | iecc_core/ialuwrap/swapen_reg_n_0                                 | rst_IBUF                                                          |              127 |            520 |         4.09 |
+|  clk_IBUF_BUFG |                                                                   | rst_IBUF                                                          |              264 |            835 |         3.16 |
+|  clk_IBUF_BUFG |                                                                   |                                                                   |              255 |            875 |         3.43 |
++----------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "dout",
+					"strict" : false
+				},
+				{
+					"name" : "status[0]",
+					"strict" : false
+				},
+				{
+					"name" : "status[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "mode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "test_num",
+					"strict" : false
+				},
+				{
+					"name" : "din",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

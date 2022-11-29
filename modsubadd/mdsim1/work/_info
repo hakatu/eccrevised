@@ -1,0 +1,122 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Paper/ECC Revised/mdsim/mds_ecc_4
+T_opt
+!s110 1668707728
+Vc_Ja79M1N]ahL3W:IYz[>3
+Z1 04 2 4 work tb fast 0
+=1-3003c8d4a537-6376758f-212-2764
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1668767991
+VQ;<?koCTTDa6TmQ4jiIMM2
+R1
+=3-3003c8d4a537-637760f7-1ee-dd0
+o-quiet -auto_acc_if_foreign -work work +acc
+R2
+n@_opt1
+R3
+ve_mod_add
+Z4 !s110 1668707716
+!i10b 1
+!s100 lRC5m>1zCkT_?:dKI4i;X0
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6B:3HbAZ^CdMW5bhzR6kg3
+Z6 dD:/Paper/ECC Revised/modsubadd/mdsim1
+w1668658463
+8D:/Paper/ECC Revised/modsubadd/v2/e_mod_add.v
+FD:/Paper/ECC Revised/modsubadd/v2/e_mod_add.v
+!i122 0
+L0 2 122
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z9 !s108 1668707716.000000
+!s107 D:/Paper/ECC Revised/modsubadd/v2/e_mod_add.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/modsubadd/v2/e_mod_add.v|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+ve_ppn_add
+R4
+!i10b 1
+!s100 HdbXGDSiJG8:bIRJW[0zz3
+R5
+IT^[L[2S>S6:cN?@IziQ^T3
+R6
+w1668576244
+8D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add.v
+FD:/Paper/ECC Revised/modsubadd/v2/e_ppn_add.v
+!i122 1
+L0 3 277
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add.v|
+!i113 0
+R10
+R2
+ve_ppn_add_cell
+R4
+!i10b 1
+!s100 3iI>FKY3LcdUb:G;8K<dS3
+R5
+I?bNbRfj6SaINPGG==MIlU3
+R6
+w1668576232
+8D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add_cell.v
+FD:/Paper/ECC Revised/modsubadd/v2/e_ppn_add_cell.v
+!i122 2
+L0 2 12
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add_cell.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/modsubadd/v2/e_ppn_add_cell.v|
+!i113 0
+R10
+R2
+vtb
+!s110 1668767985
+!i10b 1
+!s100 jEIUlOj37WRBM>YUPI5`N1
+R5
+I?TbNcVBRoM<nOAfj@eazK0
+R6
+w1668767979
+8D:/Paper/ECC Revised/modsubadd/v2/tb.v
+FD:/Paper/ECC Revised/modsubadd/v2/tb.v
+!i122 6
+L0 5 106
+R7
+R8
+r1
+!s85 0
+31
+!s108 1668767985.000000
+!s107 D:/Paper/ECC Revised/modsubadd/v2/tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/modsubadd/v2/tb.v|
+!i113 0
+R10
+R2

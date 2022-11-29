@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Aug 29 16:15:20 2022
+# Process ID: 21540
+# Current directory: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1
+# Command line: vivado.exe -log ecc_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ecc_top.tcl -notrace
+# Log file: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1/ecc_top.vdi
+# Journal file: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1\vivado.jou
+# Running On: DESKTOP-HITIO21, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 14702 MB
+#-----------------------------------------------------------
+source ecc_top.tcl -notrace

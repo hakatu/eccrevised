@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Aug 29 16:15:20 2022
+# Process ID: 21540
+# Current directory: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1
+# Command line: vivado.exe -log ecc_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ecc_top.tcl -notrace
+# Log file: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1/ecc_top.vdi
+# Journal file: D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.runs/impl_1\vivado.jou
+# Running On: DESKTOP-HITIO21, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 14702 MB
+#-----------------------------------------------------------
+source ecc_top.tcl -notrace
+Command: link_design -top ecc_top -part xc7k70tfbv676-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.217 . Memory (MB): peak = 1291.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 537 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+CRITICAL WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'aladder' instantiated as 'iecc_core/ialuwrap/imodfa/ialadder'. 9 instances of this cell are unresolved black boxes. [D:/Paper/ECC Revised/QuartusPrj/eccrevised/eccrevised.srcs/sources_1/imports/lv_2pl/modfa.v:171]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1291.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+6 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1291.258 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k70t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imodfa/ialadder' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontinv/phase1/iadd' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontinv/phase1/ifull_sub_uv' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontinv/phase1/ifull_sub_vu' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontinv/phase2/iadd' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontprowrap/imontpro/ialadder' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/ialuwrap/imontprowrap/imontpro/ialadder2' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/iauc_wrap/iauc_naf/isub_cnum1' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'iecc_core/iauc_wrap/iauc_naf/isub_cnum2' of type 'aladder' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+INFO: [Project 1-461] DRC finished with 9 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1291.258 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 1 Critical Warnings and 10 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 29 16:15:33 2022...

@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Nov  6 19:55:03 2022
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+Revision Name : modfatesttiming
+Top-level Entity Name : modfatesttiming
+Family : Cyclone V
+Device : 5CGXFC5C6F23C6
+Timing Models : Final
+Logic utilization (in ALMs) : 1,430 / 29,080 ( 5 % )
+Total registers : 2347
+Total pins : 9 / 268 ( 3 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 4,567,040 ( 0 % )
+Total RAM Blocks : 0 / 446 ( 0 % )
+Total DSP Blocks : 0 / 150 ( 0 % )
+Total HSSI RX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
+Total HSSI TX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
+Total PLLs : 0 / 12 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

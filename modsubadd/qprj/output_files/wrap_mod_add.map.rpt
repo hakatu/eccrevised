@@ -1,0 +1,2139 @@
+Analysis & Synthesis report for wrap_mod_add
+Sun Nov 13 13:40:11 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Protected by Synthesis
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat
+ 12. Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l
+ 13. Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l
+ 14. Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat
+ 15. Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l
+ 16. Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l
+ 17. Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat
+ 18. Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l
+ 19. Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l
+ 20. Parameter Settings for User Entity Instance: Top-level Entity: |wrap_mod_add
+ 21. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1
+ 22. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat
+ 23. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l
+ 24. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l
+ 25. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2
+ 26. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat
+ 27. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l
+ 28. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l
+ 29. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3
+ 30. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat
+ 31. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l
+ 32. Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l
+ 33. Parameter Settings for User Entity Instance: e_mod_add:ie_mod_add
+ 34. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_2"
+ 35. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[255].phun_ppn_cell_s7_i"
+ 36. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[127].phun_ppn_cell_s7_i"
+ 37. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[126].phun_ppn_cell_s7_i"
+ 38. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[125].phun_ppn_cell_s7_i"
+ 39. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[124].phun_ppn_cell_s7_i"
+ 40. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[123].phun_ppn_cell_s7_i"
+ 41. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[122].phun_ppn_cell_s7_i"
+ 42. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[121].phun_ppn_cell_s7_i"
+ 43. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[120].phun_ppn_cell_s7_i"
+ 44. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[119].phun_ppn_cell_s7_i"
+ 45. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[118].phun_ppn_cell_s7_i"
+ 46. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[117].phun_ppn_cell_s7_i"
+ 47. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[116].phun_ppn_cell_s7_i"
+ 48. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[115].phun_ppn_cell_s7_i"
+ 49. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[114].phun_ppn_cell_s7_i"
+ 50. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[113].phun_ppn_cell_s7_i"
+ 51. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[112].phun_ppn_cell_s7_i"
+ 52. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[111].phun_ppn_cell_s7_i"
+ 53. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[110].phun_ppn_cell_s7_i"
+ 54. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[109].phun_ppn_cell_s7_i"
+ 55. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[108].phun_ppn_cell_s7_i"
+ 56. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[107].phun_ppn_cell_s7_i"
+ 57. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[106].phun_ppn_cell_s7_i"
+ 58. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[105].phun_ppn_cell_s7_i"
+ 59. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[104].phun_ppn_cell_s7_i"
+ 60. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[103].phun_ppn_cell_s7_i"
+ 61. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[102].phun_ppn_cell_s7_i"
+ 62. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[101].phun_ppn_cell_s7_i"
+ 63. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[100].phun_ppn_cell_s7_i"
+ 64. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[99].phun_ppn_cell_s7_i"
+ 65. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[98].phun_ppn_cell_s7_i"
+ 66. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[97].phun_ppn_cell_s7_i"
+ 67. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[96].phun_ppn_cell_s7_i"
+ 68. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[95].phun_ppn_cell_s7_i"
+ 69. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[94].phun_ppn_cell_s7_i"
+ 70. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[93].phun_ppn_cell_s7_i"
+ 71. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[92].phun_ppn_cell_s7_i"
+ 72. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[91].phun_ppn_cell_s7_i"
+ 73. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[90].phun_ppn_cell_s7_i"
+ 74. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[89].phun_ppn_cell_s7_i"
+ 75. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[88].phun_ppn_cell_s7_i"
+ 76. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[87].phun_ppn_cell_s7_i"
+ 77. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[86].phun_ppn_cell_s7_i"
+ 78. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[85].phun_ppn_cell_s7_i"
+ 79. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[84].phun_ppn_cell_s7_i"
+ 80. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[83].phun_ppn_cell_s7_i"
+ 81. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[82].phun_ppn_cell_s7_i"
+ 82. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[81].phun_ppn_cell_s7_i"
+ 83. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[80].phun_ppn_cell_s7_i"
+ 84. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[79].phun_ppn_cell_s7_i"
+ 85. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[78].phun_ppn_cell_s7_i"
+ 86. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[77].phun_ppn_cell_s7_i"
+ 87. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[76].phun_ppn_cell_s7_i"
+ 88. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[75].phun_ppn_cell_s7_i"
+ 89. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[74].phun_ppn_cell_s7_i"
+ 90. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[73].phun_ppn_cell_s7_i"
+ 91. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[72].phun_ppn_cell_s7_i"
+ 92. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[71].phun_ppn_cell_s7_i"
+ 93. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[70].phun_ppn_cell_s7_i"
+ 94. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[69].phun_ppn_cell_s7_i"
+ 95. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[68].phun_ppn_cell_s7_i"
+ 96. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[67].phun_ppn_cell_s7_i"
+ 97. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[66].phun_ppn_cell_s7_i"
+ 98. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[65].phun_ppn_cell_s7_i"
+ 99. Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[64].phun_ppn_cell_s7_i"
+100. Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l"
+101. Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo3"
+102. Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo2"
+103. Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo1"
+104. Post-Synthesis Netlist Statistics for Top Partition
+105. Elapsed Time Per Partition
+106. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Nov 13 13:40:11 2022           ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name                   ; wrap_mod_add                                    ;
+; Top-level Entity Name           ; wrap_mod_add                                    ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 40                                              ;
+; Total pins                      ; 9                                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; wrap_mod_add       ; wrap_mod_add       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; ../wrap_mod_add.v                ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v   ;         ;
+; ../rtldbgsipo1.v                 ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v    ;         ;
+; ../fflopknx.v                    ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/fflopknx.v       ;         ;
+; ../e_ppn_add_cell.v              ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/e_ppn_add_cell.v ;         ;
+; ../e_ppn_add.v                   ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/e_ppn_add.v      ;         ;
+; ../e_mod_add.v                   ; yes             ; User Verilog HDL File  ; D:/Paper/ECC Revised/modsubadd/e_mod_add.v      ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 21        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 32        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 4         ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 2         ;
+;     -- <=3 input functions                  ; 22        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 40        ;
+;                                             ;           ;
+; I/O pins                                    ; 9         ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 40        ;
+; Total fan-out                               ; 167       ;
+; Average fan-out                             ; 1.86      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name  ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------+--------------+
+; |wrap_mod_add                   ; 32 (0)              ; 40 (0)                    ; 0                 ; 0          ; 9    ; 0            ; |wrap_mod_add                                              ; wrap_mod_add ; work         ;
+;    |e_mod_add:ie_mod_add|       ; 9 (7)               ; 13 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|e_mod_add:ie_mod_add                         ; e_mod_add    ; work         ;
+;       |e_ppn_add:p_e_ppn_add_1| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1 ; e_ppn_add    ; work         ;
+;       |e_ppn_add:p_e_ppn_add_2| ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_2 ; e_ppn_add    ; work         ;
+;    |rtldbgsipo1:irtldbgsipo1|   ; 10 (2)              ; 11 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo1                     ; rtldbgsipo1  ; work         ;
+;       |fflopknx:xflidat_l|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflocnt_l|      ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflodat|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat    ; fflopknx     ; work         ;
+;    |rtldbgsipo1:irtldbgsipo2|   ; 10 (2)              ; 11 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo2                     ; rtldbgsipo1  ; work         ;
+;       |fflopknx:xflidat_l|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflocnt_l|      ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflodat|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat    ; fflopknx     ; work         ;
+;    |rtldbgsipo1:irtldbgsipo3|   ; 3 (1)               ; 5 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo3                     ; rtldbgsipo1  ; work         ;
+;       |fflopknx:xflidat_l|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflocnt_l|      ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l  ; fflopknx     ; work         ;
+;       |fflopknx:xflodat|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |wrap_mod_add|rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat    ; fflopknx     ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                      ;
++-------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                         ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++-------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat|d_reg[0]    ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l|d_reg[-1] ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat|d_reg[0]    ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat|d_reg[0]    ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[7]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[6]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[5]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[4]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[3]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[2]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[1]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[7]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[6]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[5]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[4]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[3]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[2]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[1]  ; yes                                                              ; yes                                        ;
+; rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l|d_reg[0]  ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 24             ;                                                                  ;                                            ;
++-------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                              ;
++--------------------------------------------------+--------------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                           ;
++--------------------------------------------------+--------------------------------------------------------------+
+; e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_2|c_o ; Merged with e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|c_o ;
+; Total Number of Removed Registers = 1            ;                                                              ;
++--------------------------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 40    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat ;
++-------------------+-------+------+-------------------------------+
+; Assignment        ; Value ; From ; To                            ;
++-------------------+-------+------+-------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[255]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[254]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[253]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[252]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[251]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[250]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[249]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[248]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[247]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[246]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[245]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[244]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[243]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[242]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[241]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[240]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[239]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[238]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[237]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[236]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[235]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[234]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[233]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[232]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[231]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[230]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[229]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[228]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[227]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[226]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[225]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[224]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[223]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[222]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[221]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[220]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[219]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[218]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[217]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[216]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[215]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[214]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[213]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[212]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[211]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[210]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[209]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[208]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[207]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[206]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[205]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[204]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[203]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[202]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[201]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[200]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[199]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[198]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[197]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[196]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[195]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[194]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[193]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[192]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[191]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[190]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[189]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[188]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[187]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[186]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[185]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[184]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[183]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[182]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[181]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[180]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[179]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[178]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[177]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[176]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[175]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[174]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[173]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[172]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[171]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[170]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[169]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[168]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[167]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[166]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[165]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[164]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[163]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[162]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[161]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[160]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[159]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[158]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[157]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[156]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[155]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[154]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[153]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[152]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[151]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[150]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[149]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[148]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[147]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[146]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[145]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[144]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[143]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[142]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[141]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[140]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[139]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[138]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[137]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[136]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[135]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[134]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[133]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[132]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[131]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[130]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[129]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[128]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[127]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[126]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[125]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[124]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[123]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[122]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[121]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[120]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[119]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[118]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[117]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[116]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[115]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[114]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[113]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[112]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[111]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[110]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[109]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[108]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[107]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[106]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[105]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[104]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[103]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[102]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[101]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[100]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[99]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[98]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[97]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[96]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[95]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[94]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[93]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[92]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[91]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[90]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[89]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[88]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[87]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[86]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[85]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[84]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[83]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[82]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[81]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[80]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[79]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[78]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[77]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[76]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[75]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[74]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[73]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[72]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[71]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[70]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[69]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[68]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[67]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[66]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[65]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[64]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[63]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[62]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[61]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[60]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[59]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[58]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[57]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[56]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[55]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[54]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[53]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[52]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[51]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[50]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[49]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[48]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[47]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[46]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[45]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[44]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[43]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[42]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[41]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[40]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[39]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[38]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[37]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[36]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[35]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[34]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[33]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[32]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[31]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[30]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[29]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[28]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[27]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[26]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[25]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[24]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[23]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[22]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[21]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[20]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[19]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[18]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[17]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[16]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[15]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[14]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[13]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[12]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[11]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[10]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[9]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[8]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[7]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[6]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[5]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[4]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[3]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[2]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[1]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                      ;
++-------------------+-------+------+-------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
++-------------------+-------+------+---------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[7]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[6]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[5]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[4]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[3]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[2]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[1]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
++-------------------+-------+------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat ;
++-------------------+-------+------+-------------------------------+
+; Assignment        ; Value ; From ; To                            ;
++-------------------+-------+------+-------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[255]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[254]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[253]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[252]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[251]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[250]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[249]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[248]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[247]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[246]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[245]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[244]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[243]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[242]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[241]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[240]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[239]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[238]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[237]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[236]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[235]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[234]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[233]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[232]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[231]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[230]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[229]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[228]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[227]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[226]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[225]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[224]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[223]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[222]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[221]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[220]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[219]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[218]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[217]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[216]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[215]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[214]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[213]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[212]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[211]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[210]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[209]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[208]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[207]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[206]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[205]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[204]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[203]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[202]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[201]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[200]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[199]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[198]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[197]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[196]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[195]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[194]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[193]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[192]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[191]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[190]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[189]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[188]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[187]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[186]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[185]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[184]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[183]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[182]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[181]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[180]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[179]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[178]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[177]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[176]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[175]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[174]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[173]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[172]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[171]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[170]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[169]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[168]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[167]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[166]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[165]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[164]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[163]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[162]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[161]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[160]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[159]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[158]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[157]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[156]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[155]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[154]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[153]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[152]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[151]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[150]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[149]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[148]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[147]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[146]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[145]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[144]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[143]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[142]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[141]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[140]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[139]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[138]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[137]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[136]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[135]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[134]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[133]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[132]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[131]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[130]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[129]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[128]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[127]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[126]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[125]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[124]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[123]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[122]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[121]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[120]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[119]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[118]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[117]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[116]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[115]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[114]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[113]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[112]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[111]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[110]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[109]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[108]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[107]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[106]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[105]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[104]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[103]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[102]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[101]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[100]                    ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[99]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[98]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[97]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[96]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[95]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[94]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[93]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[92]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[91]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[90]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[89]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[88]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[87]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[86]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[85]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[84]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[83]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[82]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[81]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[80]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[79]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[78]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[77]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[76]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[75]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[74]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[73]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[72]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[71]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[70]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[69]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[68]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[67]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[66]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[65]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[64]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[63]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[62]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[61]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[60]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[59]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[58]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[57]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[56]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[55]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[54]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[53]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[52]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[51]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[50]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[49]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[48]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[47]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[46]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[45]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[44]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[43]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[42]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[41]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[40]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[39]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[38]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[37]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[36]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[35]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[34]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[33]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[32]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[31]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[30]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[29]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[28]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[27]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[26]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[25]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[24]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[23]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[22]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[21]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[20]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[19]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[18]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[17]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[16]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[15]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[14]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[13]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[12]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[11]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[10]                     ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[9]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[8]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[7]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[6]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[5]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[4]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[3]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[2]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[1]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                      ;
++-------------------+-------+------+-------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
++-------------------+-------+------+---------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[7]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[6]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[5]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[4]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[3]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[2]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[1]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
++-------------------+-------+------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat ;
++-------------------+-------+------+-------------------------------+
+; Assignment        ; Value ; From ; To                            ;
++-------------------+-------+------+-------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                      ;
++-------------------+-------+------+-------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[255]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[254]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[253]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[252]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[251]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[250]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[249]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[248]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[247]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[246]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[245]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[244]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[243]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[242]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[241]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[240]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[239]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[238]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[237]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[236]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[235]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[234]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[233]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[232]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[231]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[230]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[229]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[228]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[227]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[226]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[225]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[224]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[223]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[222]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[221]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[220]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[219]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[218]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[217]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[216]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[215]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[214]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[213]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[212]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[211]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[210]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[209]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[208]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[207]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[206]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[205]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[204]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[203]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[202]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[201]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[200]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[199]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[198]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[197]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[196]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[195]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[194]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[193]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[192]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[191]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[190]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[189]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[188]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[187]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[186]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[185]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[184]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[183]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[182]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[181]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[180]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[179]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[178]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[177]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[176]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[175]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[174]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[173]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[172]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[171]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[170]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[169]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[168]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[167]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[166]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[165]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[164]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[163]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[162]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[161]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[160]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[159]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[158]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[157]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[156]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[155]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[154]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[153]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[152]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[151]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[150]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[149]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[148]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[147]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[146]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[145]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[144]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[143]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[142]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[141]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[140]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[139]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[138]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[137]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[136]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[135]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[134]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[133]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[132]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[131]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[130]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[129]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[128]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[127]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[126]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[125]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[124]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[123]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[122]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[121]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[120]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[119]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[118]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[117]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[116]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[115]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[114]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[113]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[112]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[111]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[110]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[109]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[108]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[107]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[106]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[105]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[104]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[103]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[102]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[101]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[100]                      ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[99]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[98]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[97]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[96]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[95]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[94]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[93]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[92]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[91]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[90]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[89]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[88]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[87]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[86]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[85]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[84]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[83]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[82]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[81]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[80]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[79]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[78]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[77]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[76]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[75]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[74]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[73]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[72]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[71]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[70]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[69]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[68]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[67]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[66]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[65]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[64]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[63]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[62]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[61]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[60]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[59]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[58]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[57]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[56]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[55]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[54]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[53]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[52]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[51]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[50]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[49]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[48]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[47]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[46]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[45]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[44]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[43]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[42]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[41]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[40]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[39]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[38]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[37]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[36]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[35]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[34]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[33]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[32]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[31]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[30]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[29]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[28]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[27]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[26]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[25]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[24]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[23]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[22]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[21]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[20]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[19]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[18]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[17]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[16]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[15]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[14]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[13]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[12]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[11]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[10]                       ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[9]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[8]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[7]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[6]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[5]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[4]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[3]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[2]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[1]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
++-------------------+-------+------+---------------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l ;
++-------------------+-------+------+---------------------------------+
+; Assignment        ; Value ; From ; To                              ;
++-------------------+-------+------+---------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[0]                        ;
+; PRESERVE_REGISTER ; on    ; -    ; d_reg[-1]                       ;
++-------------------+-------+------+---------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |wrap_mod_add ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 256   ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; ODAT_B         ; 256   ; Signed Integer                               ;
+; IDAT_B         ; 1     ; Signed Integer                               ;
+; OCNT_B         ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; W_B            ; 256   ; Signed Integer                                                ;
+; K_V            ; 1     ; Signed Integer                                                ;
+; A_R            ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 1     ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 8     ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; ODAT_B         ; 256   ; Signed Integer                               ;
+; IDAT_B         ; 1     ; Signed Integer                               ;
+; OCNT_B         ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflodat ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; W_B            ; 256   ; Signed Integer                                                ;
+; K_V            ; 1     ; Signed Integer                                                ;
+; A_R            ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflidat_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 1     ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo2|fflopknx:xflocnt_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 8     ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; ODAT_B         ; 1     ; Signed Integer                               ;
+; IDAT_B         ; 256   ; Signed Integer                               ;
+; OCNT_B         ; 0     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflodat ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; W_B            ; 1     ; Signed Integer                                                ;
+; K_V            ; 1     ; Signed Integer                                                ;
+; A_R            ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 256   ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W_B            ; 0     ; Signed Integer                                                  ;
+; K_V            ; 1     ; Signed Integer                                                  ;
+; A_R            ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: e_mod_add:ie_mod_add ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 256   ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_2" ;
++--------+-------+----------+----------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                      ;
++--------+-------+----------+----------------------------------------------+
+; b_i[0] ; Input ; Info     ; Stuck at VCC                                 ;
++--------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[255].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
+; g_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[127].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[126].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[125].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[124].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[123].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[122].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[121].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[120].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[119].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[118].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[117].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[116].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[115].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[114].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[113].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[112].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[111].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[110].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[109].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[108].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[107].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[106].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[105].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[104].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[103].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[102].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[101].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[100].phun_ppn_cell_s7_i" ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                    ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.        ;
++-------+--------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[99].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[98].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[97].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[96].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[95].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[94].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[93].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[92].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[91].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[90].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[89].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[88].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[87].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[86].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[85].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[84].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[83].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[82].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[81].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[80].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[79].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[78].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[77].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[76].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[75].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[74].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[73].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[72].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[71].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[70].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[69].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[68].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[67].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[66].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[65].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block7[64].phun_ppn_cell_s7_i" ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+; p_now ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++-------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo3|fflopknx:xflidat_l"                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; odat[255..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo3" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; iena ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo2" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; iena ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "rtldbgsipo1:irtldbgsipo1" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; iena ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 40                          ;
+;     CLR               ; 10                          ;
+;     ENA CLR           ; 3                           ;
+;     plain             ; 27                          ;
+; arriav_lcell_comb     ; 32                          ;
+;     normal            ; 32                          ;
+;         0 data inputs ; 18                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 4                           ;
+; boundary_port         ; 9                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 0.92                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Processing started: Sun Nov 13 13:39:59 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wrap_mod_add -c wrap_mod_add
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/wrap_mod_add.v
+    Info (12023): Found entity 1: wrap_mod_add File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/rtldbgsipo1.v
+    Info (12023): Found entity 1: rtldbgsipo1 File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/ffxkclkx.v
+    Info (12023): Found entity 1: ffxkclkx File: D:/Paper/ECC Revised/modsubadd/ffxkclkx.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/ffxkclk.v
+    Info (12023): Found entity 1: ffxkclk File: D:/Paper/ECC Revised/modsubadd/ffxkclk.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/fflopx.v
+    Info (12023): Found entity 1: fflopx File: D:/Paper/ECC Revised/modsubadd/fflopx.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/fflopknx.v
+    Info (12023): Found entity 1: fflopknx File: D:/Paper/ECC Revised/modsubadd/fflopknx.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/e_ppn_add_cell.v
+    Info (12023): Found entity 1: e_ppn_add_cell File: D:/Paper/ECC Revised/modsubadd/e_ppn_add_cell.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/e_ppn_add.v
+    Info (12023): Found entity 1: e_ppn_add File: D:/Paper/ECC Revised/modsubadd/e_ppn_add.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /paper/ecc revised/modsubadd/e_mod_add.v
+    Info (12023): Found entity 1: e_mod_add File: D:/Paper/ECC Revised/modsubadd/e_mod_add.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at wrap_mod_add.v(32): created implicit net for "rst" File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 32
+Info (12127): Elaborating entity "wrap_mod_add" for the top level hierarchy
+Info (12128): Elaborating entity "rtldbgsipo1" for hierarchy "rtldbgsipo1:irtldbgsipo1" File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 36
+Info (12128): Elaborating entity "fflopknx" for hierarchy "rtldbgsipo1:irtldbgsipo1|fflopknx:xflodat" File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 57
+Info (12128): Elaborating entity "fflopknx" for hierarchy "rtldbgsipo1:irtldbgsipo1|fflopknx:xflidat_l" File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 64
+Info (12128): Elaborating entity "fflopknx" for hierarchy "rtldbgsipo1:irtldbgsipo1|fflopknx:xflocnt_l" File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 65
+Info (12128): Elaborating entity "rtldbgsipo1" for hierarchy "rtldbgsipo1:irtldbgsipo3" File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 58
+Warning (10230): Verilog HDL assignment warning at rtldbgsipo1.v(69): truncated value with size 256 to match size of target (1) File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 69
+Info (12128): Elaborating entity "fflopknx" for hierarchy "rtldbgsipo1:irtldbgsipo3|fflopknx:xflocnt_l" File: D:/Paper/ECC Revised/modsubadd/rtldbgsipo1.v Line: 65
+Warning (10230): Verilog HDL assignment warning at fflopknx.v(62): truncated value with size 4 to match size of target (2) File: D:/Paper/ECC Revised/modsubadd/fflopknx.v Line: 62
+Info (12128): Elaborating entity "e_mod_add" for hierarchy "e_mod_add:ie_mod_add" File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 69
+Warning (10230): Verilog HDL assignment warning at e_mod_add.v(119): truncated value with size 32 to match size of target (5) File: D:/Paper/ECC Revised/modsubadd/e_mod_add.v Line: 119
+Info (12128): Elaborating entity "e_ppn_add" for hierarchy "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1" File: D:/Paper/ECC Revised/modsubadd/e_mod_add.v Line: 75
+Warning (10230): Verilog HDL assignment warning at e_ppn_add.v(265): truncated value with size 32 to match size of target (1) File: D:/Paper/ECC Revised/modsubadd/e_ppn_add.v Line: 265
+Info (12128): Elaborating entity "e_ppn_add_cell" for hierarchy "e_mod_add:ie_mod_add|e_ppn_add:p_e_ppn_add_1|e_ppn_add_cell:block1[1].phun_ppn_cell_s1_i" File: D:/Paper/ECC Revised/modsubadd/e_ppn_add.v Line: 63
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "rst" is missing source, defaulting to GND File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 32
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sel[0]" File: D:/Paper/ECC Revised/modsubadd/wrap_mod_add.v Line: 4
+Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 43 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4963 megabytes
+    Info: Processing ended: Sun Nov 13 13:40:11 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:14
+
+

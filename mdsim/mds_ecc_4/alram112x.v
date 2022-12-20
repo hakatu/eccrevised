@@ -79,7 +79,7 @@ ffxkclkx #(2,1) isa (clkw, rst, sa, sa2);
 fflopx #(256) ifflopx1(clkw,rst,wdi,wdi1);
 fflopx #(256) ifflopx2(clkw,rst,wdi1,wdi2);
 
-assign rdo = sa2? wdi2 : rdonor;
+assign rdo = sa2? wdi2 : rdonor
 
 `else
 

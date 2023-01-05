@@ -1,0 +1,302 @@
+{D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montprowrap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montprowrap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montprowrap
+
+Top level modules:
+	montprowrap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ffxkclk.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ffxkclk.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module ffxkclk
+
+Top level modules:
+	ffxkclk
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_conv.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_conv.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_conv
+
+Top level modules:
+	auc_wmul_conv
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/alram113x.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/alram113x.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module alram113x
+
+Top level modules:
+	alram113x
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/rtldbgsipo1.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/rtldbgsipo1.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module rtldbgsipo1
+
+Top level modules:
+	rtldbgsipo1
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinv.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinv.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montinv
+
+Top level modules:
+	montinv
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montexp.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montexp.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montexp
+
+Top level modules:
+	montexp
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ecc_core.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ecc_core.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module ecc_core
+
+Top level modules:
+	ecc_core
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_pre.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_pre.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_pre
+
+Top level modules:
+	auc_wmul_pre
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinvp1.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinvp1.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montinvp1
+
+Top level modules:
+	montinvp1
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/full_sub.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/full_sub.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module full_sub
+
+Top level modules:
+	full_sub
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinvp2.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montinvp2.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montinvp2
+
+Top level modules:
+	montinvp2
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ecc_top.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ecc_top.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module ecc_top
+
+Top level modules:
+	ecc_top
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_add.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_add.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_add
+
+Top level modules:
+	auc_wmul_add
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulfinal.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulfinal.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_mmulfinal
+
+Top level modules:
+	auc_mmulfinal
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_naf.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_naf.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_naf
+
+Top level modules:
+	auc_naf
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_rand.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_rand.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_rand
+
+Top level modules:
+	auc_rand
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul
+
+Top level modules:
+	auc_wmul
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/lv_rd256wrap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/lv_rd256wrap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module lv_rd256wrap
+
+Top level modules:
+	lv_rd256wrap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_decoder.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_decoder.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_decoder
+
+Top level modules:
+	auc_decoder
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montpro.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/montpro.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module montpro
+
+Top level modules:
+	montpro
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/fflopx.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/fflopx.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module fflopx
+
+Top level modules:
+	fflopx
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ffxkclkx.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/ffxkclkx.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module ffxkclkx
+
+Top level modules:
+	ffxkclkx
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_main.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_main.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_main
+
+Top level modules:
+	auc_wmul_main
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/alram112x.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/alram112x.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module alram112x
+
+Top level modules:
+	alram112x
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/rsinv.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/rsinv.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module rsinv
+
+Top level modules:
+	rsinv
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/mux_xx1.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/mux_xx1.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module mux_xx1
+
+Top level modules:
+	mux_xx1
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/mainctrl.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/mainctrl.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module mainctrl
+
+Top level modules:
+	mainctrl
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/full_adder.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/full_adder.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module full_adder
+
+Top level modules:
+	full_adder
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wrap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wrap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wrap
+
+Top level modules:
+	auc_wrap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_decoder.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_decoder.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_decoder
+
+Top level modules:
+	auc_wmul_decoder
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulcomp.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulcomp.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_mmulcomp
+
+Top level modules:
+	auc_mmulcomp
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmul.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmul.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_mmul
+
+Top level modules:
+	auc_mmul
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/aluwrap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/aluwrap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module aluwrap
+
+Top level modules:
+	aluwrap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/complement_2.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/complement_2.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module complement_2
+
+Top level modules:
+	complement_2
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/tb_ex_sim.vt} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/tb_ex_sim.vt}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module tb_ex_sim
+
+Top level modules:
+	tb_ex_sim
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/cswap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/cswap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module cswap
+
+Top level modules:
+	cswap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_dbl.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_wmul_dbl.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_wmul_dbl
+
+Top level modules:
+	auc_wmul_dbl
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_rand_wrap.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_rand_wrap.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_rand_wrap
+
+Top level modules:
+	auc_rand_wrap
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/modfa.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/modfa.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module modfa
+
+Top level modules:
+	modfa
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulinit.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/auc_mmulinit.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module auc_mmulinit
+
+Top level modules:
+	auc_mmulinit
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/fflopknx.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/fflopknx.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module fflopknx
+
+Top level modules:
+	fflopknx
+
+} {} {}} {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/cla.v} {1 {vlog -work work -vopt -stats=none {D:/Paper/ECC Revised/eccrevised/mdsim/qsim_ecc_4/cla.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module cla
+
+Top level modules:
+	cla
+
+} {} {}}

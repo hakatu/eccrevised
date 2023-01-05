@@ -311,7 +311,7 @@ module e_mod_inv #(parameter WIDTH = 256)
       end
    end
 
-   e_ppn_wrap_add_sub u_denta_uv (
+   e_ppn_wrap_add_sub u_denta_uv(
       .clk            (clk),
       .reset_n        (reset_n),
       .start_cal      (start_denta_uv),

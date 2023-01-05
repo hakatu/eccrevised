@@ -1,0 +1,1054 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Paper/ECC Revised/mdsim/mdsim_test1
+T_opt
+!s110 1664783382
+VI13e^Z09CbMgOEXJb_5?E3
+Z1 04 9 4 work tb_ex_sim fast 0
+=6-3003c8d4a537-633a9415-2a7-70fc
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1664992262
+Vn_>`UUC6A26n=TSmR@4EZ1
+R1
+=2-3003c8d4a537-633dc405-3d1-2844
+o-quiet -auto_acc_if_foreign -work work
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1664993521
+VOE[h7[fY=czc@z]dfW@780
+R1
+=2-3003c8d4a537-633dc8f0-3b3-1290
+R2
+R3
+n@_opt2
+R4
+valadder
+Z5 !s110 1664993491
+!i10b 1
+!s100 zfoO?>OgCb26W3Fd_T3jf0
+Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IQ3ff6hT@Qml>SE2acR5Ke2
+Z7 dD:/Paper/ECC Revised/mdsim/mds_ecc_core_top
+Z8 w1558555460
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/aladder_bb.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/aladder_bb.v
+!i122 319
+L0 34 16
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z11 !s108 1664993491.000000
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/aladder_bb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/aladder_bb.v|
+!i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+valram112x
+R5
+!i10b 1
+!s100 GbA>f7E9MYzZkj99?k;JB0
+R6
+ITMRV6b>1eaS0MHJ=_QMzX0
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram112x.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram112x.v
+!i122 320
+L0 15 76
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram112x.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram112x.v|
+!i113 0
+R12
+R3
+valram113x
+R5
+!i10b 1
+!s100 >I6^]mD1blOIiLJFGHUh73
+R6
+IzdZ`fil3?T@GBSNIOeQnK3
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram113x.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram113x.v
+!i122 321
+Z13 L0 14 62
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram113x.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/alram113x.v|
+!i113 0
+R12
+R3
+valuwrap
+Z14 !s110 1664993492
+!i10b 1
+!s100 i79O4M1HG5XA<eNzo3OG=1
+R6
+IO]GQS^jkzA4k2E<Zz@g8M3
+R7
+w1558641508
+8D:\Paper\ECC Revised\eccrevised\LuanVan-20210617T090538Z-001\LuanVan\rtl\ecc_core_top\aluwrap.v
+FD:\Paper\ECC Revised\eccrevised\LuanVan-20210617T090538Z-001\LuanVan\rtl\ecc_core_top\aluwrap.v
+!i122 322
+L0 16 464
+R9
+R10
+r1
+!s85 0
+31
+Z15 !s108 1664993492.000000
+!s107 D:\Paper\ECC Revised\eccrevised\LuanVan-20210617T090538Z-001\LuanVan\rtl\ecc_core_top\aluwrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:\Paper\ECC Revised\eccrevised\LuanVan-20210617T090538Z-001\LuanVan\rtl\ecc_core_top\aluwrap.v|
+!i113 0
+R12
+R3
+vauc_decoder
+R14
+!i10b 1
+!s100 zH43>6okCRzN^@jX`z9Ml3
+R6
+I>ZaigXM?eQTOA4CISP43m3
+R7
+w1664993483
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_decoder.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_decoder.v
+!i122 323
+L0 14 259
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_decoder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_decoder.v|
+!i113 0
+R12
+R3
+vauc_mmul
+R14
+!i10b 1
+!s100 lDQ4@OH5hFRCH=a8G]8c:2
+R6
+IkcJgLl?S@]@SDznkjdaYi1
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmul.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmul.v
+!i122 324
+L0 15 391
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmul.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmul.v|
+!i113 0
+R12
+R3
+vauc_mmulcomp
+R14
+!i10b 1
+!s100 ^zf=H7NeA[]LDZYeZRU<11
+R6
+ISGZjIbZme`S1]RM9N<MXn3
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulcomp.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulcomp.v
+!i122 325
+L0 14 1076
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulcomp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulcomp.v|
+!i113 0
+R12
+R3
+vauc_mmulfinal
+R14
+!i10b 1
+!s100 [J[9nCKA``BmK`J=nz8CV3
+R6
+IgbYTo`STioK3Y5SUW`b_D1
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulfinal.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulfinal.v
+!i122 326
+L0 14 471
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulfinal.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulfinal.v|
+!i113 0
+R12
+R3
+vauc_mmulinit
+R14
+!i10b 1
+!s100 FfK5B9:?A;BH@]7aM0LOW1
+R6
+InZ;LeP`bJQ<Ljg0R`FS]l1
+R7
+R8
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulinit.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulinit.v
+!i122 327
+L0 14 456
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulinit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_mmulinit.v|
+!i113 0
+R12
+R3
+vauc_naf
+R14
+!i10b 1
+!s100 >JE7gkYfC`eJ=S5c6U]mj2
+R6
+IMVhF6if;^^kg<aA@9o[WL0
+R7
+Z16 w1558555466
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_naf.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_naf.v
+!i122 328
+L0 14 322
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_naf.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_naf.v|
+!i113 0
+R12
+R3
+vauc_rand
+R14
+!i10b 1
+!s100 j64TZ2i_ZCOO]4K;^kZXH3
+R6
+Ikc<IJ@hi9U<_Fg[fSK22k1
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand.v
+!i122 329
+L0 14 163
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand.v|
+!i113 0
+R12
+R3
+vauc_rand_wrap
+R14
+!i10b 1
+!s100 Ijd5lFob`YE517He9RJ5?2
+R6
+I_<BN0W`hIo2F;F1UG4X491
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand_wrap.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand_wrap.v
+!i122 330
+L0 14 88
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand_wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_rand_wrap.v|
+!i113 0
+R12
+R3
+vauc_wmul
+R14
+!i10b 1
+!s100 g7n90IPj32nl7_[QN9YTz2
+R6
+IGUQQ:V44Kk@EV7_ekb@2;3
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul.v
+!i122 331
+L0 14 433
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul.v|
+!i113 0
+R12
+R3
+vauc_wmul_add
+R14
+!i10b 1
+!s100 FjHC`^``FanTDJVRYKcQS0
+R6
+IDT[loMCgQ4]RF:m@>U0SX2
+R7
+Z17 w1558555468
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_add.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_add.v
+!i122 332
+L0 14 1034
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_add.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_add.v|
+!i113 0
+R12
+R3
+vauc_wmul_conv
+R14
+!i10b 1
+!s100 0M?k7n6SC9ON^P_RhQ3?N1
+R6
+I<Xd4bZJan1jTQg;W59K5G3
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_conv.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_conv.v
+!i122 333
+L0 14 265
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_conv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_conv.v|
+!i113 0
+R12
+R3
+vauc_wmul_dbl
+R14
+!i10b 1
+!s100 3`_G4W4>A=Kf8L?kJBnNg1
+R6
+IgFjVQQOCmTWVHPjP2A1eC1
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_dbl.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_dbl.v
+!i122 334
+L0 14 775
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_dbl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_dbl.v|
+!i113 0
+R12
+R3
+vauc_wmul_decoder
+R14
+!i10b 1
+!s100 5B@VzlJK3^VZlK_1bK1_20
+R6
+ID2b3@DQLbc@beYid?<97Q3
+R7
+R16
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_decoder.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_decoder.v
+!i122 335
+L0 14 133
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_decoder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_decoder.v|
+!i113 0
+R12
+R3
+vauc_wmul_main
+R14
+!i10b 1
+!s100 X4j`4k:Rb8T_R:1HS3CeN2
+R6
+IF>:=9B5^MFK2<4<UO:C3P0
+R7
+R17
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_main.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_main.v
+!i122 336
+L0 14 391
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_main.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_main.v|
+!i113 0
+R12
+R3
+vauc_wmul_pre
+R14
+!i10b 1
+!s100 Xm2?N[[[aN0RNzG:Kka1X1
+R6
+I[<VBV_O6JdXdkf<[cbdB73
+R7
+R17
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_pre.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_pre.v
+!i122 337
+L0 14 422
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_pre.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wmul_pre.v|
+!i113 0
+R12
+R3
+vauc_wrap
+R14
+!i10b 1
+!s100 LSeAa[?4oBY55<KA<JA;50
+R6
+IF7<PLUb[<1?0=@?N;1RBT2
+R7
+w1664993461
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wrap.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wrap.v
+!i122 338
+L0 14 537
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/auc_wrap.v|
+!i113 0
+R12
+R3
+vcla
+R14
+!i10b 1
+!s100 =JS7OG2RPa2n<9Q1Nng6[1
+R6
+ImGHTGW9d>Lfd4Nl363S7G3
+R7
+R17
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cla.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cla.v
+!i122 339
+R13
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cla.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cla.v|
+!i113 0
+R12
+R3
+vcomplement_2
+R14
+!i10b 1
+!s100 ]ZI<l1P;jz><ZOd6E5U0F3
+R6
+I`^g<570lP166Tk3:Q?:8m0
+R7
+Z18 w1558555470
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/complement_2.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/complement_2.v
+!i122 340
+L0 14 56
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/complement_2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/complement_2.v|
+!i113 0
+R12
+R3
+vcswap
+Z19 !s110 1664993493
+!i10b 1
+!s100 RAfZoKEo6n^95:fWM?J;A0
+R6
+IKENS0Jza=QRJY6LY=KcD@2
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cswap.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cswap.v
+!i122 341
+L0 14 143
+R9
+R10
+r1
+!s85 0
+31
+Z20 !s108 1664993493.000000
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cswap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/cswap.v|
+!i113 0
+R12
+R3
+vecc_core
+R19
+!i10b 1
+!s100 8`9icMSF=TIO7Z9GIf8=B1
+R6
+IH=ml?86eD[mHeU3L@7IAV0
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_core.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_core.v
+!i122 342
+L0 14 149
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_core.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_core.v|
+!i113 0
+R12
+R3
+vecc_top
+R19
+!i10b 1
+!s100 LYBXBM>>]:i8L1PC7oSXH0
+R6
+IA3WX4>K8=31G[j7Y@Bi6]2
+R7
+R17
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_top.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_top.v
+!i122 343
+L0 14 124
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ecc_top.v|
+!i113 0
+R12
+R3
+vfflopknx
+R19
+!i10b 1
+!s100 omIHJ=j;N1W8YCOFb;Qz;3
+R6
+IfHG[`3mYQEgOE0nKd23490
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopknx.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopknx.v
+!i122 344
+L0 14 68
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopknx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopknx.v|
+!i113 0
+R12
+R3
+vfflopx
+R19
+!i10b 1
+!s100 c[XDNRVEALC[aoHXQC2K[2
+R6
+IGLja:16J7HW8VzFI]20[;3
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopx.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopx.v
+!i122 345
+L0 14 25
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/fflopx.v|
+!i113 0
+R12
+R3
+vffxkclk
+R19
+!i10b 1
+!s100 g^0dKMEcU0XE7<k>>76Dc3
+R6
+I3J=8g>ZJ=Ccc6beZFPfWU0
+R7
+Z21 w1558555472
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclk.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclk.v
+!i122 346
+Z22 L0 14 36
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclk.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclk.v|
+!i113 0
+R12
+R3
+vffxkclkx
+R19
+!i10b 1
+!s100 fJn4gcoh0JOXPL2gBVj<W2
+R6
+I;TL;REYFgjiXhGzWGf6O`2
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclkx.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclkx.v
+!i122 347
+R22
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclkx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/ffxkclkx.v|
+!i113 0
+R12
+R3
+vfull_adder
+R19
+!i10b 1
+!s100 6A4>[gE<<AI3hAf5O`Z110
+R6
+IjM3OaB66UNUFdl<IGYBJ@0
+R7
+R21
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_adder.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_adder.v
+!i122 348
+L0 14 32
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_adder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_adder.v|
+!i113 0
+R12
+R3
+vfull_sub
+R19
+!i10b 1
+!s100 k7S?XXeg3k50:dMJ5bB[A2
+R6
+IAD7f1OCBI`n2Gz4dhBM5^1
+R7
+R18
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_sub.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_sub.v
+!i122 349
+R13
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_sub.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/full_sub.v|
+!i113 0
+R12
+R3
+vlv_rd256wrap
+R19
+!i10b 1
+!s100 4REDa6g_Uj5agFf[HF[2@0
+R6
+IIG^Cf:KJM2gDLRkRz4zV]1
+R7
+R21
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/lv_rd256wrap.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/lv_rd256wrap.v
+!i122 350
+L0 16 48
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/lv_rd256wrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/lv_rd256wrap.v|
+!i113 0
+R12
+R3
+vmainctrl
+R19
+!i10b 1
+!s100 RdHB;1?48>SZKk1AT[9<43
+R6
+I5^:eZ^zSMFQVn0k]3I1U33
+R7
+w1664207676
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mainctrl.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mainctrl.v
+!i122 351
+L0 14 1100
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mainctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mainctrl.v|
+!i113 0
+R12
+R3
+vmodfa
+R19
+!i10b 1
+!s100 M`4z[4Mm=E`LzEGRO]Fcg0
+R6
+I9efKkhH6HI0A@adi5G?[n1
+R7
+w1558031178
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/modfa.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/modfa.v
+!i122 352
+L0 14 175
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/modfa.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/modfa.v|
+!i113 0
+R12
+R3
+vmontexp
+R19
+!i10b 1
+!s100 DSB3d8b>mU]F;2b0Pe<_z2
+R6
+IOz:c2W7Y1Pc5h?@LSnOla2
+R7
+R21
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montexp.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montexp.v
+!i122 353
+L0 14 296
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montexp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montexp.v|
+!i113 0
+R12
+R3
+vmontinv
+R19
+!i10b 1
+!s100 immN<kVekESPO>S><R^m63
+R6
+IZ_FMUka19o?B?>D`boN]d0
+R7
+Z23 w1558641522
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinv.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinv.v
+!i122 354
+L0 14 64
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinv.v|
+!i113 0
+R12
+R3
+vmontinvp1
+R19
+!i10b 1
+!s100 f7IQQTLO?KS:][7BWKOoH3
+R6
+IB<4mcVj`Uge=iM27cKQFH0
+R7
+R23
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp1.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp1.v
+!i122 355
+L0 14 212
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp1.v|
+!i113 0
+R12
+R3
+vmontinvp2
+R19
+!i10b 1
+!s100 caN8Wf6`fQ_VgKA^HNa=g2
+R6
+IhgFXOOjRcDf;1]0LZ`0]=2
+R7
+R23
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp2.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp2.v
+!i122 356
+L0 14 102
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montinvp2.v|
+!i113 0
+R12
+R3
+vmontpro
+R19
+!i10b 1
+!s100 H<VSb?kR1B[1J1]CPom<`2
+R6
+I^aXjEJi<gWTHS9n9T9oFZ3
+R7
+R23
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montpro.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montpro.v
+!i122 357
+L0 14 116
+R9
+R10
+r1
+!s85 0
+31
+R20
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montpro.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montpro.v|
+!i113 0
+R12
+R3
+vmontprowrap
+Z24 !s110 1664993494
+!i10b 1
+!s100 QSCkU4QLM1M]D=29g6I4`2
+R6
+I@`Wj;bg5LBK07HAjN^iB=0
+R7
+R23
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montprowrap.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montprowrap.v
+!i122 358
+L0 13 141
+R9
+R10
+r1
+!s85 0
+31
+Z25 !s108 1664993494.000000
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montprowrap.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/montprowrap.v|
+!i113 0
+R12
+R3
+vmux_xx1
+R24
+!i10b 1
+!s100 llEm9NFG0WaAd`K6Vm_6?0
+R6
+Ii8HaD^z]4o4Ye6^zU7mL<3
+R7
+Z26 w1558555474
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mux_xx1.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mux_xx1.v
+!i122 359
+L0 14 30
+R9
+R10
+r1
+!s85 0
+31
+R25
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mux_xx1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/mux_xx1.v|
+!i113 0
+R12
+R3
+vrsinv
+R24
+!i10b 1
+!s100 41TSWTD5cnh2Zdb=8<KIS1
+R6
+IVFDbRK8Bl54iCV7NJRCTc1
+R7
+R26
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rsinv.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rsinv.v
+!i122 360
+L0 14 481
+R9
+R10
+r1
+!s85 0
+31
+R25
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rsinv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rsinv.v|
+!i113 0
+R12
+R3
+vrtldbgsipo1
+R24
+!i10b 1
+!s100 d14haWC0F3<ReST?1iLk02
+R6
+ISd@kUjY1TPaCGB9O9A^j_2
+R7
+R26
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rtldbgsipo1.v
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rtldbgsipo1.v
+!i122 361
+L0 14 58
+R9
+R10
+r1
+!s85 0
+31
+R25
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rtldbgsipo1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core_top/rtldbgsipo1.v|
+!i113 0
+R12
+R3
+vtb_ex_sim
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R24
+!i10b 1
+!s100 z=DM0ELnU7?:@@h;Z3z263
+R6
+IQ2H<jkF0kF7bUcoBamVaz3
+S1
+R7
+w1664102366
+8D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core/tb_ex_sim.sv
+FD:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core/tb_ex_sim.sv
+!i122 362
+L0 2 170
+R9
+R10
+r1
+!s85 0
+31
+R25
+!s107 D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core/tb_ex_sim.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Paper/ECC Revised/eccrevised/LuanVan-20210617T090538Z-001/LuanVan/rtl/ecc_core/tb_ex_sim.sv|
+!i113 0
+o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3

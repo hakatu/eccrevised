@@ -1,0 +1,117 @@
+
+State Machine - |ecc_top|ecc_core:iecc_core|aluwrap:ialuwrap|state
+Name state.SWAP state.NOR state.MUL state.INV state.FA state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.FA 0 0 0 0 1 1 
+state.INV 0 0 0 1 0 1 
+state.MUL 0 0 1 0 0 1 
+state.NOR 0 1 0 0 0 1 
+state.SWAP 1 0 0 0 0 1 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulcomp:iauc_mmul_comp|comp_state
+Name comp_state.C_GETZ33 comp_state.C_GETZ32 comp_state.C_GETZ31 comp_state.C_GETDACB24 comp_state.C_GETDACB23 comp_state.C_GETDACB22 comp_state.C_GETDACB21 comp_state.C_GETX34 comp_state.C_GETX33 comp_state.C_GETX32 comp_state.C_GETX31 comp_state.C_GETDA2 comp_state.C_GETDA1 comp_state.C_GETCB2 comp_state.C_GETCB1 comp_state.C_GETD2 comp_state.C_GETD1 comp_state.C_GETC2 comp_state.C_GETC1 comp_state.C_GETZ26 comp_state.C_GETZ25 comp_state.C_GETZ24 comp_state.C_GETZ23 comp_state.C_GETZ22 comp_state.C_GETZ21 comp_state.C_GETX22 comp_state.C_GETX21 comp_state.C_GETE2 comp_state.C_GETE1 comp_state.C_GETBB2 comp_state.C_GETBB comp_state.C_GETB2 comp_state.C_GETB1 comp_state.C_GETAA comp_state.C_GETA2 comp_state.C_GETA1 comp_state.C_SWAPZ33 comp_state.C_SWAPZ32 comp_state.C_SWAPZ3 comp_state.C_SWAPZ22 comp_state.C_SWAPZ2 comp_state.C_SWAPX3 comp_state.C_SWAPX2 comp_state.C_PREKT2 comp_state.C_PREKT1 comp_state.C_IDLE 
+comp_state.C_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+comp_state.C_PREKT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+comp_state.C_PREKT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+comp_state.C_SWAPX2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+comp_state.C_SWAPX3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+comp_state.C_SWAPZ2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+comp_state.C_SWAPZ22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+comp_state.C_SWAPZ3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+comp_state.C_SWAPZ32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+comp_state.C_SWAPZ33 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETA1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETA2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETAA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETB1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETB2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETBB 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETBB2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETE1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETE2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ23 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ26 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETC1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETC2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETD1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETD2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETCB1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETCB2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDA1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDA2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX31 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX32 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX33 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETX34 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDACB21 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDACB22 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDACB23 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETDACB24 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ31 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ32 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+comp_state.C_GETZ33 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ecc_top|ecc_core:iecc_core|mainctrl:imainctrl|gen_state_2
+Name gen_state_2.GENIDL gen_state_2.GENMUL gen_state_2.GENRAN 
+gen_state_2.GENIDL 0 0 0 
+gen_state_2.GENRAN 1 0 1 
+gen_state_2.GENMUL 1 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|mainctrl:imainctrl|main_state
+Name main_state.ECDHE_GEN main_state.IDLE main_state.ECDHE_COMP 
+main_state.IDLE 0 0 0 
+main_state.ECDHE_GEN 1 1 0 
+main_state.ECDHE_COMP 0 1 1 
+
+State Machine - |ecc_top|ecc_core:iecc_core|mainctrl:imainctrl|gen_state
+Name gen_state.GENIDL gen_state.GENMUL gen_state.GENRAN 
+gen_state.GENIDL 0 0 0 
+gen_state.GENRAN 1 0 1 
+gen_state.GENMUL 1 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|mainctrl:imainctrl|gen_state_1
+Name gen_state_1.GENIDL gen_state_1.GENMUL gen_state_1.GENRAN 
+gen_state_1.GENIDL 0 0 0 
+gen_state_1.GENRAN 1 0 1 
+gen_state_1.GENMUL 1 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|rsinv:irsinv|mainfsm
+Name mainfsm.IPRO 
+mainfsm.IDLE 0 
+mainfsm.IPRO 1 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|main
+Name main.FINAL main.COMP main.INIT main.IDLE 
+main.IDLE 0 0 0 0 
+main.INIT 0 0 1 1 
+main.COMP 0 1 0 1 
+main.FINAL 1 0 0 1 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulfinal:iauc_mmul_final|final_state
+Name final_state.F_DONE final_state.F_RSLT final_state.F_POW2 final_state.F_POW final_state.F_IDLE final_state.F_SWAPX33 
+final_state.F_IDLE 0 0 0 0 0 0 
+final_state.F_SWAPX33 0 0 0 0 1 1 
+final_state.F_POW 0 0 0 1 1 0 
+final_state.F_POW2 0 0 1 0 1 0 
+final_state.F_RSLT 0 1 0 0 1 0 
+final_state.F_DONE 1 0 0 0 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulinit:iauc_mmul_init|init_state
+Name init_state.I_INITU init_state.I_INITK3 init_state.I_INITK2 init_state.I_INITK1 init_state.I_INITA24 init_state.I_INITZ3 init_state.I_INITX32 init_state.I_INITX3 init_state.I_INITZ2 init_state.I_INITX2 init_state.I_IDLE 
+init_state.I_IDLE 0 0 0 0 0 0 0 0 0 0 0 
+init_state.I_INITX2 0 0 0 0 0 0 0 0 0 1 1 
+init_state.I_INITZ2 0 0 0 0 0 0 0 0 1 0 1 
+init_state.I_INITX3 0 0 0 0 0 0 0 1 0 0 1 
+init_state.I_INITX32 0 0 0 0 0 0 1 0 0 0 1 
+init_state.I_INITZ3 0 0 0 0 0 1 0 0 0 0 1 
+init_state.I_INITA24 0 0 0 0 1 0 0 0 0 0 1 
+init_state.I_INITK1 0 0 0 1 0 0 0 0 0 0 1 
+init_state.I_INITK2 0 0 1 0 0 0 0 0 0 0 1 
+init_state.I_INITK3 0 1 0 0 0 0 0 0 0 0 1 
+init_state.I_INITU 1 0 0 0 0 0 0 0 0 0 1 

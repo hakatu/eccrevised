@@ -1,0 +1,47 @@
+
+State Machine - |wrap_mod_inv|e_mod_inv:u1|e_ppn_wrap_add_sub:u_sigma|state
+Name state.IDLE state.DONE state.CAL 
+state.IDLE 0 0 0 
+state.CAL 1 0 1 
+state.DONE 1 1 0 
+
+State Machine - |wrap_mod_inv|e_mod_inv:u1|e_ppn_wrap_add_sub:u_denta_rs|state
+Name state.IDLE state.DONE state.CAL 
+state.IDLE 0 0 0 
+state.CAL 1 0 1 
+state.DONE 1 1 0 
+
+State Machine - |wrap_mod_inv|e_mod_inv:u1|e_ppn_wrap_add_sub:u_denta_uv|state
+Name state.IDLE state.DONE state.CAL 
+state.IDLE 0 0 0 
+state.CAL 1 0 1 
+state.DONE 1 1 0 
+
+State Machine - |wrap_mod_inv|e_mod_inv:u1|e_mod_inv_control:inv_ctrl|state
+Name state.LOAD state.DONE state.CHECK state.CALRS state.CALSIGMA state.STORE state.P8 state.P7 state.P6 state.P5 state.P4 state.P3 state.P2 state.P1_CHECK state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.P1_CHECK 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.P2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.P3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.P4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.P5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.P6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.P7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.P8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.STORE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.CALSIGMA 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.CALRS 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.CHECK 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DONE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOAD 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |wrap_mod_inv|e_mod_inv:u1|e_mod_inv_control:inv_ctrl|pre_state
+Name pre_state.P7 pre_state.P6 pre_state.P5 pre_state.P4 pre_state.P3 pre_state.P2 pre_state.IDLE pre_state.P8 
+pre_state.IDLE 0 0 0 0 0 0 0 0 
+pre_state.P2 0 0 0 0 0 1 1 0 
+pre_state.P3 0 0 0 0 1 0 1 0 
+pre_state.P4 0 0 0 1 0 0 1 0 
+pre_state.P5 0 0 1 0 0 0 1 0 
+pre_state.P6 0 1 0 0 0 0 1 0 
+pre_state.P7 1 0 0 0 0 0 1 0 
+pre_state.P8 0 0 0 0 0 0 1 1 

@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Jan  2 23:17:15 2023
+Analysis & Synthesis Status : Successful - Tue Jan 10 10:01:33 2023
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Standard Edition
 Revision Name : ecc_top
 Top-level Entity Name : ecc_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 33408
+Total registers : 33409
 Total pins : 11
 Total virtual pins : 0
 Total block memory bits : 8,192

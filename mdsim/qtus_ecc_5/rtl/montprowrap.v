@@ -38,7 +38,7 @@ parameter CNTWID = 8;
 parameter ZERO = 256'b0;
 parameter IDLE = 1'b0;
 parameter RUNNING = 1'b1;
-parameter DELAY = 2;
+parameter DELAY = 1;
 `endif
 ////////////////////////////////////////////////////////////////////////////////
 // Port declarations

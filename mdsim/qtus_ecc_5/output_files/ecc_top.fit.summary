@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Jan  2 23:44:47 2023
+Fitter Status : Successful - Tue Jan 10 10:30:24 2023
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Standard Edition
 Revision Name : ecc_top
 Top-level Entity Name : ecc_top
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 19,699 / 41,910 ( 47 % )
-Total registers : 33424
+Logic utilization (in ALMs) : 19,424 / 41,910 ( 46 % )
+Total registers : 33426
 Total pins : 11 / 499 ( 2 % )
 Total virtual pins : 0
 Total block memory bits : 8,192 / 5,662,720 ( < 1 % )

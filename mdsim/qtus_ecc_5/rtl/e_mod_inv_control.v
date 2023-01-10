@@ -102,28 +102,54 @@ module e_mod_inv_control #(
   reg [13:0] state;
   reg [13:0] n_state;
   reg [13:0] pre_state;
-
-  reg [10:0]  pi0;
-
+  
   reg         lsb_s;
   reg         lsb_r;
+  reg [10:0]  pi0;
+
+  reg         sel;
+  //reg         sel_v_bigger_0;
+  //reg         sel_pi0_512;
+  //reg         sel_u0;
+  //reg         sel_v0;
+  //reg         sel_uv;
+  //reg         sel_rprime;
   // Instantiations
+
+  //always @(posedge clk or negedge reset_n) begin
+  //  if(!reset_n) begin
+  //    sel_v_bigger_0 <= 1'b0;
+  //    sel_pi0_512    <= 1'b0;
+  //    sel_u0         <= 1'b0;
+  //    sel_v0         <= 1'b0;
+  //    sel_uv         <= 1'b0;
+  //    sel_rprime     <= 1'b0;
+  //  end
+  //  else begin
+  //    sel_v_bigger_0 <= v > 256'd0   ? 1'b1 : 1'b0;
+  //    sel_pi0_512    <= pi0 < 'd512  ? 1'b1 : 1'b0;
+  //    sel_u0         <= u[0] == 1'b0 ? 1'b1 : 1'b0;
+  //    sel_v0         <= v[0] == 1'b0 ? 1'b1 : 1'b0;
+  //    sel_uv         <= u > v        ? 1'b1 : 1'b0;
+  //    sel_rprime     <= r > PRIME    ? 1'b1 : 1'b0;
+  //  end
+  //end
 
   // Conbinational Logic
 
-  always @(*) begin
-     case(state)
-        IDLE: begin
-           n_state = start_inv ? LOAD : IDLE;
-        end
-        LOAD: begin
-           n_state = CHECK;
-        end
-        CHECK: begin
-           n_state = pi0 < 'd512 ? P1_CHECK : DONE;
-        end
-        P1_CHECK: begin
-           if(v > 256'd0) begin
+   always @(*) begin
+      case(state)
+         IDLE: begin
+            n_state = start_inv ? LOAD : IDLE;
+         end
+         LOAD: begin
+            n_state = CHECK;
+         end
+         CHECK: begin
+            n_state = pi0 < 'd512 ? P1_CHECK : DONE;
+         end
+         P1_CHECK: begin
+            if(v > 256'd0) begin
               if(u[0] == 'b0) begin
                  n_state = P2;
               end
@@ -240,6 +266,14 @@ module e_mod_inv_control #(
      end
   end
 
+  always @(posedge clk) begin
+      if(reset) begin
+         sel <= 1'b0;
+      end
+      else begin
+         sel <= (pi0 == 0) ? 1'b1 : 1'b0;
+      end
+  end
   // Output Logic
   always @(posedge clk) begin
      if(reset) begin
@@ -297,10 +331,10 @@ module e_mod_inv_control #(
            end
            LOAD: begin
               pi0                <= pi0;
-              {sign_v_cal,v_cal} <= (pi0 == 'd0) ? {1'b0,nu1}      : {sign_v,v} ; // ban dau, input dc dua ra tinh
-              {sign_u_cal,u_cal} <= (pi0 == 'd0) ? {1'b0,PRIME}    : {sign_u,u};
-              {sign_r_cal,r_cal} <= (pi0 == 'd0) ? 257'd0          : {sign_r,r};
-              {sign_s_cal,s_cal} <= (pi0 == 'd0) ? {1'b0,ADJUST_M} : {sign_s,s};
+              {sign_v_cal,v_cal} <= sel ? {1'b0,nu1}      : {sign_v,v} ; // ban dau, input dc dua ra tinh
+              {sign_u_cal,u_cal} <= sel ? {1'b0,PRIME}    : {sign_u,u};
+              {sign_r_cal,r_cal} <= sel ? 257'd0          : {sign_r,r};
+              {sign_s_cal,s_cal} <= sel ? {1'b0,ADJUST_M} : {sign_s,s};
               sel_u              <= 'd0;
               sel_v              <= 'd0;
               sel_r              <= 'd0;  
@@ -328,10 +362,10 @@ module e_mod_inv_control #(
               //v_cal            <= 256'd0;
               //r_cal            <= 256'd0;
               //s_cal            <= 256'd0;
-              {sign_v_cal,v_cal} <= (pi0 == 'd0) ? {1'b0,nu1}      : {sign_v,v} ; // ban dau, input dc dua ra tinh
-              {sign_u_cal,u_cal} <= (pi0 == 'd0) ? {1'b0,PRIME}    : {sign_u,u};
-              {sign_r_cal,r_cal} <= (pi0 == 'd0) ? 257'd0          : {sign_r,r};
-              {sign_s_cal,s_cal} <= (pi0 == 'd0) ? {1'b0,ADJUST_M} : {sign_s,s};
+              {sign_v_cal,v_cal} <= sel ? {1'b0,nu1}      : {sign_v,v} ; // ban dau, input dc dua ra tinh
+              {sign_u_cal,u_cal} <= sel ? {1'b0,PRIME}    : {sign_u,u};
+              {sign_r_cal,r_cal} <= sel ? 257'd0          : {sign_r,r};
+              {sign_s_cal,s_cal} <= sel ? {1'b0,ADJUST_M} : {sign_s,s};
               //{sign_v_cal,v_cal} <= {sign_v,v}; 
               //{sign_u_cal,u_cal} <= {sign_u,u};
               //{sign_r_cal,r_cal} <= {sign_r,r};
@@ -353,7 +387,7 @@ module e_mod_inv_control #(
               sel_denta_rs       <= 'd0;
               sel_sigma          <= 'd0;
               pre_state          <= pre_state;
-              lsb_s              <= (pi0 == 'd0) ? ADJUST_M[0] : s[0];
+              lsb_s              <= sel ? ADJUST_M[0] : s[0];
               lsb_r              <= r[0];
               overflow           <= 'b0;
            end

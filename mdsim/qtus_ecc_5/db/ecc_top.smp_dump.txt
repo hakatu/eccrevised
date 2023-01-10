@@ -14,17 +14,20 @@ state.IDLE 0 0 0
 state.CAL 1 0 1 
 state.DONE 1 1 0 
 
-State Machine - |ecc_top|ecc_core:iecc_core|aluwrap:ialuwrap|e_mod_inv:ie_mod_inv|e_ppn_wrap_add_sub:u_sigma|state
-Name state.IDLE state.DONE state.CAL 
-state.IDLE 0 0 0 
-state.CAL 1 0 1 
-state.DONE 1 1 0 
-
 State Machine - |ecc_top|ecc_core:iecc_core|aluwrap:ialuwrap|e_mod_inv:ie_mod_inv|e_ppn_wrap_add_sub:u_denta_rs|state
 Name state.IDLE state.DONE state.CAL 
 state.IDLE 0 0 0 
 state.CAL 1 0 1 
 state.DONE 1 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulfinal:iauc_mmul_final|final_state
+Name final_state.F_DONE final_state.F_RSLT final_state.F_POW2 final_state.F_POW final_state.F_IDLE final_state.F_SWAPX33 
+final_state.F_IDLE 0 0 0 0 0 0 
+final_state.F_SWAPX33 0 0 0 0 1 1 
+final_state.F_POW 0 0 0 1 1 0 
+final_state.F_POW2 0 0 1 0 1 0 
+final_state.F_RSLT 0 1 0 0 1 0 
+final_state.F_DONE 1 0 0 0 1 0 
 
 State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|rsinv:irsinv|mainfsm
 Name mainfsm.IPRO 
@@ -55,6 +58,12 @@ Name gen_state_1.GENIDL gen_state_1.GENMUL gen_state_1.GENRAN
 gen_state_1.GENIDL 0 0 0 
 gen_state_1.GENRAN 1 0 1 
 gen_state_1.GENMUL 1 1 0 
+
+State Machine - |ecc_top|ecc_core:iecc_core|aluwrap:ialuwrap|e_mod_inv:ie_mod_inv|e_ppn_wrap_add_sub:u_sigma|state
+Name state.IDLE state.DONE state.CAL 
+state.IDLE 0 0 0 
+state.CAL 1 0 1 
+state.DONE 1 1 0 
 
 State Machine - |ecc_top|ecc_core:iecc_core|aluwrap:ialuwrap|e_mod_inv:ie_mod_inv|e_mod_inv_control:inv_ctrl|pre_state
 Name pre_state.P7 pre_state.P6 pre_state.P5 pre_state.P4 pre_state.P3 pre_state.P2 pre_state.IDLE pre_state.P8 
@@ -90,15 +99,6 @@ Name gen_state_2.GENIDL gen_state_2.GENMUL gen_state_2.GENRAN
 gen_state_2.GENIDL 0 0 0 
 gen_state_2.GENRAN 1 0 1 
 gen_state_2.GENMUL 1 1 0 
-
-State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulfinal:iauc_mmul_final|final_state
-Name final_state.F_DONE final_state.F_RSLT final_state.F_POW2 final_state.F_POW final_state.F_IDLE final_state.F_SWAPX33 
-final_state.F_IDLE 0 0 0 0 0 0 
-final_state.F_SWAPX33 0 0 0 0 1 1 
-final_state.F_POW 0 0 0 1 1 0 
-final_state.F_POW2 0 0 1 0 1 0 
-final_state.F_RSLT 0 1 0 0 1 0 
-final_state.F_DONE 1 0 0 0 1 0 
 
 State Machine - |ecc_top|ecc_core:iecc_core|auc_wrap:iauc_wrap|auc_mmul:iauc_mmul|auc_mmulcomp:iauc_mmul_comp|comp_state
 Name comp_state.C_GETZ33 comp_state.C_GETZ32 comp_state.C_GETZ31 comp_state.C_GETDACB24 comp_state.C_GETDACB23 comp_state.C_GETDACB22 comp_state.C_GETDACB21 comp_state.C_GETX34 comp_state.C_GETX33 comp_state.C_GETX32 comp_state.C_GETX31 comp_state.C_GETDA2 comp_state.C_GETDA1 comp_state.C_GETCB2 comp_state.C_GETCB1 comp_state.C_GETD2 comp_state.C_GETD1 comp_state.C_GETC2 comp_state.C_GETC1 comp_state.C_GETZ26 comp_state.C_GETZ25 comp_state.C_GETZ24 comp_state.C_GETZ23 comp_state.C_GETZ22 comp_state.C_GETZ21 comp_state.C_GETX22 comp_state.C_GETX21 comp_state.C_GETE2 comp_state.C_GETE1 comp_state.C_GETBB2 comp_state.C_GETBB comp_state.C_GETB2 comp_state.C_GETB1 comp_state.C_GETAA comp_state.C_GETA2 comp_state.C_GETA1 comp_state.C_SWAPZ33 comp_state.C_SWAPZ32 comp_state.C_SWAPZ3 comp_state.C_SWAPZ22 comp_state.C_SWAPZ2 comp_state.C_SWAPX3 comp_state.C_SWAPX2 comp_state.C_PREKT2 comp_state.C_PREKT1 comp_state.C_IDLE 

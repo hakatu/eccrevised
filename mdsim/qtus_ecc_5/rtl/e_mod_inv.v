@@ -335,7 +335,7 @@ module e_mod_inv #(parameter WIDTH = 256)
    
    e_ppn_wrap_add_sub u_denta_rs(
       .clk            (clk),
-      .reset        (reset),
+      .reset       (reset),
       .start_cal      (start_denta_rs),
       .sel            (1'b1),
       .a_i            (nu1_denta_rs),
@@ -363,7 +363,6 @@ module e_mod_inv #(parameter WIDTH = 256)
       .c_o            (c_sigma),
       .sign_o         (sign_sigma),
       .done_o         (done_sigma),
-
       .overflow       (overflow)
    );
 
